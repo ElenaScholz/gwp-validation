@@ -2,7 +2,7 @@ from pathlib import Path
 import geopandas as gpd
 import pandas as pd
 import os
-from globallakevariability.utils.filehandling import get_filepaths_from_folder
+from globallakevariability.preprocessing.filehandling import get_filepaths_from_folder
 
 
 def derive_max_extent_info(path_to_gwp_timeseries_folder: str):

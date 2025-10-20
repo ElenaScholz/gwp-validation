@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 from globallakevariability.preprocessing.HydrolakesDataloader import HydroLakesGWP_DataLoading
-from globallakevariability.utils.filehandling import get_output_filename, get_csv_filename, get_gpkg_filename
+from globallakevariability.preprocessing.filehandling import get_output_filename, get_csv_filename, get_gpkg_filename
 from globallakevariability.preprocessing.add_max_extent import derive_max_extent_info, add_max_extent_to_gwp
 
 def main(config):
