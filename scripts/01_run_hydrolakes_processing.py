@@ -17,6 +17,7 @@ def main(config):
     print(f"Processing Hydrolakes for AOI: {aoi}")
 
     output_path = get_output_filename(output_dir, aoi)
+    print(output_path)
     gwp_timeseries_folder = os.path.join(root_dir, path_to_time_series_folder)
     
     hylak_processor = HydroLakesGWP_DataLoading(
