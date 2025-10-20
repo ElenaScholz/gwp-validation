@@ -4,7 +4,8 @@ import json
 from pathlib import Path
 
 from globallakevariability.preprocessing.HydrolakesDataloader import HydroLakesGWP_DataLoading
-from globallakevariability.utils.filehandling import get_output_filename, get_csv_filename
+from globallakevariability.utils.filehandling import get_output_filename, get_csv_filename, get_gpkg_filename
+from globallakevariability.preprocessing.add_max_extent import derive_max_extent_info, add_max_extent_to_gwp
 
 def main(config):
     aoi = config["aoi"]
@@ -16,7 +17,7 @@ def main(config):
     print(f"Processing Hydrolakes for AOI: {aoi}")
 
     output_path = get_output_filename(output_dir, aoi)
-    timeseries_folder = os.path.join(root_dir, path_to_time_series_folder)
+    gwp_timeseries_folder = os.path.join(root_dir, path_to_time_series_folder)
     
     hylak_processor = HydroLakesGWP_DataLoading(
         root_dir,
@@ -30,12 +31,16 @@ def main(config):
 
     # Add max extent info
 
-    # TODO
+    max_extent_df = derive_max_extent_info(gwp_timeseries_folder)
+
+    gwp_with_hylak_id_max_extent = add_max_extent_to_gwp(gwp_with_hylak_id, max_extent_df)
 
     print(f"Saving outputs to {output_dir}")
     gwp_with_hylak_id.to_file(output_path, driver="GPKG")
     gwp_with_hylak_id.to_csv(get_csv_filename(output_path, "noMaxExtent"), index=False)
 
+    gwp_with_hylak_id_max_extent.to_file(get_gpkg_filename(output_path, "withMaxExtent"), driver="GPKG")
+    gwp_with_hylak_id_max_extent.to_csv(get_csv_filename(output_path, "withMaxExtent"), index=False)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process Hydrolakes and GWP data based on configuration file.")
