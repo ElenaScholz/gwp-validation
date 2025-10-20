@@ -9,20 +9,24 @@ Each Processing step was assigend to a number:
 04 = visualisation
 
 
-DLR-GWPIntercomparison/
-├── configs/
-├── scripts/
-│   ├── 01_run_hydrolakes_processing.py
-│   ├── 
-│   └── ...
-├── src/globallakevariability
-│   ├── 
-│   └── 
-├── notebooks/
-│   ├── exploration.ipynb
-│   └── validation.ipynb
-├── pyproject.toml
-└── README.md
+DLR-GWPIntercomparison/  
+├── configs/  
+│   ├── arlie.json  
+│   ├── li.json  
+│   ├── nasaflood.json  
+│   ├── world_hydrolakes.json  
+├── scripts/  
+│   ├── 01_run_hydrolakes_processing.py  
+│   ├──   
+│   └── ...  
+├── src/globallakevariability  
+│   ├──   
+│   └──   
+├── notebooks/  
+│   ├── exploration.ipynb  
+│   └── validation.ipynb  
+├── pyproject.toml  
+└── README.md  
 
 # Workflow
 
