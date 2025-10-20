@@ -1,0 +1,9 @@
+{
+  "aoi": "world",
+  "root_dir": "T:/DLR/Analysis3",
+  "path_to_gwp_timeseries_folder": "Input/GWP/05_timeseries_8247_rm2902",
+  "preprocessing": {
+    "output_dir": "T:/DLR/Analysis2/Output/Hydrolakes"
+  }
+
+}

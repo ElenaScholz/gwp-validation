@@ -1,0 +1,57 @@
+import os
+import argparse
+import json
+from pathlib import Path
+
+from globallakevariability.preprocessing.HydrolakesDataloader import HydroLakesGWP_DataLoading
+from globallakevariability.utils.filehandling import get_output_filename, get_csv_filename
+
+def main(config):
+    aoi = config["aoi"]
+    root_dir = config["root_dir"]
+    path_to_time_series_folder = config["path_to_gwp_timeseries_folder"]
+    output_dir = config["preprocessing"]["output_dir"]
+
+    clip_to_arlie = (aoi == 'arlie')
+    print(f"Processing Hydrolakes for AOI: {aoi}")
+
+    output_path = get_output_filename(output_dir, aoi)
+    timeseries_folder = os.path.join(root_dir, path_to_time_series_folder)
+    
+    hylak_processor = HydroLakesGWP_DataLoading(
+        root_dir,
+        clip_to_arlie
+    )
+
+    gwp_with_hylak_id = hylak_processor.load_and_join_hydrolakes_gwp()
+
+    print(f"There are {len(gwp_with_hylak_id)} GWP samples with a matching Hydrolake for the further analysis")
+    print(gwp_with_hylak_id)
+
+    # Add max extent info
+
+    # TODO
+
+    print(f"Saving outputs to {output_dir}")
+    gwp_with_hylak_id.to_file(output_path, driver="GPKG")
+    gwp_with_hylak_id.to_csv(get_csv_filename(output_path, "noMaxExtent"), index=False)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Process Hydrolakes and GWP data based on configuration file.")
+    parser.add_argument(
+        '--config',
+        type=str,
+        required=True,
+        help="Path to the JSON configuration file"
+    )
+    
+    args = parser.parse_args()
+    
+    with open(args.config, 'r') as f:
+        config = json.load(f)
+    
+    main(config)
+
+
+
