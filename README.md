@@ -20,7 +20,7 @@ DLR-GWPIntercomparison/
 │   ├──   
 │   └── ...  
 ├── src/globallakevariability  
-│   ├── preprocessing
+│   ├── preprocessing  
 │   │   ├── add_maximum_extent.py  
 │   │   ├── HydrolakesDataloader.py    
 │   │   ├── ...
