@@ -47,7 +47,6 @@ def add_max_extent_to_gwp(gwp_with_hylak_id: gpd.GeoDataFrame, max_extent_df: pd
     gpd.GeoDataFrame: Updated GeoDataFrame with maximum extent information added.
     """
 
-    gwp_with_hylak_id = gpd.read_file(r"T:\DLR\Analysis3\Output\Hydrolakes\gwp_withHylaksAndMaxExtent_arlie.gpkg")
     ids = max_extent_df['Coordinate_ID'].tolist()    # Merge the max extent information to the gwp_with_hylak_id GeoDataFrame
     gwp_with_max_extent = gwp_with_hylak_id.merge(max_extent_df, left_on='id', right_on='Coordinate_ID', how='left')
     filtered_gwp_hylak_max_extent = gwp_with_max_extent[gwp_with_max_extent['id'].isin(ids)]
