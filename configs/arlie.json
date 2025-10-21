@@ -10,6 +10,11 @@
     "gwp_hylaks_gpkg": "T:/DLR/Analysis3/Output/Hydrolakes/gwp_withHylaks_arlie.gpkg"
   },
   "matching":{
-    "output_directory": "Output/ARLIE/matching"
+    "output_directory": "Output/ARLIE/matching",
+    "processed_data_directory": "Output/allValidationDatasets/ARLIE",
+    "filename_gwp_arlie_matching_summary": "all_arlie_lakes_10percDisr",
+    "max_area_difference": 0.10,
+    "maximum_disruption_threshold_perc": 10.0,
+    "min_length_to_keep_df": 50
   }
 }

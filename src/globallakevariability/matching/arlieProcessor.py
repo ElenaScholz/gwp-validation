@@ -310,7 +310,7 @@ def aggregate_water_data(df, max_area_difference, id_column="river_km_id", targe
     
     # Fläche in km² umrechnen
     df_grouped['Arlie_Area'] = df_grouped['area'] * 1e-6  # Convert area to km²
-    df_grouped['Gwp_Max_Area'] = df_grouped['gwp_Area_max'] * 1e-6  # Convert area to km²
+    df_grouped['Gwp_Max_Area'] = df_grouped['gwp_Area_max']# * 1e-6  # Convert area to km²
     df_grouped = df_grouped.drop(columns=["total_perc", "area", "gwp_Area_max"])
 
 
@@ -334,13 +334,15 @@ def make_arlie_files_to_dict(file_list, max_area_difference, max_disruption_thre
 
     for file in file_list:
         #df = pd.read_csv(file, sep=",")
-        # In your utils/arlieProcessing.py file, around line 335:
+        print(f"Processing {file}...")
         try:
             df = pd.read_csv(file, sep=",")
+         
         except pd.errors.ParserError as e:
             print(f"Error parsing {file}: {e}")
             continue  # Skip this file and continue with the next one
         # Schlüssel erstellen
+   
         key = df['gwp_id'].iloc[0][:-14]  # Kürzen
 
         # Doppelte Zeitstempel löschen

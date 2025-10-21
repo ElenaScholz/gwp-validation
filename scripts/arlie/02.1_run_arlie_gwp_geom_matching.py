@@ -23,6 +23,9 @@ def main(config):
     df_gwp_hylakIds = df_gwp_hylakIds.rename(columns={'id': 'gwp_id'})
     df_gwp_hylakIds = df_gwp_hylakIds[['Hylak_id', 'gwp_id', 'gwp_Area_max']].copy()
     
+    out_dir = input_root / config["matching"]["output_directory"]
+
+
     arlieProcessor = ArlieProcessor(root_to_arlie_folder= arlie_root,
                                   path_to_hylak_dataset= config["path_to_hydrolake_dataset"],
                                   gwp_dataset_with_hylak_ids= df_gwp_hylakIds)
@@ -38,7 +41,7 @@ def main(config):
     gwp_arlie_dicts = create_gwp_based_dict(stats_dict)
     arlie_to_hylak, multiple_assignments = find_multiple_assignments(gwp_arlie_dicts)
     filtered_dict = drop_multiple_assigned_hylaks(multiple_assignments, gwp_arlie_dicts)
-    out_dir = input_root / config["matching"]["output_directory"]
+
     save_dict(filtered_dict, output_path=out_dir)
 
 
