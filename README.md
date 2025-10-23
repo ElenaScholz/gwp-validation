@@ -2,7 +2,11 @@
 # Prerequesites
 1. Download ARLIE Dataset for the whole time series (script 00_arlie_download_hda_files.py)
 2. Extract Arlie zip files - script 00_extract_arlie_zipfiles.py
+3. download the hydrolakes dataset.
+4. download the dataset of Li et al.
+5. Nasa Flood Product (no historical dataset freely available)
 
+  
 # Repository Structure
 Each Processing step was assigend to a number:  
 
@@ -48,8 +52,13 @@ this script needs to be run twice: once for the ARLIE dataset and once for the w
 uv run .\scripts\01_run_hydrolakes_processing.py --config .\configs\arlie.json
 
 
-Input:
+Input:  
+- hydrolakes Shapefile
+- gwp coordinate files
+- gwp timeseries files
 Output:
+- gpkg/csv file where each point of gwp also contains information of hydrolakes id as well as the laximum area extent.
+  
 ## Matching Global Waterpack with validation Datasets
 ### ARLIE: 02_run_arlie_gwp_matching.py
 
