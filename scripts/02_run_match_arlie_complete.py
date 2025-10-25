@@ -36,8 +36,8 @@ csv_files_validation = list(processed_data_dir.glob("*.csv"))
 if not csv_files_validation:
     print(f"Running 02.2_run_arlie_gwp_geom_matching.py because no CSV files found in {processed_data_dir}.")
     subprocess.run(
-        [sys.executable, "scripts/arlie/02.1_run_arlie_gwp_geom_matching.py", "--config", CONFIG_PATH],
+        [sys.executable, "scripts/arlie/02.2_run_arlie_gwp_geom_matching.py", "--config", CONFIG_PATH],
         check=True
     )
-else: 
-    print(f"Skipping 02.1_run_arlie_gwp_geom_matching.py because CSV files already exist in {processed_data_dir}.")
+else:
+    print(f"Skipping 02.2_run_arlie_gwp_geom_matching.py because CSV files already exist in {processed_data_dir}.")

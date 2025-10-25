@@ -1,0 +1,981 @@
+2025-10-25 17:27:24,793 - INFO - Verarbeite Tile h22v04 für Jahr 2010
+2025-10-25 17:27:24,794 - ERROR - Fehler bei der Verarbeitung von h22v04, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,795 - INFO - Verarbeite Tile h22v04 für Jahr 2021
+2025-10-25 17:27:24,795 - ERROR - Fehler bei der Verarbeitung von h22v04, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,796 - INFO - Verarbeite Tile h29v06 für Jahr 2010
+2025-10-25 17:27:24,796 - ERROR - Fehler bei der Verarbeitung von h29v06, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,796 - INFO - Verarbeite Tile h29v06 für Jahr 2021
+2025-10-25 17:27:24,797 - ERROR - Fehler bei der Verarbeitung von h29v06, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,797 - INFO - Verarbeite Tile h09v05 für Jahr 2010
+2025-10-25 17:27:24,797 - ERROR - Fehler bei der Verarbeitung von h09v05, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,797 - INFO - Verarbeite Tile h09v05 für Jahr 2021
+2025-10-25 17:27:24,798 - ERROR - Fehler bei der Verarbeitung von h09v05, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,798 - INFO - Verarbeite Tile h11v10 für Jahr 2010
+2025-10-25 17:27:24,798 - ERROR - Fehler bei der Verarbeitung von h11v10, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,798 - INFO - Verarbeite Tile h11v10 für Jahr 2021
+2025-10-25 17:27:24,798 - ERROR - Fehler bei der Verarbeitung von h11v10, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,799 - INFO - Verarbeite Tile h08v05 für Jahr 2010
+2025-10-25 17:27:24,799 - ERROR - Fehler bei der Verarbeitung von h08v05, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,799 - INFO - Verarbeite Tile h08v05 für Jahr 2021
+2025-10-25 17:27:24,799 - ERROR - Fehler bei der Verarbeitung von h08v05, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,799 - INFO - Verarbeite Tile h24v04 für Jahr 2010
+2025-10-25 17:27:24,799 - ERROR - Fehler bei der Verarbeitung von h24v04, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,800 - INFO - Verarbeite Tile h24v04 für Jahr 2021
+2025-10-25 17:27:24,800 - ERROR - Fehler bei der Verarbeitung von h24v04, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,800 - INFO - Verarbeite Tile h06v04 für Jahr 2010
+2025-10-25 17:27:24,800 - ERROR - Fehler bei der Verarbeitung von h06v04, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,800 - INFO - Verarbeite Tile h06v04 für Jahr 2021
+2025-10-25 17:27:24,800 - ERROR - Fehler bei der Verarbeitung von h06v04, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,801 - INFO - Verarbeite Tile h30v10 für Jahr 2010
+2025-10-25 17:27:24,801 - ERROR - Fehler bei der Verarbeitung von h30v10, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,801 - INFO - Verarbeite Tile h30v10 für Jahr 2021
+2025-10-25 17:27:24,801 - ERROR - Fehler bei der Verarbeitung von h30v10, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,802 - INFO - Verarbeite Tile h22v04 für Jahr 2010
+2025-10-25 17:27:24,802 - ERROR - Fehler bei der Verarbeitung von h22v04, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,802 - INFO - Verarbeite Tile h22v04 für Jahr 2021
+2025-10-25 17:27:24,802 - ERROR - Fehler bei der Verarbeitung von h22v04, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,802 - INFO - Verarbeite Tile h19v07 für Jahr 2010
+2025-10-25 17:27:24,803 - ERROR - Fehler bei der Verarbeitung von h19v07, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,803 - INFO - Verarbeite Tile h19v07 für Jahr 2021
+2025-10-25 17:27:24,803 - ERROR - Fehler bei der Verarbeitung von h19v07, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,803 - INFO - Verarbeite Tile h14v09 für Jahr 2010
+2025-10-25 17:27:24,803 - ERROR - Fehler bei der Verarbeitung von h14v09, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,803 - INFO - Verarbeite Tile h14v09 für Jahr 2021
+2025-10-25 17:27:24,803 - ERROR - Fehler bei der Verarbeitung von h14v09, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,804 - INFO - Verarbeite Tile h11v11 für Jahr 2010
+2025-10-25 17:27:24,804 - ERROR - Fehler bei der Verarbeitung von h11v11, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,804 - INFO - Verarbeite Tile h11v11 für Jahr 2021
+2025-10-25 17:27:24,804 - ERROR - Fehler bei der Verarbeitung von h11v11, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,805 - INFO - Verarbeite Tile h09v04 für Jahr 2010
+2025-10-25 17:27:24,805 - ERROR - Fehler bei der Verarbeitung von h09v04, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,805 - INFO - Verarbeite Tile h09v04 für Jahr 2021
+2025-10-25 17:27:24,805 - ERROR - Fehler bei der Verarbeitung von h09v04, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,805 - INFO - Verarbeite Tile h10v05 für Jahr 2010
+2025-10-25 17:27:24,806 - ERROR - Fehler bei der Verarbeitung von h10v05, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,806 - INFO - Verarbeite Tile h10v05 für Jahr 2021
+2025-10-25 17:27:24,806 - ERROR - Fehler bei der Verarbeitung von h10v05, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,806 - INFO - Verarbeite Tile h27v06 für Jahr 2010
+2025-10-25 17:27:24,806 - ERROR - Fehler bei der Verarbeitung von h27v06, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,806 - INFO - Verarbeite Tile h27v06 für Jahr 2021
+2025-10-25 17:27:24,807 - ERROR - Fehler bei der Verarbeitung von h27v06, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,807 - INFO - Verarbeite Tile h26v06 für Jahr 2010
+2025-10-25 17:27:24,807 - ERROR - Fehler bei der Verarbeitung von h26v06, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,807 - INFO - Verarbeite Tile h26v06 für Jahr 2021
+2025-10-25 17:27:24,807 - ERROR - Fehler bei der Verarbeitung von h26v06, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,808 - INFO - Verarbeite Tile h25v02 für Jahr 2010
+2025-10-25 17:27:24,808 - ERROR - Fehler bei der Verarbeitung von h25v02, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,808 - INFO - Verarbeite Tile h25v02 für Jahr 2021
+2025-10-25 17:27:24,808 - ERROR - Fehler bei der Verarbeitung von h25v02, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,808 - INFO - Verarbeite Tile h23v04 für Jahr 2010
+2025-10-25 17:27:24,808 - ERROR - Fehler bei der Verarbeitung von h23v04, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,809 - INFO - Verarbeite Tile h23v04 für Jahr 2021
+2025-10-25 17:27:24,809 - ERROR - Fehler bei der Verarbeitung von h23v04, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,809 - INFO - Verarbeite Tile h21v09 für Jahr 2010
+2025-10-25 17:27:24,809 - ERROR - Fehler bei der Verarbeitung von h21v09, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,809 - INFO - Verarbeite Tile h21v09 für Jahr 2021
+2025-10-25 17:27:24,809 - ERROR - Fehler bei der Verarbeitung von h21v09, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,810 - INFO - Verarbeite Tile h21v05 für Jahr 2010
+2025-10-25 17:27:24,810 - ERROR - Fehler bei der Verarbeitung von h21v05, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,810 - INFO - Verarbeite Tile h21v05 für Jahr 2021
+2025-10-25 17:27:24,810 - ERROR - Fehler bei der Verarbeitung von h21v05, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,810 - INFO - Verarbeite Tile h19v02 für Jahr 2010
+2025-10-25 17:27:24,810 - ERROR - Fehler bei der Verarbeitung von h19v02, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,810 - INFO - Verarbeite Tile h19v02 für Jahr 2021
+2025-10-25 17:27:24,811 - ERROR - Fehler bei der Verarbeitung von h19v02, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,811 - INFO - Verarbeite Tile h17v07 für Jahr 2010
+2025-10-25 17:27:24,811 - ERROR - Fehler bei der Verarbeitung von h17v07, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,811 - INFO - Verarbeite Tile h17v07 für Jahr 2021
+2025-10-25 17:27:24,811 - ERROR - Fehler bei der Verarbeitung von h17v07, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,812 - INFO - Verarbeite Tile h14v02 für Jahr 2010
+2025-10-25 17:27:24,812 - ERROR - Fehler bei der Verarbeitung von h14v02, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,812 - INFO - Verarbeite Tile h14v02 für Jahr 2021
+2025-10-25 17:27:24,812 - ERROR - Fehler bei der Verarbeitung von h14v02, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,812 - INFO - Verarbeite Tile h12v12 für Jahr 2010
+2025-10-25 17:27:24,812 - ERROR - Fehler bei der Verarbeitung von h12v12, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,813 - INFO - Verarbeite Tile h12v12 für Jahr 2021
+2025-10-25 17:27:24,813 - ERROR - Fehler bei der Verarbeitung von h12v12, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,813 - INFO - Verarbeite Tile h12v08 für Jahr 2010
+2025-10-25 17:27:24,813 - ERROR - Fehler bei der Verarbeitung von h12v08, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,813 - INFO - Verarbeite Tile h12v08 für Jahr 2021
+2025-10-25 17:27:24,814 - ERROR - Fehler bei der Verarbeitung von h12v08, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,814 - INFO - Verarbeite Tile h19v12 für Jahr 2010
+2025-10-25 17:27:24,814 - ERROR - Fehler bei der Verarbeitung von h19v12, 2010: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,814 - INFO - Verarbeite Tile h19v12 für Jahr 2021
+2025-10-25 17:27:24,814 - ERROR - Fehler bei der Verarbeitung von h19v12, 2021: 'output_dir_mwp_nasaflood'
+2025-10-25 17:27:24,814 - WARNING - Keine Ergebnisse gefunden!
+2025-10-25 17:32:57,135 - INFO - Verarbeite Tile h22v04 für Jahr 2010
+2025-10-25 17:32:57,303 - ERROR - Fehler bei der Verarbeitung von h22v04, 2010: name 'args' is not defined
+2025-10-25 17:32:57,305 - INFO - Verarbeite Tile h22v04 für Jahr 2021
+2025-10-25 17:32:57,315 - ERROR - Fehler bei der Verarbeitung von h22v04, 2021: name 'args' is not defined
+2025-10-25 17:32:57,316 - INFO - Verarbeite Tile h29v06 für Jahr 2010
+2025-10-25 17:32:57,344 - ERROR - Fehler bei der Verarbeitung von h29v06, 2010: name 'args' is not defined
+2025-10-25 17:32:57,347 - INFO - Verarbeite Tile h29v06 für Jahr 2021
+2025-10-25 17:32:57,364 - ERROR - Fehler bei der Verarbeitung von h29v06, 2021: name 'args' is not defined
+2025-10-25 17:32:57,367 - INFO - Verarbeite Tile h09v05 für Jahr 2010
+2025-10-25 17:32:57,397 - ERROR - Fehler bei der Verarbeitung von h09v05, 2010: name 'args' is not defined
+2025-10-25 17:32:57,400 - INFO - Verarbeite Tile h09v05 für Jahr 2021
+2025-10-25 17:32:57,417 - ERROR - Fehler bei der Verarbeitung von h09v05, 2021: name 'args' is not defined
+2025-10-25 17:32:57,420 - INFO - Verarbeite Tile h11v10 für Jahr 2010
+2025-10-25 17:32:57,435 - ERROR - Fehler bei der Verarbeitung von h11v10, 2010: name 'args' is not defined
+2025-10-25 17:32:57,436 - INFO - Verarbeite Tile h11v10 für Jahr 2021
+2025-10-25 17:32:57,446 - ERROR - Fehler bei der Verarbeitung von h11v10, 2021: name 'args' is not defined
+2025-10-25 17:32:57,446 - INFO - Verarbeite Tile h08v05 für Jahr 2010
+2025-10-25 17:32:57,472 - ERROR - Fehler bei der Verarbeitung von h08v05, 2010: name 'args' is not defined
+2025-10-25 17:32:57,475 - INFO - Verarbeite Tile h08v05 für Jahr 2021
+2025-10-25 17:32:57,494 - ERROR - Fehler bei der Verarbeitung von h08v05, 2021: name 'args' is not defined
+2025-10-25 17:32:57,497 - INFO - Verarbeite Tile h24v04 für Jahr 2010
+2025-10-25 17:32:57,515 - ERROR - Fehler bei der Verarbeitung von h24v04, 2010: name 'args' is not defined
+2025-10-25 17:32:57,516 - INFO - Verarbeite Tile h24v04 für Jahr 2021
+2025-10-25 17:32:57,526 - ERROR - Fehler bei der Verarbeitung von h24v04, 2021: name 'args' is not defined
+2025-10-25 17:32:57,527 - INFO - Verarbeite Tile h06v04 für Jahr 2010
+2025-10-25 17:32:57,546 - ERROR - Fehler bei der Verarbeitung von h06v04, 2010: name 'args' is not defined
+2025-10-25 17:32:57,548 - INFO - Verarbeite Tile h06v04 für Jahr 2021
+2025-10-25 17:32:57,560 - ERROR - Fehler bei der Verarbeitung von h06v04, 2021: name 'args' is not defined
+2025-10-25 17:32:57,562 - INFO - Verarbeite Tile h30v10 für Jahr 2010
+2025-10-25 17:32:57,572 - ERROR - Fehler bei der Verarbeitung von h30v10, 2010: name 'args' is not defined
+2025-10-25 17:32:57,572 - INFO - Verarbeite Tile h30v10 für Jahr 2021
+2025-10-25 17:32:57,579 - ERROR - Fehler bei der Verarbeitung von h30v10, 2021: name 'args' is not defined
+2025-10-25 17:32:57,579 - INFO - Verarbeite Tile h22v04 für Jahr 2010
+2025-10-25 17:32:57,589 - ERROR - Fehler bei der Verarbeitung von h22v04, 2010: name 'args' is not defined
+2025-10-25 17:32:57,590 - INFO - Verarbeite Tile h22v04 für Jahr 2021
+2025-10-25 17:32:57,599 - ERROR - Fehler bei der Verarbeitung von h22v04, 2021: name 'args' is not defined
+2025-10-25 17:32:57,600 - INFO - Verarbeite Tile h19v07 für Jahr 2010
+2025-10-25 17:32:57,621 - ERROR - Fehler bei der Verarbeitung von h19v07, 2010: name 'args' is not defined
+2025-10-25 17:32:57,623 - INFO - Verarbeite Tile h19v07 für Jahr 2021
+2025-10-25 17:32:57,638 - ERROR - Fehler bei der Verarbeitung von h19v07, 2021: name 'args' is not defined
+2025-10-25 17:32:57,640 - INFO - Verarbeite Tile h14v09 für Jahr 2010
+2025-10-25 17:32:57,651 - ERROR - Fehler bei der Verarbeitung von h14v09, 2010: name 'args' is not defined
+2025-10-25 17:32:57,651 - INFO - Verarbeite Tile h14v09 für Jahr 2021
+2025-10-25 17:32:57,658 - ERROR - Fehler bei der Verarbeitung von h14v09, 2021: name 'args' is not defined
+2025-10-25 17:32:57,659 - INFO - Verarbeite Tile h11v11 für Jahr 2010
+2025-10-25 17:32:57,671 - ERROR - Fehler bei der Verarbeitung von h11v11, 2010: name 'args' is not defined
+2025-10-25 17:32:57,672 - INFO - Verarbeite Tile h11v11 für Jahr 2021
+2025-10-25 17:32:57,681 - ERROR - Fehler bei der Verarbeitung von h11v11, 2021: name 'args' is not defined
+2025-10-25 17:32:57,681 - INFO - Verarbeite Tile h09v04 für Jahr 2010
+2025-10-25 17:32:57,721 - ERROR - Fehler bei der Verarbeitung von h09v04, 2010: name 'args' is not defined
+2025-10-25 17:32:57,724 - INFO - Verarbeite Tile h09v04 für Jahr 2021
+2025-10-25 17:32:57,749 - ERROR - Fehler bei der Verarbeitung von h09v04, 2021: name 'args' is not defined
+2025-10-25 17:32:57,751 - INFO - Verarbeite Tile h10v05 für Jahr 2010
+2025-10-25 17:32:57,761 - ERROR - Fehler bei der Verarbeitung von h10v05, 2010: name 'args' is not defined
+2025-10-25 17:32:57,762 - INFO - Verarbeite Tile h10v05 für Jahr 2021
+2025-10-25 17:32:57,768 - ERROR - Fehler bei der Verarbeitung von h10v05, 2021: name 'args' is not defined
+2025-10-25 17:32:57,768 - INFO - Verarbeite Tile h27v06 für Jahr 2010
+2025-10-25 17:32:57,781 - ERROR - Fehler bei der Verarbeitung von h27v06, 2010: name 'args' is not defined
+2025-10-25 17:32:57,782 - INFO - Verarbeite Tile h27v06 für Jahr 2021
+2025-10-25 17:32:57,788 - ERROR - Fehler bei der Verarbeitung von h27v06, 2021: name 'args' is not defined
+2025-10-25 17:32:57,789 - INFO - Verarbeite Tile h26v06 für Jahr 2010
+2025-10-25 17:32:57,805 - ERROR - Fehler bei der Verarbeitung von h26v06, 2010: name 'args' is not defined
+2025-10-25 17:32:57,806 - INFO - Verarbeite Tile h26v06 für Jahr 2021
+2025-10-25 17:32:57,815 - ERROR - Fehler bei der Verarbeitung von h26v06, 2021: name 'args' is not defined
+2025-10-25 17:32:57,816 - INFO - Verarbeite Tile h25v02 für Jahr 2010
+2025-10-25 17:32:57,848 - ERROR - Fehler bei der Verarbeitung von h25v02, 2010: name 'args' is not defined
+2025-10-25 17:32:57,851 - INFO - Verarbeite Tile h25v02 für Jahr 2021
+2025-10-25 17:32:57,871 - ERROR - Fehler bei der Verarbeitung von h25v02, 2021: name 'args' is not defined
+2025-10-25 17:32:57,875 - INFO - Verarbeite Tile h23v04 für Jahr 2010
+2025-10-25 17:32:57,894 - ERROR - Fehler bei der Verarbeitung von h23v04, 2010: name 'args' is not defined
+2025-10-25 17:32:57,896 - INFO - Verarbeite Tile h23v04 für Jahr 2021
+2025-10-25 17:32:57,908 - ERROR - Fehler bei der Verarbeitung von h23v04, 2021: name 'args' is not defined
+2025-10-25 17:32:57,910 - INFO - Verarbeite Tile h21v09 für Jahr 2010
+2025-10-25 17:32:57,924 - ERROR - Fehler bei der Verarbeitung von h21v09, 2010: name 'args' is not defined
+2025-10-25 17:32:57,925 - INFO - Verarbeite Tile h21v09 für Jahr 2021
+2025-10-25 17:32:57,934 - ERROR - Fehler bei der Verarbeitung von h21v09, 2021: name 'args' is not defined
+2025-10-25 17:32:57,934 - INFO - Verarbeite Tile h21v05 für Jahr 2010
+2025-10-25 17:32:57,948 - ERROR - Fehler bei der Verarbeitung von h21v05, 2010: name 'args' is not defined
+2025-10-25 17:32:57,948 - INFO - Verarbeite Tile h21v05 für Jahr 2021
+2025-10-25 17:32:57,956 - ERROR - Fehler bei der Verarbeitung von h21v05, 2021: name 'args' is not defined
+2025-10-25 17:32:57,957 - INFO - Verarbeite Tile h19v02 für Jahr 2010
+2025-10-25 17:32:57,984 - ERROR - Fehler bei der Verarbeitung von h19v02, 2010: name 'args' is not defined
+2025-10-25 17:32:57,986 - INFO - Verarbeite Tile h19v02 für Jahr 2021
+2025-10-25 17:32:58,003 - ERROR - Fehler bei der Verarbeitung von h19v02, 2021: name 'args' is not defined
+2025-10-25 17:32:58,005 - INFO - Verarbeite Tile h17v07 für Jahr 2010
+2025-10-25 17:32:58,015 - ERROR - Fehler bei der Verarbeitung von h17v07, 2010: name 'args' is not defined
+2025-10-25 17:32:58,015 - INFO - Verarbeite Tile h17v07 für Jahr 2021
+2025-10-25 17:32:58,021 - ERROR - Fehler bei der Verarbeitung von h17v07, 2021: name 'args' is not defined
+2025-10-25 17:32:58,021 - INFO - Verarbeite Tile h14v02 für Jahr 2010
+2025-10-25 17:32:58,028 - ERROR - Fehler bei der Verarbeitung von h14v02, 2010: name 'args' is not defined
+2025-10-25 17:32:58,029 - INFO - Verarbeite Tile h14v02 für Jahr 2021
+2025-10-25 17:32:58,033 - ERROR - Fehler bei der Verarbeitung von h14v02, 2021: name 'args' is not defined
+2025-10-25 17:32:58,033 - INFO - Verarbeite Tile h12v12 für Jahr 2010
+2025-10-25 17:32:58,046 - ERROR - Fehler bei der Verarbeitung von h12v12, 2010: name 'args' is not defined
+2025-10-25 17:32:58,047 - INFO - Verarbeite Tile h12v12 für Jahr 2021
+2025-10-25 17:32:58,054 - ERROR - Fehler bei der Verarbeitung von h12v12, 2021: name 'args' is not defined
+2025-10-25 17:32:58,054 - INFO - Verarbeite Tile h12v08 für Jahr 2010
+2025-10-25 17:32:58,064 - ERROR - Fehler bei der Verarbeitung von h12v08, 2010: name 'args' is not defined
+2025-10-25 17:32:58,065 - INFO - Verarbeite Tile h12v08 für Jahr 2021
+2025-10-25 17:32:58,071 - ERROR - Fehler bei der Verarbeitung von h12v08, 2021: name 'args' is not defined
+2025-10-25 17:32:58,072 - INFO - Verarbeite Tile h19v12 für Jahr 2010
+2025-10-25 17:32:58,079 - ERROR - Fehler bei der Verarbeitung von h19v12, 2010: name 'args' is not defined
+2025-10-25 17:32:58,079 - INFO - Verarbeite Tile h19v12 für Jahr 2021
+2025-10-25 17:32:58,084 - ERROR - Fehler bei der Verarbeitung von h19v12, 2021: name 'args' is not defined
+2025-10-25 17:32:58,084 - WARNING - Keine Ergebnisse gefunden!
+2025-10-25 17:33:47,466 - INFO - Verarbeite Tile h22v04 für Jahr 2010
+2025-10-25 17:33:47,507 - ERROR - Fehler bei der Verarbeitung von h22v04, 2010: name 'args' is not defined
+2025-10-25 17:33:47,508 - INFO - Verarbeite Tile h22v04 für Jahr 2021
+2025-10-25 17:33:47,518 - ERROR - Fehler bei der Verarbeitung von h22v04, 2021: name 'args' is not defined
+2025-10-25 17:33:47,519 - INFO - Verarbeite Tile h29v06 für Jahr 2010
+2025-10-25 17:33:47,537 - ERROR - Fehler bei der Verarbeitung von h29v06, 2010: name 'args' is not defined
+2025-10-25 17:33:47,540 - INFO - Verarbeite Tile h29v06 für Jahr 2021
+2025-10-25 17:33:47,558 - ERROR - Fehler bei der Verarbeitung von h29v06, 2021: name 'args' is not defined
+2025-10-25 17:33:47,561 - INFO - Verarbeite Tile h09v05 für Jahr 2010
+2025-10-25 17:33:47,579 - ERROR - Fehler bei der Verarbeitung von h09v05, 2010: name 'args' is not defined
+2025-10-25 17:33:47,582 - INFO - Verarbeite Tile h09v05 für Jahr 2021
+2025-10-25 17:33:47,600 - ERROR - Fehler bei der Verarbeitung von h09v05, 2021: name 'args' is not defined
+2025-10-25 17:33:47,603 - INFO - Verarbeite Tile h11v10 für Jahr 2010
+2025-10-25 17:33:47,613 - ERROR - Fehler bei der Verarbeitung von h11v10, 2010: name 'args' is not defined
+2025-10-25 17:33:47,614 - INFO - Verarbeite Tile h11v10 für Jahr 2021
+2025-10-25 17:33:47,624 - ERROR - Fehler bei der Verarbeitung von h11v10, 2021: name 'args' is not defined
+2025-10-25 17:33:47,624 - INFO - Verarbeite Tile h08v05 für Jahr 2010
+2025-10-25 17:33:47,643 - ERROR - Fehler bei der Verarbeitung von h08v05, 2010: name 'args' is not defined
+2025-10-25 17:33:47,645 - INFO - Verarbeite Tile h08v05 für Jahr 2021
+2025-10-25 17:33:47,665 - ERROR - Fehler bei der Verarbeitung von h08v05, 2021: name 'args' is not defined
+2025-10-25 17:33:47,668 - INFO - Verarbeite Tile h24v04 für Jahr 2010
+2025-10-25 17:33:47,679 - ERROR - Fehler bei der Verarbeitung von h24v04, 2010: name 'args' is not defined
+2025-10-25 17:33:47,680 - INFO - Verarbeite Tile h24v04 für Jahr 2021
+2025-10-25 17:33:47,690 - ERROR - Fehler bei der Verarbeitung von h24v04, 2021: name 'args' is not defined
+2025-10-25 17:33:47,691 - INFO - Verarbeite Tile h06v04 für Jahr 2010
+2025-10-25 17:33:47,705 - ERROR - Fehler bei der Verarbeitung von h06v04, 2010: name 'args' is not defined
+2025-10-25 17:33:47,707 - INFO - Verarbeite Tile h06v04 für Jahr 2021
+2025-10-25 17:33:47,721 - ERROR - Fehler bei der Verarbeitung von h06v04, 2021: name 'args' is not defined
+2025-10-25 17:33:47,722 - INFO - Verarbeite Tile h30v10 für Jahr 2010
+2025-10-25 17:33:47,730 - ERROR - Fehler bei der Verarbeitung von h30v10, 2010: name 'args' is not defined
+2025-10-25 17:33:47,730 - INFO - Verarbeite Tile h30v10 für Jahr 2021
+2025-10-25 17:33:47,737 - ERROR - Fehler bei der Verarbeitung von h30v10, 2021: name 'args' is not defined
+2025-10-25 17:33:47,738 - INFO - Verarbeite Tile h22v04 für Jahr 2010
+2025-10-25 17:33:47,750 - ERROR - Fehler bei der Verarbeitung von h22v04, 2010: name 'args' is not defined
+2025-10-25 17:33:47,751 - INFO - Verarbeite Tile h22v04 für Jahr 2021
+2025-10-25 17:33:47,762 - ERROR - Fehler bei der Verarbeitung von h22v04, 2021: name 'args' is not defined
+2025-10-25 17:33:47,763 - INFO - Verarbeite Tile h19v07 für Jahr 2010
+2025-10-25 17:33:47,778 - ERROR - Fehler bei der Verarbeitung von h19v07, 2010: name 'args' is not defined
+2025-10-25 17:33:47,780 - INFO - Verarbeite Tile h19v07 für Jahr 2021
+2025-10-25 17:33:47,795 - ERROR - Fehler bei der Verarbeitung von h19v07, 2021: name 'args' is not defined
+2025-10-25 17:33:47,797 - INFO - Verarbeite Tile h14v09 für Jahr 2010
+2025-10-25 17:33:47,805 - ERROR - Fehler bei der Verarbeitung von h14v09, 2010: name 'args' is not defined
+2025-10-25 17:33:47,805 - INFO - Verarbeite Tile h14v09 für Jahr 2021
+2025-10-25 17:33:47,812 - ERROR - Fehler bei der Verarbeitung von h14v09, 2021: name 'args' is not defined
+2025-10-25 17:33:47,812 - INFO - Verarbeite Tile h11v11 für Jahr 2010
+2025-10-25 17:33:47,822 - ERROR - Fehler bei der Verarbeitung von h11v11, 2010: name 'args' is not defined
+2025-10-25 17:33:47,822 - INFO - Verarbeite Tile h11v11 für Jahr 2021
+2025-10-25 17:33:47,831 - ERROR - Fehler bei der Verarbeitung von h11v11, 2021: name 'args' is not defined
+2025-10-25 17:33:47,831 - INFO - Verarbeite Tile h09v04 für Jahr 2010
+2025-10-25 17:33:47,859 - ERROR - Fehler bei der Verarbeitung von h09v04, 2010: name 'args' is not defined
+2025-10-25 17:33:47,863 - INFO - Verarbeite Tile h09v04 für Jahr 2021
+2025-10-25 17:33:47,895 - ERROR - Fehler bei der Verarbeitung von h09v04, 2021: name 'args' is not defined
+2025-10-25 17:33:47,898 - INFO - Verarbeite Tile h10v05 für Jahr 2010
+2025-10-25 17:33:47,906 - ERROR - Fehler bei der Verarbeitung von h10v05, 2010: name 'args' is not defined
+2025-10-25 17:33:47,906 - INFO - Verarbeite Tile h10v05 für Jahr 2021
+2025-10-25 17:33:47,913 - ERROR - Fehler bei der Verarbeitung von h10v05, 2021: name 'args' is not defined
+2025-10-25 17:33:47,913 - INFO - Verarbeite Tile h27v06 für Jahr 2010
+2025-10-25 17:33:47,921 - ERROR - Fehler bei der Verarbeitung von h27v06, 2010: name 'args' is not defined
+2025-10-25 17:33:47,922 - INFO - Verarbeite Tile h27v06 für Jahr 2021
+2025-10-25 17:33:47,928 - ERROR - Fehler bei der Verarbeitung von h27v06, 2021: name 'args' is not defined
+2025-10-25 17:33:47,929 - INFO - Verarbeite Tile h26v06 für Jahr 2010
+2025-10-25 17:33:47,939 - ERROR - Fehler bei der Verarbeitung von h26v06, 2010: name 'args' is not defined
+2025-10-25 17:33:47,940 - INFO - Verarbeite Tile h26v06 für Jahr 2021
+2025-10-25 17:33:47,950 - ERROR - Fehler bei der Verarbeitung von h26v06, 2021: name 'args' is not defined
+2025-10-25 17:33:47,951 - INFO - Verarbeite Tile h25v02 für Jahr 2010
+2025-10-25 17:33:47,976 - ERROR - Fehler bei der Verarbeitung von h25v02, 2010: name 'args' is not defined
+2025-10-25 17:33:47,980 - INFO - Verarbeite Tile h25v02 für Jahr 2021
+2025-10-25 17:33:48,003 - ERROR - Fehler bei der Verarbeitung von h25v02, 2021: name 'args' is not defined
+2025-10-25 17:33:48,007 - INFO - Verarbeite Tile h23v04 für Jahr 2010
+2025-10-25 17:33:48,020 - ERROR - Fehler bei der Verarbeitung von h23v04, 2010: name 'args' is not defined
+2025-10-25 17:33:48,022 - INFO - Verarbeite Tile h23v04 für Jahr 2021
+2025-10-25 17:33:48,035 - ERROR - Fehler bei der Verarbeitung von h23v04, 2021: name 'args' is not defined
+2025-10-25 17:33:48,037 - INFO - Verarbeite Tile h21v09 für Jahr 2010
+2025-10-25 17:33:48,047 - ERROR - Fehler bei der Verarbeitung von h21v09, 2010: name 'args' is not defined
+2025-10-25 17:33:48,047 - INFO - Verarbeite Tile h21v09 für Jahr 2021
+2025-10-25 17:33:48,057 - ERROR - Fehler bei der Verarbeitung von h21v09, 2021: name 'args' is not defined
+2025-10-25 17:33:48,058 - INFO - Verarbeite Tile h21v05 für Jahr 2010
+2025-10-25 17:33:48,067 - ERROR - Fehler bei der Verarbeitung von h21v05, 2010: name 'args' is not defined
+2025-10-25 17:33:48,069 - INFO - Verarbeite Tile h21v05 für Jahr 2021
+2025-10-25 17:33:48,078 - ERROR - Fehler bei der Verarbeitung von h21v05, 2021: name 'args' is not defined
+2025-10-25 17:33:48,078 - INFO - Verarbeite Tile h19v02 für Jahr 2010
+2025-10-25 17:33:48,096 - ERROR - Fehler bei der Verarbeitung von h19v02, 2010: name 'args' is not defined
+2025-10-25 17:33:48,099 - INFO - Verarbeite Tile h19v02 für Jahr 2021
+2025-10-25 17:33:48,118 - ERROR - Fehler bei der Verarbeitung von h19v02, 2021: name 'args' is not defined
+2025-10-25 17:33:48,120 - INFO - Verarbeite Tile h17v07 für Jahr 2010
+2025-10-25 17:33:48,127 - ERROR - Fehler bei der Verarbeitung von h17v07, 2010: name 'args' is not defined
+2025-10-25 17:33:48,128 - INFO - Verarbeite Tile h17v07 für Jahr 2021
+2025-10-25 17:33:48,135 - ERROR - Fehler bei der Verarbeitung von h17v07, 2021: name 'args' is not defined
+2025-10-25 17:33:48,136 - INFO - Verarbeite Tile h14v02 für Jahr 2010
+2025-10-25 17:33:48,141 - ERROR - Fehler bei der Verarbeitung von h14v02, 2010: name 'args' is not defined
+2025-10-25 17:33:48,142 - INFO - Verarbeite Tile h14v02 für Jahr 2021
+2025-10-25 17:33:48,147 - ERROR - Fehler bei der Verarbeitung von h14v02, 2021: name 'args' is not defined
+2025-10-25 17:33:48,147 - INFO - Verarbeite Tile h12v12 für Jahr 2010
+2025-10-25 17:33:48,157 - ERROR - Fehler bei der Verarbeitung von h12v12, 2010: name 'args' is not defined
+2025-10-25 17:33:48,157 - INFO - Verarbeite Tile h12v12 für Jahr 2021
+2025-10-25 17:33:48,167 - ERROR - Fehler bei der Verarbeitung von h12v12, 2021: name 'args' is not defined
+2025-10-25 17:33:48,169 - INFO - Verarbeite Tile h12v08 für Jahr 2010
+2025-10-25 17:33:48,177 - ERROR - Fehler bei der Verarbeitung von h12v08, 2010: name 'args' is not defined
+2025-10-25 17:33:48,178 - INFO - Verarbeite Tile h12v08 für Jahr 2021
+2025-10-25 17:33:48,186 - ERROR - Fehler bei der Verarbeitung von h12v08, 2021: name 'args' is not defined
+2025-10-25 17:33:48,187 - INFO - Verarbeite Tile h19v12 für Jahr 2010
+2025-10-25 17:33:48,193 - ERROR - Fehler bei der Verarbeitung von h19v12, 2010: name 'args' is not defined
+2025-10-25 17:33:48,194 - INFO - Verarbeite Tile h19v12 für Jahr 2021
+2025-10-25 17:33:48,200 - ERROR - Fehler bei der Verarbeitung von h19v12, 2021: name 'args' is not defined
+2025-10-25 17:33:48,201 - WARNING - Keine Ergebnisse gefunden!
+2025-10-25 17:36:32,289 - INFO - Verarbeite Tile h22v04 für Jahr 2010
+2025-10-25 17:36:32,330 - ERROR - Fehler beim Suchen von Dateien für h22v04, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h22v04'
+2025-10-25 17:36:32,330 - WARNING - Keine passenden Dateien für h22v04, 2010 gefunden
+2025-10-25 17:36:32,331 - INFO - Verarbeite Tile h22v04 für Jahr 2021
+2025-10-25 17:36:32,341 - ERROR - Fehler beim Suchen von Dateien für h22v04, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h22v04'
+2025-10-25 17:36:32,341 - WARNING - Keine passenden Dateien für h22v04, 2021 gefunden
+2025-10-25 17:36:32,342 - INFO - Verarbeite Tile h29v06 für Jahr 2010
+2025-10-25 17:36:32,359 - ERROR - Fehler beim Suchen von Dateien für h29v06, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h29v06'
+2025-10-25 17:36:32,359 - WARNING - Keine passenden Dateien für h29v06, 2010 gefunden
+2025-10-25 17:36:32,361 - INFO - Verarbeite Tile h29v06 für Jahr 2021
+2025-10-25 17:36:32,378 - ERROR - Fehler beim Suchen von Dateien für h29v06, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h29v06'
+2025-10-25 17:36:32,378 - WARNING - Keine passenden Dateien für h29v06, 2021 gefunden
+2025-10-25 17:36:32,380 - INFO - Verarbeite Tile h09v05 für Jahr 2010
+2025-10-25 17:36:32,397 - ERROR - Fehler beim Suchen von Dateien für h09v05, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h09v05'
+2025-10-25 17:36:32,398 - WARNING - Keine passenden Dateien für h09v05, 2010 gefunden
+2025-10-25 17:36:32,400 - INFO - Verarbeite Tile h09v05 für Jahr 2021
+2025-10-25 17:36:32,418 - ERROR - Fehler beim Suchen von Dateien für h09v05, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h09v05'
+2025-10-25 17:36:32,418 - WARNING - Keine passenden Dateien für h09v05, 2021 gefunden
+2025-10-25 17:36:32,421 - INFO - Verarbeite Tile h11v10 für Jahr 2010
+2025-10-25 17:36:32,430 - ERROR - Fehler beim Suchen von Dateien für h11v10, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h11v10'
+2025-10-25 17:36:32,430 - WARNING - Keine passenden Dateien für h11v10, 2010 gefunden
+2025-10-25 17:36:32,431 - INFO - Verarbeite Tile h11v10 für Jahr 2021
+2025-10-25 17:36:32,440 - ERROR - Fehler beim Suchen von Dateien für h11v10, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h11v10'
+2025-10-25 17:36:32,440 - WARNING - Keine passenden Dateien für h11v10, 2021 gefunden
+2025-10-25 17:36:32,441 - INFO - Verarbeite Tile h08v05 für Jahr 2010
+2025-10-25 17:36:32,459 - ERROR - Fehler beim Suchen von Dateien für h08v05, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h08v05'
+2025-10-25 17:36:32,459 - WARNING - Keine passenden Dateien für h08v05, 2010 gefunden
+2025-10-25 17:36:32,461 - INFO - Verarbeite Tile h08v05 für Jahr 2021
+2025-10-25 17:36:32,479 - ERROR - Fehler beim Suchen von Dateien für h08v05, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h08v05'
+2025-10-25 17:36:32,479 - WARNING - Keine passenden Dateien für h08v05, 2021 gefunden
+2025-10-25 17:36:32,482 - INFO - Verarbeite Tile h24v04 für Jahr 2010
+2025-10-25 17:36:32,492 - ERROR - Fehler beim Suchen von Dateien für h24v04, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h24v04'
+2025-10-25 17:36:32,492 - WARNING - Keine passenden Dateien für h24v04, 2010 gefunden
+2025-10-25 17:36:32,493 - INFO - Verarbeite Tile h24v04 für Jahr 2021
+2025-10-25 17:36:32,502 - ERROR - Fehler beim Suchen von Dateien für h24v04, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h24v04'
+2025-10-25 17:36:32,502 - WARNING - Keine passenden Dateien für h24v04, 2021 gefunden
+2025-10-25 17:36:32,503 - INFO - Verarbeite Tile h06v04 für Jahr 2010
+2025-10-25 17:36:32,514 - ERROR - Fehler beim Suchen von Dateien für h06v04, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h06v04'
+2025-10-25 17:36:32,515 - WARNING - Keine passenden Dateien für h06v04, 2010 gefunden
+2025-10-25 17:36:32,516 - INFO - Verarbeite Tile h06v04 für Jahr 2021
+2025-10-25 17:36:32,528 - ERROR - Fehler beim Suchen von Dateien für h06v04, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h06v04'
+2025-10-25 17:36:32,529 - WARNING - Keine passenden Dateien für h06v04, 2021 gefunden
+2025-10-25 17:36:32,530 - INFO - Verarbeite Tile h30v10 für Jahr 2010
+2025-10-25 17:36:32,537 - ERROR - Fehler beim Suchen von Dateien für h30v10, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h30v10'
+2025-10-25 17:36:32,537 - WARNING - Keine passenden Dateien für h30v10, 2010 gefunden
+2025-10-25 17:36:32,538 - INFO - Verarbeite Tile h30v10 für Jahr 2021
+2025-10-25 17:36:32,544 - ERROR - Fehler beim Suchen von Dateien für h30v10, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h30v10'
+2025-10-25 17:36:32,544 - WARNING - Keine passenden Dateien für h30v10, 2021 gefunden
+2025-10-25 17:36:32,544 - INFO - Verarbeite Tile h22v04 für Jahr 2010
+2025-10-25 17:36:32,554 - ERROR - Fehler beim Suchen von Dateien für h22v04, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h22v04'
+2025-10-25 17:36:32,554 - WARNING - Keine passenden Dateien für h22v04, 2010 gefunden
+2025-10-25 17:36:32,555 - INFO - Verarbeite Tile h22v04 für Jahr 2021
+2025-10-25 17:36:32,563 - ERROR - Fehler beim Suchen von Dateien für h22v04, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h22v04'
+2025-10-25 17:36:32,564 - WARNING - Keine passenden Dateien für h22v04, 2021 gefunden
+2025-10-25 17:36:32,564 - INFO - Verarbeite Tile h19v07 für Jahr 2010
+2025-10-25 17:36:32,579 - ERROR - Fehler beim Suchen von Dateien für h19v07, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h19v07'
+2025-10-25 17:36:32,579 - WARNING - Keine passenden Dateien für h19v07, 2010 gefunden
+2025-10-25 17:36:32,580 - INFO - Verarbeite Tile h19v07 für Jahr 2021
+2025-10-25 17:36:32,594 - ERROR - Fehler beim Suchen von Dateien für h19v07, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h19v07'
+2025-10-25 17:36:32,594 - WARNING - Keine passenden Dateien für h19v07, 2021 gefunden
+2025-10-25 17:36:32,595 - INFO - Verarbeite Tile h14v09 für Jahr 2010
+2025-10-25 17:36:32,602 - ERROR - Fehler beim Suchen von Dateien für h14v09, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h14v09'
+2025-10-25 17:36:32,602 - WARNING - Keine passenden Dateien für h14v09, 2010 gefunden
+2025-10-25 17:36:32,602 - INFO - Verarbeite Tile h14v09 für Jahr 2021
+2025-10-25 17:36:32,608 - ERROR - Fehler beim Suchen von Dateien für h14v09, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h14v09'
+2025-10-25 17:36:32,608 - WARNING - Keine passenden Dateien für h14v09, 2021 gefunden
+2025-10-25 17:36:32,609 - INFO - Verarbeite Tile h11v11 für Jahr 2010
+2025-10-25 17:36:32,616 - ERROR - Fehler beim Suchen von Dateien für h11v11, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h11v11'
+2025-10-25 17:36:32,616 - WARNING - Keine passenden Dateien für h11v11, 2010 gefunden
+2025-10-25 17:36:32,616 - INFO - Verarbeite Tile h11v11 für Jahr 2021
+2025-10-25 17:36:32,624 - ERROR - Fehler beim Suchen von Dateien für h11v11, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h11v11'
+2025-10-25 17:36:32,624 - WARNING - Keine passenden Dateien für h11v11, 2021 gefunden
+2025-10-25 17:36:32,625 - INFO - Verarbeite Tile h09v04 für Jahr 2010
+2025-10-25 17:36:32,648 - ERROR - Fehler beim Suchen von Dateien für h09v04, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h09v04'
+2025-10-25 17:36:32,648 - WARNING - Keine passenden Dateien für h09v04, 2010 gefunden
+2025-10-25 17:36:32,651 - INFO - Verarbeite Tile h09v04 für Jahr 2021
+2025-10-25 17:36:32,673 - ERROR - Fehler beim Suchen von Dateien für h09v04, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h09v04'
+2025-10-25 17:36:32,674 - WARNING - Keine passenden Dateien für h09v04, 2021 gefunden
+2025-10-25 17:36:32,676 - INFO - Verarbeite Tile h10v05 für Jahr 2010
+2025-10-25 17:36:32,683 - ERROR - Fehler beim Suchen von Dateien für h10v05, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h10v05'
+2025-10-25 17:36:32,683 - WARNING - Keine passenden Dateien für h10v05, 2010 gefunden
+2025-10-25 17:36:32,683 - INFO - Verarbeite Tile h10v05 für Jahr 2021
+2025-10-25 17:36:32,689 - ERROR - Fehler beim Suchen von Dateien für h10v05, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h10v05'
+2025-10-25 17:36:32,689 - WARNING - Keine passenden Dateien für h10v05, 2021 gefunden
+2025-10-25 17:36:32,689 - INFO - Verarbeite Tile h27v06 für Jahr 2010
+2025-10-25 17:36:32,696 - ERROR - Fehler beim Suchen von Dateien für h27v06, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h27v06'
+2025-10-25 17:36:32,696 - WARNING - Keine passenden Dateien für h27v06, 2010 gefunden
+2025-10-25 17:36:32,697 - INFO - Verarbeite Tile h27v06 für Jahr 2021
+2025-10-25 17:36:32,703 - ERROR - Fehler beim Suchen von Dateien für h27v06, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h27v06'
+2025-10-25 17:36:32,703 - WARNING - Keine passenden Dateien für h27v06, 2021 gefunden
+2025-10-25 17:36:32,704 - INFO - Verarbeite Tile h26v06 für Jahr 2010
+2025-10-25 17:36:32,712 - ERROR - Fehler beim Suchen von Dateien für h26v06, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h26v06'
+2025-10-25 17:36:32,712 - WARNING - Keine passenden Dateien für h26v06, 2010 gefunden
+2025-10-25 17:36:32,713 - INFO - Verarbeite Tile h26v06 für Jahr 2021
+2025-10-25 17:36:32,722 - ERROR - Fehler beim Suchen von Dateien für h26v06, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h26v06'
+2025-10-25 17:36:32,722 - WARNING - Keine passenden Dateien für h26v06, 2021 gefunden
+2025-10-25 17:36:32,723 - INFO - Verarbeite Tile h25v02 für Jahr 2010
+2025-10-25 17:36:32,743 - ERROR - Fehler beim Suchen von Dateien für h25v02, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h25v02'
+2025-10-25 17:36:32,743 - WARNING - Keine passenden Dateien für h25v02, 2010 gefunden
+2025-10-25 17:36:32,746 - INFO - Verarbeite Tile h25v02 für Jahr 2021
+2025-10-25 17:36:32,766 - ERROR - Fehler beim Suchen von Dateien für h25v02, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h25v02'
+2025-10-25 17:36:32,766 - WARNING - Keine passenden Dateien für h25v02, 2021 gefunden
+2025-10-25 17:36:32,769 - INFO - Verarbeite Tile h23v04 für Jahr 2010
+2025-10-25 17:36:32,782 - ERROR - Fehler beim Suchen von Dateien für h23v04, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h23v04'
+2025-10-25 17:36:32,782 - WARNING - Keine passenden Dateien für h23v04, 2010 gefunden
+2025-10-25 17:36:32,784 - INFO - Verarbeite Tile h23v04 für Jahr 2021
+2025-10-25 17:36:32,796 - ERROR - Fehler beim Suchen von Dateien für h23v04, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h23v04'
+2025-10-25 17:36:32,796 - WARNING - Keine passenden Dateien für h23v04, 2021 gefunden
+2025-10-25 17:36:32,797 - INFO - Verarbeite Tile h21v09 für Jahr 2010
+2025-10-25 17:36:32,807 - ERROR - Fehler beim Suchen von Dateien für h21v09, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h21v09'
+2025-10-25 17:36:32,807 - WARNING - Keine passenden Dateien für h21v09, 2010 gefunden
+2025-10-25 17:36:32,808 - INFO - Verarbeite Tile h21v09 für Jahr 2021
+2025-10-25 17:36:32,816 - ERROR - Fehler beim Suchen von Dateien für h21v09, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h21v09'
+2025-10-25 17:36:32,816 - WARNING - Keine passenden Dateien für h21v09, 2021 gefunden
+2025-10-25 17:36:32,816 - INFO - Verarbeite Tile h21v05 für Jahr 2010
+2025-10-25 17:36:32,824 - ERROR - Fehler beim Suchen von Dateien für h21v05, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h21v05'
+2025-10-25 17:36:32,824 - WARNING - Keine passenden Dateien für h21v05, 2010 gefunden
+2025-10-25 17:36:32,825 - INFO - Verarbeite Tile h21v05 für Jahr 2021
+2025-10-25 17:36:32,834 - ERROR - Fehler beim Suchen von Dateien für h21v05, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h21v05'
+2025-10-25 17:36:32,834 - WARNING - Keine passenden Dateien für h21v05, 2021 gefunden
+2025-10-25 17:36:32,834 - INFO - Verarbeite Tile h19v02 für Jahr 2010
+2025-10-25 17:36:32,850 - ERROR - Fehler beim Suchen von Dateien für h19v02, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h19v02'
+2025-10-25 17:36:32,851 - WARNING - Keine passenden Dateien für h19v02, 2010 gefunden
+2025-10-25 17:36:32,852 - INFO - Verarbeite Tile h19v02 für Jahr 2021
+2025-10-25 17:36:32,869 - ERROR - Fehler beim Suchen von Dateien für h19v02, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h19v02'
+2025-10-25 17:36:32,869 - WARNING - Keine passenden Dateien für h19v02, 2021 gefunden
+2025-10-25 17:36:32,870 - INFO - Verarbeite Tile h17v07 für Jahr 2010
+2025-10-25 17:36:32,876 - ERROR - Fehler beim Suchen von Dateien für h17v07, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h17v07'
+2025-10-25 17:36:32,876 - WARNING - Keine passenden Dateien für h17v07, 2010 gefunden
+2025-10-25 17:36:32,877 - INFO - Verarbeite Tile h17v07 für Jahr 2021
+2025-10-25 17:36:32,882 - ERROR - Fehler beim Suchen von Dateien für h17v07, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h17v07'
+2025-10-25 17:36:32,883 - WARNING - Keine passenden Dateien für h17v07, 2021 gefunden
+2025-10-25 17:36:32,883 - INFO - Verarbeite Tile h14v02 für Jahr 2010
+2025-10-25 17:36:32,887 - ERROR - Fehler beim Suchen von Dateien für h14v02, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h14v02'
+2025-10-25 17:36:32,888 - WARNING - Keine passenden Dateien für h14v02, 2010 gefunden
+2025-10-25 17:36:32,888 - INFO - Verarbeite Tile h14v02 für Jahr 2021
+2025-10-25 17:36:32,892 - ERROR - Fehler beim Suchen von Dateien für h14v02, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h14v02'
+2025-10-25 17:36:32,892 - WARNING - Keine passenden Dateien für h14v02, 2021 gefunden
+2025-10-25 17:36:32,893 - INFO - Verarbeite Tile h12v12 für Jahr 2010
+2025-10-25 17:36:32,900 - ERROR - Fehler beim Suchen von Dateien für h12v12, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h12v12'
+2025-10-25 17:36:32,900 - WARNING - Keine passenden Dateien für h12v12, 2010 gefunden
+2025-10-25 17:36:32,900 - INFO - Verarbeite Tile h12v12 für Jahr 2021
+2025-10-25 17:36:32,907 - ERROR - Fehler beim Suchen von Dateien für h12v12, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h12v12'
+2025-10-25 17:36:32,907 - WARNING - Keine passenden Dateien für h12v12, 2021 gefunden
+2025-10-25 17:36:32,908 - INFO - Verarbeite Tile h12v08 für Jahr 2010
+2025-10-25 17:36:32,913 - ERROR - Fehler beim Suchen von Dateien für h12v08, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h12v08'
+2025-10-25 17:36:32,913 - WARNING - Keine passenden Dateien für h12v08, 2010 gefunden
+2025-10-25 17:36:32,914 - INFO - Verarbeite Tile h12v08 für Jahr 2021
+2025-10-25 17:36:32,920 - ERROR - Fehler beim Suchen von Dateien für h12v08, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h12v08'
+2025-10-25 17:36:32,920 - WARNING - Keine passenden Dateien für h12v08, 2021 gefunden
+2025-10-25 17:36:32,920 - INFO - Verarbeite Tile h19v12 für Jahr 2010
+2025-10-25 17:36:32,925 - ERROR - Fehler beim Suchen von Dateien für h19v12, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h19v12'
+2025-10-25 17:36:32,925 - WARNING - Keine passenden Dateien für h19v12, 2010 gefunden
+2025-10-25 17:36:32,925 - INFO - Verarbeite Tile h19v12 für Jahr 2021
+2025-10-25 17:36:32,929 - ERROR - Fehler beim Suchen von Dateien für h19v12, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h19v12'
+2025-10-25 17:36:32,929 - WARNING - Keine passenden Dateien für h19v12, 2021 gefunden
+2025-10-25 17:36:32,930 - WARNING - Keine Ergebnisse gefunden!
+2025-10-25 17:52:25,595 - INFO - Verarbeite Tile h22v04 für Jahr 2010
+2025-10-25 17:52:25,631 - ERROR - Fehler beim Suchen von Dateien für h22v04, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h22v04'
+2025-10-25 17:52:25,632 - WARNING - Keine passenden Dateien für h22v04, 2010 gefunden
+2025-10-25 17:52:25,632 - INFO - Verarbeite Tile h22v04 für Jahr 2021
+2025-10-25 17:52:25,642 - ERROR - Fehler beim Suchen von Dateien für h22v04, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h22v04'
+2025-10-25 17:52:25,643 - WARNING - Keine passenden Dateien für h22v04, 2021 gefunden
+2025-10-25 17:52:25,643 - INFO - Verarbeite Tile h29v06 für Jahr 2010
+2025-10-25 17:52:25,659 - ERROR - Fehler beim Suchen von Dateien für h29v06, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h29v06'
+2025-10-25 17:52:25,659 - WARNING - Keine passenden Dateien für h29v06, 2010 gefunden
+2025-10-25 17:52:25,661 - INFO - Verarbeite Tile h29v06 für Jahr 2021
+2025-10-25 17:52:25,676 - ERROR - Fehler beim Suchen von Dateien für h29v06, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h29v06'
+2025-10-25 17:52:25,677 - WARNING - Keine passenden Dateien für h29v06, 2021 gefunden
+2025-10-25 17:52:25,679 - INFO - Verarbeite Tile h09v05 für Jahr 2010
+2025-10-25 17:52:25,694 - ERROR - Fehler beim Suchen von Dateien für h09v05, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h09v05'
+2025-10-25 17:52:25,695 - WARNING - Keine passenden Dateien für h09v05, 2010 gefunden
+2025-10-25 17:52:25,696 - INFO - Verarbeite Tile h09v05 für Jahr 2021
+2025-10-25 17:52:25,712 - ERROR - Fehler beim Suchen von Dateien für h09v05, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h09v05'
+2025-10-25 17:52:25,712 - WARNING - Keine passenden Dateien für h09v05, 2021 gefunden
+2025-10-25 17:52:25,714 - INFO - Verarbeite Tile h11v10 für Jahr 2010
+2025-10-25 17:52:25,724 - ERROR - Fehler beim Suchen von Dateien für h11v10, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h11v10'
+2025-10-25 17:52:25,724 - WARNING - Keine passenden Dateien für h11v10, 2010 gefunden
+2025-10-25 17:52:25,725 - INFO - Verarbeite Tile h11v10 für Jahr 2021
+2025-10-25 17:52:25,733 - ERROR - Fehler beim Suchen von Dateien für h11v10, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h11v10'
+2025-10-25 17:52:25,734 - WARNING - Keine passenden Dateien für h11v10, 2021 gefunden
+2025-10-25 17:52:25,734 - INFO - Verarbeite Tile h08v05 für Jahr 2010
+2025-10-25 17:52:25,751 - ERROR - Fehler beim Suchen von Dateien für h08v05, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h08v05'
+2025-10-25 17:52:25,751 - WARNING - Keine passenden Dateien für h08v05, 2010 gefunden
+2025-10-25 17:52:25,753 - INFO - Verarbeite Tile h08v05 für Jahr 2021
+2025-10-25 17:52:25,770 - ERROR - Fehler beim Suchen von Dateien für h08v05, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h08v05'
+2025-10-25 17:52:25,770 - WARNING - Keine passenden Dateien für h08v05, 2021 gefunden
+2025-10-25 17:52:25,773 - INFO - Verarbeite Tile h24v04 für Jahr 2010
+2025-10-25 17:52:25,782 - ERROR - Fehler beim Suchen von Dateien für h24v04, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h24v04'
+2025-10-25 17:52:25,782 - WARNING - Keine passenden Dateien für h24v04, 2010 gefunden
+2025-10-25 17:52:25,783 - INFO - Verarbeite Tile h24v04 für Jahr 2021
+2025-10-25 17:52:25,791 - ERROR - Fehler beim Suchen von Dateien für h24v04, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h24v04'
+2025-10-25 17:52:25,792 - WARNING - Keine passenden Dateien für h24v04, 2021 gefunden
+2025-10-25 17:52:25,792 - INFO - Verarbeite Tile h06v04 für Jahr 2010
+2025-10-25 17:52:25,803 - ERROR - Fehler beim Suchen von Dateien für h06v04, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h06v04'
+2025-10-25 17:52:25,803 - WARNING - Keine passenden Dateien für h06v04, 2010 gefunden
+2025-10-25 17:52:25,805 - INFO - Verarbeite Tile h06v04 für Jahr 2021
+2025-10-25 17:52:25,815 - ERROR - Fehler beim Suchen von Dateien für h06v04, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h06v04'
+2025-10-25 17:52:25,816 - WARNING - Keine passenden Dateien für h06v04, 2021 gefunden
+2025-10-25 17:52:25,816 - INFO - Verarbeite Tile h30v10 für Jahr 2010
+2025-10-25 17:52:25,823 - ERROR - Fehler beim Suchen von Dateien für h30v10, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h30v10'
+2025-10-25 17:52:25,823 - WARNING - Keine passenden Dateien für h30v10, 2010 gefunden
+2025-10-25 17:52:25,823 - INFO - Verarbeite Tile h30v10 für Jahr 2021
+2025-10-25 17:52:25,829 - ERROR - Fehler beim Suchen von Dateien für h30v10, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h30v10'
+2025-10-25 17:52:25,829 - WARNING - Keine passenden Dateien für h30v10, 2021 gefunden
+2025-10-25 17:52:25,829 - INFO - Verarbeite Tile h22v04 für Jahr 2010
+2025-10-25 17:52:25,838 - ERROR - Fehler beim Suchen von Dateien für h22v04, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h22v04'
+2025-10-25 17:52:25,838 - WARNING - Keine passenden Dateien für h22v04, 2010 gefunden
+2025-10-25 17:52:25,839 - INFO - Verarbeite Tile h22v04 für Jahr 2021
+2025-10-25 17:52:25,847 - ERROR - Fehler beim Suchen von Dateien für h22v04, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h22v04'
+2025-10-25 17:52:25,847 - WARNING - Keine passenden Dateien für h22v04, 2021 gefunden
+2025-10-25 17:52:25,847 - INFO - Verarbeite Tile h19v07 für Jahr 2010
+2025-10-25 17:52:25,859 - ERROR - Fehler beim Suchen von Dateien für h19v07, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h19v07'
+2025-10-25 17:52:25,860 - WARNING - Keine passenden Dateien für h19v07, 2010 gefunden
+2025-10-25 17:52:25,861 - INFO - Verarbeite Tile h19v07 für Jahr 2021
+2025-10-25 17:52:25,873 - ERROR - Fehler beim Suchen von Dateien für h19v07, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h19v07'
+2025-10-25 17:52:25,873 - WARNING - Keine passenden Dateien für h19v07, 2021 gefunden
+2025-10-25 17:52:25,874 - INFO - Verarbeite Tile h14v09 für Jahr 2010
+2025-10-25 17:52:25,880 - ERROR - Fehler beim Suchen von Dateien für h14v09, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h14v09'
+2025-10-25 17:52:25,881 - WARNING - Keine passenden Dateien für h14v09, 2010 gefunden
+2025-10-25 17:52:25,881 - INFO - Verarbeite Tile h14v09 für Jahr 2021
+2025-10-25 17:52:25,887 - ERROR - Fehler beim Suchen von Dateien für h14v09, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h14v09'
+2025-10-25 17:52:25,887 - WARNING - Keine passenden Dateien für h14v09, 2021 gefunden
+2025-10-25 17:52:25,887 - INFO - Verarbeite Tile h11v11 für Jahr 2010
+2025-10-25 17:52:25,894 - ERROR - Fehler beim Suchen von Dateien für h11v11, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h11v11'
+2025-10-25 17:52:25,894 - WARNING - Keine passenden Dateien für h11v11, 2010 gefunden
+2025-10-25 17:52:25,894 - INFO - Verarbeite Tile h11v11 für Jahr 2021
+2025-10-25 17:52:25,901 - ERROR - Fehler beim Suchen von Dateien für h11v11, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h11v11'
+2025-10-25 17:52:25,901 - WARNING - Keine passenden Dateien für h11v11, 2021 gefunden
+2025-10-25 17:52:25,901 - INFO - Verarbeite Tile h09v04 für Jahr 2010
+2025-10-25 17:52:25,924 - ERROR - Fehler beim Suchen von Dateien für h09v04, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h09v04'
+2025-10-25 17:52:25,924 - WARNING - Keine passenden Dateien für h09v04, 2010 gefunden
+2025-10-25 17:52:25,926 - INFO - Verarbeite Tile h09v04 für Jahr 2021
+2025-10-25 17:52:25,947 - ERROR - Fehler beim Suchen von Dateien für h09v04, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h09v04'
+2025-10-25 17:52:25,947 - WARNING - Keine passenden Dateien für h09v04, 2021 gefunden
+2025-10-25 17:52:25,949 - INFO - Verarbeite Tile h10v05 für Jahr 2010
+2025-10-25 17:52:25,956 - ERROR - Fehler beim Suchen von Dateien für h10v05, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h10v05'
+2025-10-25 17:52:25,957 - WARNING - Keine passenden Dateien für h10v05, 2010 gefunden
+2025-10-25 17:52:25,957 - INFO - Verarbeite Tile h10v05 für Jahr 2021
+2025-10-25 17:52:25,963 - ERROR - Fehler beim Suchen von Dateien für h10v05, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h10v05'
+2025-10-25 17:52:25,963 - WARNING - Keine passenden Dateien für h10v05, 2021 gefunden
+2025-10-25 17:52:25,963 - INFO - Verarbeite Tile h27v06 für Jahr 2010
+2025-10-25 17:52:25,970 - ERROR - Fehler beim Suchen von Dateien für h27v06, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h27v06'
+2025-10-25 17:52:25,970 - WARNING - Keine passenden Dateien für h27v06, 2010 gefunden
+2025-10-25 17:52:25,971 - INFO - Verarbeite Tile h27v06 für Jahr 2021
+2025-10-25 17:52:25,977 - ERROR - Fehler beim Suchen von Dateien für h27v06, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h27v06'
+2025-10-25 17:52:25,977 - WARNING - Keine passenden Dateien für h27v06, 2021 gefunden
+2025-10-25 17:52:25,977 - INFO - Verarbeite Tile h26v06 für Jahr 2010
+2025-10-25 17:52:25,985 - ERROR - Fehler beim Suchen von Dateien für h26v06, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h26v06'
+2025-10-25 17:52:25,985 - WARNING - Keine passenden Dateien für h26v06, 2010 gefunden
+2025-10-25 17:52:25,986 - INFO - Verarbeite Tile h26v06 für Jahr 2021
+2025-10-25 17:52:25,994 - ERROR - Fehler beim Suchen von Dateien für h26v06, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h26v06'
+2025-10-25 17:52:25,994 - WARNING - Keine passenden Dateien für h26v06, 2021 gefunden
+2025-10-25 17:52:25,995 - INFO - Verarbeite Tile h25v02 für Jahr 2010
+2025-10-25 17:52:26,013 - ERROR - Fehler beim Suchen von Dateien für h25v02, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h25v02'
+2025-10-25 17:52:26,014 - WARNING - Keine passenden Dateien für h25v02, 2010 gefunden
+2025-10-25 17:52:26,016 - INFO - Verarbeite Tile h25v02 für Jahr 2021
+2025-10-25 17:52:26,034 - ERROR - Fehler beim Suchen von Dateien für h25v02, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h25v02'
+2025-10-25 17:52:26,035 - WARNING - Keine passenden Dateien für h25v02, 2021 gefunden
+2025-10-25 17:52:26,037 - INFO - Verarbeite Tile h23v04 für Jahr 2010
+2025-10-25 17:52:26,049 - ERROR - Fehler beim Suchen von Dateien für h23v04, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h23v04'
+2025-10-25 17:52:26,049 - WARNING - Keine passenden Dateien für h23v04, 2010 gefunden
+2025-10-25 17:52:26,050 - INFO - Verarbeite Tile h23v04 für Jahr 2021
+2025-10-25 17:52:26,061 - ERROR - Fehler beim Suchen von Dateien für h23v04, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h23v04'
+2025-10-25 17:52:26,062 - WARNING - Keine passenden Dateien für h23v04, 2021 gefunden
+2025-10-25 17:52:26,063 - INFO - Verarbeite Tile h21v09 für Jahr 2010
+2025-10-25 17:52:26,071 - ERROR - Fehler beim Suchen von Dateien für h21v09, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h21v09'
+2025-10-25 17:52:26,071 - WARNING - Keine passenden Dateien für h21v09, 2010 gefunden
+2025-10-25 17:52:26,071 - INFO - Verarbeite Tile h21v09 für Jahr 2021
+2025-10-25 17:52:26,079 - ERROR - Fehler beim Suchen von Dateien für h21v09, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h21v09'
+2025-10-25 17:52:26,079 - WARNING - Keine passenden Dateien für h21v09, 2021 gefunden
+2025-10-25 17:52:26,079 - INFO - Verarbeite Tile h21v05 für Jahr 2010
+2025-10-25 17:52:26,086 - ERROR - Fehler beim Suchen von Dateien für h21v05, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h21v05'
+2025-10-25 17:52:26,086 - WARNING - Keine passenden Dateien für h21v05, 2010 gefunden
+2025-10-25 17:52:26,086 - INFO - Verarbeite Tile h21v05 für Jahr 2021
+2025-10-25 17:52:26,093 - ERROR - Fehler beim Suchen von Dateien für h21v05, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h21v05'
+2025-10-25 17:52:26,094 - WARNING - Keine passenden Dateien für h21v05, 2021 gefunden
+2025-10-25 17:52:26,094 - INFO - Verarbeite Tile h19v02 für Jahr 2010
+2025-10-25 17:52:26,108 - ERROR - Fehler beim Suchen von Dateien für h19v02, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h19v02'
+2025-10-25 17:52:26,109 - WARNING - Keine passenden Dateien für h19v02, 2010 gefunden
+2025-10-25 17:52:26,110 - INFO - Verarbeite Tile h19v02 für Jahr 2021
+2025-10-25 17:52:26,126 - ERROR - Fehler beim Suchen von Dateien für h19v02, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h19v02'
+2025-10-25 17:52:26,126 - WARNING - Keine passenden Dateien für h19v02, 2021 gefunden
+2025-10-25 17:52:26,127 - INFO - Verarbeite Tile h17v07 für Jahr 2010
+2025-10-25 17:52:26,133 - ERROR - Fehler beim Suchen von Dateien für h17v07, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h17v07'
+2025-10-25 17:52:26,133 - WARNING - Keine passenden Dateien für h17v07, 2010 gefunden
+2025-10-25 17:52:26,133 - INFO - Verarbeite Tile h17v07 für Jahr 2021
+2025-10-25 17:52:26,139 - ERROR - Fehler beim Suchen von Dateien für h17v07, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h17v07'
+2025-10-25 17:52:26,139 - WARNING - Keine passenden Dateien für h17v07, 2021 gefunden
+2025-10-25 17:52:26,140 - INFO - Verarbeite Tile h14v02 für Jahr 2010
+2025-10-25 17:52:26,144 - ERROR - Fehler beim Suchen von Dateien für h14v02, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h14v02'
+2025-10-25 17:52:26,144 - WARNING - Keine passenden Dateien für h14v02, 2010 gefunden
+2025-10-25 17:52:26,145 - INFO - Verarbeite Tile h14v02 für Jahr 2021
+2025-10-25 17:52:26,148 - ERROR - Fehler beim Suchen von Dateien für h14v02, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h14v02'
+2025-10-25 17:52:26,149 - WARNING - Keine passenden Dateien für h14v02, 2021 gefunden
+2025-10-25 17:52:26,149 - INFO - Verarbeite Tile h12v12 für Jahr 2010
+2025-10-25 17:52:26,156 - ERROR - Fehler beim Suchen von Dateien für h12v12, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h12v12'
+2025-10-25 17:52:26,156 - WARNING - Keine passenden Dateien für h12v12, 2010 gefunden
+2025-10-25 17:52:26,156 - INFO - Verarbeite Tile h12v12 für Jahr 2021
+2025-10-25 17:52:26,162 - ERROR - Fehler beim Suchen von Dateien für h12v12, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h12v12'
+2025-10-25 17:52:26,163 - WARNING - Keine passenden Dateien für h12v12, 2021 gefunden
+2025-10-25 17:52:26,163 - INFO - Verarbeite Tile h12v08 für Jahr 2010
+2025-10-25 17:52:26,168 - ERROR - Fehler beim Suchen von Dateien für h12v08, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h12v08'
+2025-10-25 17:52:26,168 - WARNING - Keine passenden Dateien für h12v08, 2010 gefunden
+2025-10-25 17:52:26,168 - INFO - Verarbeite Tile h12v08 für Jahr 2021
+2025-10-25 17:52:26,174 - ERROR - Fehler beim Suchen von Dateien für h12v08, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h12v08'
+2025-10-25 17:52:26,174 - WARNING - Keine passenden Dateien für h12v08, 2021 gefunden
+2025-10-25 17:52:26,175 - INFO - Verarbeite Tile h19v12 für Jahr 2010
+2025-10-25 17:52:26,179 - ERROR - Fehler beim Suchen von Dateien für h19v12, 2010: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h19v12'
+2025-10-25 17:52:26,179 - WARNING - Keine passenden Dateien für h19v12, 2010 gefunden
+2025-10-25 17:52:26,179 - INFO - Verarbeite Tile h19v12 für Jahr 2021
+2025-10-25 17:52:26,183 - ERROR - Fehler beim Suchen von Dateien für h19v12, 2021: [WinError 3] Das System kann den angegebenen Pfad nicht finden: 'T:\\DLR\\Analysis3\\Input\\NasaFlood\\02_GWP_gtiff\\h19v12'
+2025-10-25 17:52:26,184 - WARNING - Keine passenden Dateien für h19v12, 2021 gefunden
+2025-10-25 17:52:26,184 - WARNING - Keine Ergebnisse gefunden!
+2025-10-25 17:53:00,446 - INFO - Verarbeite Tile h22v04 für Jahr 2010
+2025-10-25 17:53:00,487 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:00,488 - INFO - 100 passende Dateien für h22v04, 2010 gefunden
+2025-10-25 17:53:01,478 - ERROR - Fehler bei der Verarbeitung von h22v04, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:01,479 - INFO - Verarbeite Tile h22v04 für Jahr 2021
+2025-10-25 17:53:01,502 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:01,503 - INFO - 100 passende Dateien für h22v04, 2021 gefunden
+2025-10-25 17:53:02,519 - ERROR - Fehler bei der Verarbeitung von h22v04, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:02,519 - INFO - Verarbeite Tile h29v06 für Jahr 2010
+2025-10-25 17:53:02,543 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:02,543 - INFO - 100 passende Dateien für h29v06, 2010 gefunden
+2025-10-25 17:53:03,602 - ERROR - Fehler bei der Verarbeitung von h29v06, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:03,603 - INFO - Verarbeite Tile h29v06 für Jahr 2021
+2025-10-25 17:53:03,630 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:03,631 - INFO - 100 passende Dateien für h29v06, 2021 gefunden
+2025-10-25 17:53:04,697 - ERROR - Fehler bei der Verarbeitung von h29v06, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:04,697 - INFO - Verarbeite Tile h09v05 für Jahr 2010
+2025-10-25 17:53:04,721 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:04,722 - INFO - 100 passende Dateien für h09v05, 2010 gefunden
+2025-10-25 17:53:05,777 - ERROR - Fehler bei der Verarbeitung von h09v05, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:05,778 - INFO - Verarbeite Tile h09v05 für Jahr 2021
+2025-10-25 17:53:05,806 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:05,806 - INFO - 100 passende Dateien für h09v05, 2021 gefunden
+2025-10-25 17:53:06,859 - ERROR - Fehler bei der Verarbeitung von h09v05, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:06,860 - INFO - Verarbeite Tile h11v10 für Jahr 2010
+2025-10-25 17:53:06,877 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:06,878 - INFO - 100 passende Dateien für h11v10, 2010 gefunden
+2025-10-25 17:53:07,844 - ERROR - Fehler bei der Verarbeitung von h11v10, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:07,845 - INFO - Verarbeite Tile h11v10 für Jahr 2021
+2025-10-25 17:53:07,864 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:07,865 - INFO - 100 passende Dateien für h11v10, 2021 gefunden
+2025-10-25 17:53:08,862 - ERROR - Fehler bei der Verarbeitung von h11v10, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:08,862 - INFO - Verarbeite Tile h08v05 für Jahr 2010
+2025-10-25 17:53:08,885 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:08,886 - INFO - 100 passende Dateien für h08v05, 2010 gefunden
+2025-10-25 17:53:09,987 - ERROR - Fehler bei der Verarbeitung von h08v05, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:09,987 - INFO - Verarbeite Tile h08v05 für Jahr 2021
+2025-10-25 17:53:10,016 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:10,017 - INFO - 100 passende Dateien für h08v05, 2021 gefunden
+2025-10-25 17:53:11,107 - ERROR - Fehler bei der Verarbeitung von h08v05, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:11,107 - INFO - Verarbeite Tile h24v04 für Jahr 2010
+2025-10-25 17:53:11,125 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:11,125 - INFO - 100 passende Dateien für h24v04, 2010 gefunden
+2025-10-25 17:53:12,138 - ERROR - Fehler bei der Verarbeitung von h24v04, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:12,139 - INFO - Verarbeite Tile h24v04 für Jahr 2021
+2025-10-25 17:53:12,158 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:12,159 - INFO - 100 passende Dateien für h24v04, 2021 gefunden
+2025-10-25 17:53:13,180 - ERROR - Fehler bei der Verarbeitung von h24v04, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:13,180 - INFO - Verarbeite Tile h06v04 für Jahr 2010
+2025-10-25 17:53:13,199 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:13,199 - INFO - 100 passende Dateien für h06v04, 2010 gefunden
+2025-10-25 17:53:14,237 - ERROR - Fehler bei der Verarbeitung von h06v04, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:14,238 - INFO - Verarbeite Tile h06v04 für Jahr 2021
+2025-10-25 17:53:14,260 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:14,260 - INFO - 100 passende Dateien für h06v04, 2021 gefunden
+2025-10-25 17:53:15,395 - ERROR - Fehler bei der Verarbeitung von h06v04, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:15,396 - INFO - Verarbeite Tile h30v10 für Jahr 2010
+2025-10-25 17:53:15,410 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:15,410 - INFO - 100 passende Dateien für h30v10, 2010 gefunden
+2025-10-25 17:53:16,622 - ERROR - Fehler bei der Verarbeitung von h30v10, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:16,623 - INFO - Verarbeite Tile h30v10 für Jahr 2021
+2025-10-25 17:53:16,643 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:16,644 - INFO - 100 passende Dateien für h30v10, 2021 gefunden
+2025-10-25 17:53:17,854 - ERROR - Fehler bei der Verarbeitung von h30v10, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:17,855 - INFO - Verarbeite Tile h22v04 für Jahr 2010
+2025-10-25 17:53:17,873 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:17,874 - INFO - 100 passende Dateien für h22v04, 2010 gefunden
+2025-10-25 17:53:19,145 - ERROR - Fehler bei der Verarbeitung von h22v04, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:19,146 - INFO - Verarbeite Tile h22v04 für Jahr 2021
+2025-10-25 17:53:19,164 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:19,165 - INFO - 100 passende Dateien für h22v04, 2021 gefunden
+2025-10-25 17:53:20,391 - ERROR - Fehler bei der Verarbeitung von h22v04, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:20,392 - INFO - Verarbeite Tile h19v07 für Jahr 2010
+2025-10-25 17:53:20,420 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:20,420 - INFO - 100 passende Dateien für h19v07, 2010 gefunden
+2025-10-25 17:53:21,742 - ERROR - Fehler bei der Verarbeitung von h19v07, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:21,743 - INFO - Verarbeite Tile h19v07 für Jahr 2021
+2025-10-25 17:53:21,766 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:21,767 - INFO - 100 passende Dateien für h19v07, 2021 gefunden
+2025-10-25 17:53:23,055 - ERROR - Fehler bei der Verarbeitung von h19v07, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:23,056 - INFO - Verarbeite Tile h14v09 für Jahr 2010
+2025-10-25 17:53:23,076 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:23,076 - INFO - 100 passende Dateien für h14v09, 2010 gefunden
+2025-10-25 17:53:24,303 - ERROR - Fehler bei der Verarbeitung von h14v09, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:24,304 - INFO - Verarbeite Tile h14v09 für Jahr 2021
+2025-10-25 17:53:24,321 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:24,322 - INFO - 100 passende Dateien für h14v09, 2021 gefunden
+2025-10-25 17:53:25,561 - ERROR - Fehler bei der Verarbeitung von h14v09, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:25,562 - INFO - Verarbeite Tile h11v11 für Jahr 2010
+2025-10-25 17:53:25,575 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:25,575 - INFO - 100 passende Dateien für h11v11, 2010 gefunden
+2025-10-25 17:53:26,847 - ERROR - Fehler bei der Verarbeitung von h11v11, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:26,848 - INFO - Verarbeite Tile h11v11 für Jahr 2021
+2025-10-25 17:53:26,866 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:26,866 - INFO - 100 passende Dateien für h11v11, 2021 gefunden
+2025-10-25 17:53:28,114 - ERROR - Fehler bei der Verarbeitung von h11v11, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:28,115 - INFO - Verarbeite Tile h09v04 für Jahr 2010
+2025-10-25 17:53:28,142 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:28,143 - INFO - 100 passende Dateien für h09v04, 2010 gefunden
+2025-10-25 17:53:29,534 - ERROR - Fehler bei der Verarbeitung von h09v04, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:29,535 - INFO - Verarbeite Tile h09v04 für Jahr 2021
+2025-10-25 17:53:29,571 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:29,571 - INFO - 100 passende Dateien für h09v04, 2021 gefunden
+2025-10-25 17:53:30,951 - ERROR - Fehler bei der Verarbeitung von h09v04, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:30,952 - INFO - Verarbeite Tile h10v05 für Jahr 2010
+2025-10-25 17:53:30,967 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:30,967 - INFO - 100 passende Dateien für h10v05, 2010 gefunden
+2025-10-25 17:53:32,189 - ERROR - Fehler bei der Verarbeitung von h10v05, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:32,190 - INFO - Verarbeite Tile h10v05 für Jahr 2021
+2025-10-25 17:53:32,206 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:32,207 - INFO - 100 passende Dateien für h10v05, 2021 gefunden
+2025-10-25 17:53:33,431 - ERROR - Fehler bei der Verarbeitung von h10v05, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:33,432 - INFO - Verarbeite Tile h27v06 für Jahr 2010
+2025-10-25 17:53:33,445 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:33,445 - INFO - 100 passende Dateien für h27v06, 2010 gefunden
+2025-10-25 17:53:34,630 - ERROR - Fehler bei der Verarbeitung von h27v06, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:34,631 - INFO - Verarbeite Tile h27v06 für Jahr 2021
+2025-10-25 17:53:34,647 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:34,648 - INFO - 100 passende Dateien für h27v06, 2021 gefunden
+2025-10-25 17:53:35,881 - ERROR - Fehler bei der Verarbeitung von h27v06, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:35,881 - INFO - Verarbeite Tile h26v06 für Jahr 2010
+2025-10-25 17:53:35,896 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:35,897 - INFO - 100 passende Dateien für h26v06, 2010 gefunden
+2025-10-25 17:53:37,256 - ERROR - Fehler bei der Verarbeitung von h26v06, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:37,257 - INFO - Verarbeite Tile h26v06 für Jahr 2021
+2025-10-25 17:53:37,277 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:37,278 - INFO - 100 passende Dateien für h26v06, 2021 gefunden
+2025-10-25 17:53:38,524 - ERROR - Fehler bei der Verarbeitung von h26v06, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:38,524 - INFO - Verarbeite Tile h25v02 für Jahr 2010
+2025-10-25 17:53:38,549 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:38,549 - INFO - 100 passende Dateien für h25v02, 2010 gefunden
+2025-10-25 17:53:39,940 - ERROR - Fehler bei der Verarbeitung von h25v02, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:39,940 - INFO - Verarbeite Tile h25v02 für Jahr 2021
+2025-10-25 17:53:39,971 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:39,971 - INFO - 100 passende Dateien für h25v02, 2021 gefunden
+2025-10-25 17:53:41,336 - ERROR - Fehler bei der Verarbeitung von h25v02, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:41,337 - INFO - Verarbeite Tile h23v04 für Jahr 2010
+2025-10-25 17:53:41,361 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:41,361 - INFO - 100 passende Dateien für h23v04, 2010 gefunden
+2025-10-25 17:53:42,655 - ERROR - Fehler bei der Verarbeitung von h23v04, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:42,655 - INFO - Verarbeite Tile h23v04 für Jahr 2021
+2025-10-25 17:53:42,682 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:42,682 - INFO - 100 passende Dateien für h23v04, 2021 gefunden
+2025-10-25 17:53:43,980 - ERROR - Fehler bei der Verarbeitung von h23v04, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:43,980 - INFO - Verarbeite Tile h21v09 für Jahr 2010
+2025-10-25 17:53:43,997 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:43,997 - INFO - 100 passende Dateien für h21v09, 2010 gefunden
+2025-10-25 17:53:45,247 - ERROR - Fehler bei der Verarbeitung von h21v09, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:45,248 - INFO - Verarbeite Tile h21v09 für Jahr 2021
+2025-10-25 17:53:45,271 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:45,272 - INFO - 100 passende Dateien für h21v09, 2021 gefunden
+2025-10-25 17:53:46,577 - ERROR - Fehler bei der Verarbeitung von h21v09, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:46,577 - INFO - Verarbeite Tile h21v05 für Jahr 2010
+2025-10-25 17:53:46,592 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:46,592 - INFO - 100 passende Dateien für h21v05, 2010 gefunden
+2025-10-25 17:53:47,851 - ERROR - Fehler bei der Verarbeitung von h21v05, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:47,851 - INFO - Verarbeite Tile h21v05 für Jahr 2021
+2025-10-25 17:53:47,869 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:47,870 - INFO - 100 passende Dateien für h21v05, 2021 gefunden
+2025-10-25 17:53:49,122 - ERROR - Fehler bei der Verarbeitung von h21v05, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:49,122 - INFO - Verarbeite Tile h19v02 für Jahr 2010
+2025-10-25 17:53:49,153 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:49,153 - INFO - 100 passende Dateien für h19v02, 2010 gefunden
+2025-10-25 17:53:50,447 - ERROR - Fehler bei der Verarbeitung von h19v02, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:50,448 - INFO - Verarbeite Tile h19v02 für Jahr 2021
+2025-10-25 17:53:50,475 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:50,475 - INFO - 100 passende Dateien für h19v02, 2021 gefunden
+2025-10-25 17:53:51,787 - ERROR - Fehler bei der Verarbeitung von h19v02, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:51,787 - INFO - Verarbeite Tile h17v07 für Jahr 2010
+2025-10-25 17:53:51,801 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:51,802 - INFO - 100 passende Dateien für h17v07, 2010 gefunden
+2025-10-25 17:53:53,050 - ERROR - Fehler bei der Verarbeitung von h17v07, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:53,050 - INFO - Verarbeite Tile h17v07 für Jahr 2021
+2025-10-25 17:53:53,069 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:53,070 - INFO - 100 passende Dateien für h17v07, 2021 gefunden
+2025-10-25 17:53:54,321 - ERROR - Fehler bei der Verarbeitung von h17v07, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:54,321 - INFO - Verarbeite Tile h14v02 für Jahr 2010
+2025-10-25 17:53:54,337 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:54,337 - INFO - 100 passende Dateien für h14v02, 2010 gefunden
+2025-10-25 17:53:55,577 - ERROR - Fehler bei der Verarbeitung von h14v02, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:55,578 - INFO - Verarbeite Tile h14v02 für Jahr 2021
+2025-10-25 17:53:55,594 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:55,595 - INFO - 100 passende Dateien für h14v02, 2021 gefunden
+2025-10-25 17:53:57,061 - ERROR - Fehler bei der Verarbeitung von h14v02, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:57,061 - INFO - Verarbeite Tile h12v12 für Jahr 2010
+2025-10-25 17:53:57,088 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:57,088 - INFO - 100 passende Dateien für h12v12, 2010 gefunden
+2025-10-25 17:53:58,624 - ERROR - Fehler bei der Verarbeitung von h12v12, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:58,625 - INFO - Verarbeite Tile h12v12 für Jahr 2021
+2025-10-25 17:53:58,645 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:58,645 - INFO - 100 passende Dateien für h12v12, 2021 gefunden
+2025-10-25 17:53:59,964 - ERROR - Fehler bei der Verarbeitung von h12v12, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:53:59,965 - INFO - Verarbeite Tile h12v08 für Jahr 2010
+2025-10-25 17:53:59,982 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:53:59,982 - INFO - 100 passende Dateien für h12v08, 2010 gefunden
+2025-10-25 17:54:01,336 - ERROR - Fehler bei der Verarbeitung von h12v08, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:54:01,337 - INFO - Verarbeite Tile h12v08 für Jahr 2021
+2025-10-25 17:54:01,363 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:54:01,364 - INFO - 100 passende Dateien für h12v08, 2021 gefunden
+2025-10-25 17:54:02,640 - ERROR - Fehler bei der Verarbeitung von h12v08, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:54:02,641 - INFO - Verarbeite Tile h19v12 für Jahr 2010
+2025-10-25 17:54:02,656 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:54:02,657 - INFO - 100 passende Dateien für h19v12, 2010 gefunden
+2025-10-25 17:54:03,944 - ERROR - Fehler bei der Verarbeitung von h19v12, 2010: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:54:03,945 - INFO - Verarbeite Tile h19v12 für Jahr 2021
+2025-10-25 17:54:03,960 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:54:03,961 - INFO - 100 passende Dateien für h19v12, 2021 gefunden
+2025-10-25 17:54:05,191 - ERROR - Fehler bei der Verarbeitung von h19v12, 2021: process_file_pair() missing 5 required positional arguments: 'mwp_file', 'max_extent', 'year', 'doy', and 'tile'
+2025-10-25 17:54:05,192 - WARNING - Keine Ergebnisse gefunden!
+2025-10-25 17:57:02,625 - INFO - Verarbeite Tile h22v04 für Jahr 2010
+2025-10-25 17:57:02,667 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:57:02,667 - INFO - 100 passende Dateien für h22v04, 2010 gefunden
+2025-10-25 17:57:59,950 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h22v04_2010.csv
+2025-10-25 17:57:59,951 - INFO - Verarbeite Tile h22v04 für Jahr 2021
+2025-10-25 17:57:59,971 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:57:59,971 - INFO - 100 passende Dateien für h22v04, 2021 gefunden
+2025-10-25 17:58:58,477 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h22v04_2021.csv
+2025-10-25 17:58:58,478 - INFO - Verarbeite Tile h29v06 für Jahr 2010
+2025-10-25 17:58:58,500 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 17:58:58,501 - INFO - 100 passende Dateien für h29v06, 2010 gefunden
+2025-10-25 18:01:02,390 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h29v06_2010.csv
+2025-10-25 18:01:02,390 - INFO - Verarbeite Tile h29v06 für Jahr 2021
+2025-10-25 18:01:02,416 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:01:02,416 - INFO - 100 passende Dateien für h29v06, 2021 gefunden
+2025-10-25 18:03:03,475 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h29v06_2021.csv
+2025-10-25 18:03:03,475 - INFO - Verarbeite Tile h09v05 für Jahr 2010
+2025-10-25 18:03:03,529 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:03:03,530 - INFO - 100 passende Dateien für h09v05, 2010 gefunden
+2025-10-25 18:05:10,650 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h09v05_2010.csv
+2025-10-25 18:05:10,650 - INFO - Verarbeite Tile h09v05 für Jahr 2021
+2025-10-25 18:05:10,678 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:05:10,678 - INFO - 100 passende Dateien für h09v05, 2021 gefunden
+2025-10-25 18:07:12,752 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h09v05_2021.csv
+2025-10-25 18:07:12,752 - INFO - Verarbeite Tile h11v10 für Jahr 2010
+2025-10-25 18:07:12,768 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:07:12,769 - INFO - 100 passende Dateien für h11v10, 2010 gefunden
+2025-10-25 18:08:09,485 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h11v10_2010.csv
+2025-10-25 18:08:09,485 - INFO - Verarbeite Tile h11v10 für Jahr 2021
+2025-10-25 18:08:09,505 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:08:09,506 - INFO - 100 passende Dateien für h11v10, 2021 gefunden
+2025-10-25 18:09:06,472 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h11v10_2021.csv
+2025-10-25 18:09:06,473 - INFO - Verarbeite Tile h08v05 für Jahr 2010
+2025-10-25 18:09:06,512 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:09:06,513 - INFO - 100 passende Dateien für h08v05, 2010 gefunden
+2025-10-25 18:11:10,670 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h08v05_2010.csv
+2025-10-25 18:11:10,670 - INFO - Verarbeite Tile h08v05 für Jahr 2021
+2025-10-25 18:11:10,701 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:11:10,702 - INFO - 100 passende Dateien für h08v05, 2021 gefunden
+2025-10-25 18:13:15,108 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h08v05_2021.csv
+2025-10-25 18:13:15,108 - INFO - Verarbeite Tile h24v04 für Jahr 2010
+2025-10-25 18:13:15,129 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:13:15,130 - INFO - 100 passende Dateien für h24v04, 2010 gefunden
+2025-10-25 18:14:15,278 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h24v04_2010.csv
+2025-10-25 18:14:15,278 - INFO - Verarbeite Tile h24v04 für Jahr 2021
+2025-10-25 18:14:15,300 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:14:15,300 - INFO - 100 passende Dateien für h24v04, 2021 gefunden
+2025-10-25 18:15:19,164 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h24v04_2021.csv
+2025-10-25 18:15:19,164 - INFO - Verarbeite Tile h06v04 für Jahr 2010
+2025-10-25 18:15:19,185 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:15:19,186 - INFO - 100 passende Dateien für h06v04, 2010 gefunden
+2025-10-25 18:16:42,523 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h06v04_2010.csv
+2025-10-25 18:16:42,523 - INFO - Verarbeite Tile h06v04 für Jahr 2021
+2025-10-25 18:16:42,548 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:16:42,549 - INFO - 100 passende Dateien für h06v04, 2021 gefunden
+2025-10-25 18:18:07,057 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h06v04_2021.csv
+2025-10-25 18:18:07,057 - INFO - Verarbeite Tile h30v10 für Jahr 2010
+2025-10-25 18:18:07,075 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:18:07,076 - INFO - 100 passende Dateien für h30v10, 2010 gefunden
+2025-10-25 18:18:45,537 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h30v10_2010.csv
+2025-10-25 18:18:45,537 - INFO - Verarbeite Tile h30v10 für Jahr 2021
+2025-10-25 18:18:45,555 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:18:45,555 - INFO - 100 passende Dateien für h30v10, 2021 gefunden
+2025-10-25 18:19:22,132 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h30v10_2021.csv
+2025-10-25 18:19:22,132 - INFO - Verarbeite Tile h22v04 für Jahr 2010
+2025-10-25 18:19:22,147 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:19:22,148 - INFO - 100 passende Dateien für h22v04, 2010 gefunden
+2025-10-25 18:20:26,855 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h22v04_2010.csv
+2025-10-25 18:20:26,855 - INFO - Verarbeite Tile h22v04 für Jahr 2021
+2025-10-25 18:20:26,878 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:20:26,879 - INFO - 100 passende Dateien für h22v04, 2021 gefunden
+2025-10-25 18:21:31,084 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h22v04_2021.csv
+2025-10-25 18:21:31,084 - INFO - Verarbeite Tile h19v07 für Jahr 2010
+2025-10-25 18:21:31,105 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:21:31,105 - INFO - 100 passende Dateien für h19v07, 2010 gefunden
+2025-10-25 18:23:27,772 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h19v07_2010.csv
+2025-10-25 18:23:27,772 - INFO - Verarbeite Tile h19v07 für Jahr 2021
+2025-10-25 18:23:27,797 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:23:27,798 - INFO - 100 passende Dateien für h19v07, 2021 gefunden
+2025-10-25 18:25:22,273 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h19v07_2021.csv
+2025-10-25 18:25:22,274 - INFO - Verarbeite Tile h14v09 für Jahr 2010
+2025-10-25 18:25:22,287 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:25:22,288 - INFO - 100 passende Dateien für h14v09, 2010 gefunden
+2025-10-25 18:25:58,020 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h14v09_2010.csv
+2025-10-25 18:25:58,020 - INFO - Verarbeite Tile h14v09 für Jahr 2021
+2025-10-25 18:25:58,038 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:25:58,039 - INFO - 100 passende Dateien für h14v09, 2021 gefunden
+2025-10-25 18:26:32,540 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h14v09_2021.csv
+2025-10-25 18:26:32,540 - INFO - Verarbeite Tile h11v11 für Jahr 2010
+2025-10-25 18:26:32,554 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:26:32,555 - INFO - 100 passende Dateien für h11v11, 2010 gefunden
+2025-10-25 18:27:15,079 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h11v11_2010.csv
+2025-10-25 18:27:15,079 - INFO - Verarbeite Tile h11v11 für Jahr 2021
+2025-10-25 18:27:15,098 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:27:15,098 - INFO - 100 passende Dateien für h11v11, 2021 gefunden
+2025-10-25 18:27:56,591 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h11v11_2021.csv
+2025-10-25 18:27:56,591 - INFO - Verarbeite Tile h09v04 für Jahr 2010
+2025-10-25 18:27:56,618 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:27:56,618 - INFO - 100 passende Dateien für h09v04, 2010 gefunden
+2025-10-25 18:30:57,863 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h09v04_2010.csv
+2025-10-25 18:30:57,863 - INFO - Verarbeite Tile h09v04 für Jahr 2021
+2025-10-25 18:30:57,895 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:30:57,895 - INFO - 100 passende Dateien für h09v04, 2021 gefunden
+2025-10-25 18:33:59,024 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h09v04_2021.csv
+2025-10-25 18:33:59,024 - INFO - Verarbeite Tile h10v05 für Jahr 2010
+2025-10-25 18:33:59,038 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:33:59,039 - INFO - 100 passende Dateien für h10v05, 2010 gefunden
+2025-10-25 18:34:37,227 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h10v05_2010.csv
+2025-10-25 18:34:37,228 - INFO - Verarbeite Tile h10v05 für Jahr 2021
+2025-10-25 18:34:37,255 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:34:37,256 - INFO - 100 passende Dateien für h10v05, 2021 gefunden
+2025-10-25 18:35:20,724 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h10v05_2021.csv
+2025-10-25 18:35:20,725 - INFO - Verarbeite Tile h27v06 für Jahr 2010
+2025-10-25 18:35:20,738 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:35:20,738 - INFO - 100 passende Dateien für h27v06, 2010 gefunden
+2025-10-25 18:36:04,291 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h27v06_2010.csv
+2025-10-25 18:36:04,292 - INFO - Verarbeite Tile h27v06 für Jahr 2021
+2025-10-25 18:36:04,311 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:36:04,312 - INFO - 100 passende Dateien für h27v06, 2021 gefunden
+2025-10-25 18:36:50,674 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h27v06_2021.csv
+2025-10-25 18:36:50,674 - INFO - Verarbeite Tile h26v06 für Jahr 2010
+2025-10-25 18:36:50,692 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:36:50,693 - INFO - 100 passende Dateien für h26v06, 2010 gefunden
+2025-10-25 18:38:04,539 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h26v06_2010.csv
+2025-10-25 18:38:04,539 - INFO - Verarbeite Tile h26v06 für Jahr 2021
+2025-10-25 18:38:04,562 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:38:04,562 - INFO - 100 passende Dateien für h26v06, 2021 gefunden
+2025-10-25 18:39:18,108 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h26v06_2021.csv
+2025-10-25 18:39:18,108 - INFO - Verarbeite Tile h25v02 für Jahr 2010
+2025-10-25 18:39:18,136 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:39:18,136 - INFO - 100 passende Dateien für h25v02, 2010 gefunden
+2025-10-25 18:41:58,377 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h25v02_2010.csv
+2025-10-25 18:41:58,377 - INFO - Verarbeite Tile h25v02 für Jahr 2021
+2025-10-25 18:41:58,408 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:41:58,408 - INFO - 100 passende Dateien für h25v02, 2021 gefunden
+2025-10-25 18:44:29,615 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h25v02_2021.csv
+2025-10-25 18:44:29,615 - INFO - Verarbeite Tile h23v04 für Jahr 2010
+2025-10-25 18:44:29,640 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:44:29,641 - INFO - 100 passende Dateien für h23v04, 2010 gefunden
+2025-10-25 18:45:59,144 - INFO - Zwischenergebnisse gespeichert in T:\DLR\Analysis3\Output\NasaFlood\intermediate_h23v04_2010.csv
+2025-10-25 18:45:59,144 - INFO - Verarbeite Tile h23v04 für Jahr 2021
+2025-10-25 18:45:59,168 - INFO - Insgesamt 100 passende Dateipaare gefunden
+2025-10-25 18:45:59,168 - INFO - 100 passende Dateien für h23v04, 2021 gefunden

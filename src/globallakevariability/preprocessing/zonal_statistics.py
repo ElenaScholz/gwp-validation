@@ -5,7 +5,7 @@ import geopandas as gpd
 import numpy as np 
 import os
 from pathlib import Path
-from globallakevariability.utils.helper import get_filepaths_from_folder 
+from globallakevariability.preprocessing.filehandling import get_filepaths_from_folder 
 import argparse
 import re
 from datetime import datetime
@@ -176,13 +176,12 @@ def find_matching_files(gwp_path, mwp_path, year, tile, max_files=None):
     
 
 
-def process_in_batches(file_pairs, max_extent, year, tile, config):
+def process_in_batches(file_pairs, max_extent, year, tile, chunk_size, num_workers ):
     """
     Process file pairs in batches to control memory usage.
     """
     all_results = []
-    chunk_size = config['zonal_statistics']['chunk_size']
-    num_workers = config['zonal_statistics']['num_workers']
+
     # Split the file pairs into chunks
     for i in range(0, len(file_pairs), chunk_size):
         chunk = file_pairs[i:i + chunk_size]
@@ -190,7 +189,8 @@ def process_in_batches(file_pairs, max_extent, year, tile, config):
         
         # Process the current batch using multiple workers
         with ProcessPoolExecutor(max_workers=num_workers) as executor:
-            futures = [executor.submit(process_file_pair, arg) for arg in batch_args]
+            # unpack each tuple so process_file_pair gets individual args
+            futures = [executor.submit(process_file_pair, *arg) for arg in batch_args]
             
             # Collect results as they complete
             for future in tqdm(as_completed(futures), total=len(futures), desc=f"Processing batch {i//chunk_size + 1}/{(len(file_pairs) + chunk_size - 1) // chunk_size}"):
@@ -234,20 +234,16 @@ def process_file_pair(gwp_file, mwp_file, max_extent, year, doy, tile):
         logger.error(f"Fehler bei der Verarbeitung von {gwp_file.name} und {mwp_file.name}: {str(e)}")
         return None
 
-def process_tile_year(tile, year, config):
+def process_tile_year(tile, year, gwp_path, mwp_basepath, max_extent_path, chunk_size, num_workers, max_files_per_tile_year):
     """
     Process all file pairs for a specific tile and year combination.
     """
     try:
         logger.info(f"Verarbeite Tile {tile} für Jahr {year}")
-        gwp_path = config['preprocessing']['output_dir_gwp_nasaflood']
-        mwp_basepath = config['preprocessing']['output_dir_mwp_nasaflood']
         # Pfade zu den Ordnern
-        # gwp_path = args.gwp_root / f"GWP.{tile}.{year}" # Old
 
         gwp_path = gwp_path / tile
         mwp_path = mwp_basepath / f"MCDWD.{tile}.{year}"
-        max_extent_path = config['zonal_statistics']['max_extent_path']
         # Lade max_extent nur einmal
         max_extent_file = max_extent_path / f"{tile}_extent.gpkg"
         if not max_extent_file.exists():
@@ -257,7 +253,7 @@ def process_tile_year(tile, year, config):
         max_extent = gpd.read_file(max_extent_file)
         print(print(f"Features: {len(max_extent)}, CRS: {max_extent.crs}"))
         # Finde passende Dateien
-        matched_files = find_matching_files(gwp_path, mwp_path, year, tile, args.max_files_per_tile_year)
+        matched_files = find_matching_files(gwp_path, mwp_path, year, tile, max_files_per_tile_year)
         
         if not matched_files:
             logger.warning(f"Keine passenden Dateien für {tile}, {year} gefunden")
@@ -271,7 +267,8 @@ def process_tile_year(tile, year, config):
             max_extent, 
             year, 
             tile, 
-            config
+            chunk_size,
+            num_workers
         )
         
         return result_df

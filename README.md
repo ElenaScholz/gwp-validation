@@ -32,6 +32,7 @@ DLR-GWPIntercomparison/
 │   ├── li.json  
 │   ├── nasaflood.json  
 │   ├── world_hydrolakes.json  
+│   ├── europe_hydrolakes.json  
 ├── scripts/  
 │   ├── arlie
 │   │   ├── 00_arlie_download_hda_files.py    
@@ -112,5 +113,10 @@ Output:
 csv files for each gwp sample with in arlie aoi. 
 containing the arlie timeseries + max extent information + gwp id 
 
-### Nasa Flood Product: 02_run_match_GWP_NasaFloodProduct.py
+### Nasa Flood Product: Calculate Zonal statistics and match time series
 
+Firstly run the script 01.1_run_GWPNasaFlood_calculate_zonalStatistics.py with the following command. 
+
+uv run python .\scripts\01.1_run_GWPNasaFlood_calculate_zonalStatistics.py --config .\configs\nasaflood.json
+
+After this process is finished use the Script 02_run_match_GWP_NasaFloodProduct.py. 

@@ -59,7 +59,8 @@ def main(config):
 
     OUTPUT_Data = input_root / config['matching']['processed_data_directory']
     OUTPUT_Data.mkdir(parents=True, exist_ok=True)
-
+    print(OUTPUT_Data)
+    print(OUTPUT_Data / f"{config['matching']['filename_gwp_arlie_matching_summary']}.csv")
     for key, value in cleaned_dict.items():
        value.to_excel(OUTPUT_Data / f"{key}_cleaned.xlsx")
     # Save length info

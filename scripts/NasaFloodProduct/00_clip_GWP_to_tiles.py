@@ -1,0 +1,1 @@
+# This script is supposed to clip GWP world maps to the Nasa Flood Product tiles.

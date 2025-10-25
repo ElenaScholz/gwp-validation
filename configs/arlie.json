@@ -11,10 +11,10 @@
   },
   "matching":{
     "output_directory": "Output/ARLIE/matching",
-    "processed_data_directory": "Output/allValidationDatasets/ARLIE",
-    "filename_gwp_arlie_matching_summary": "all_arlie_lakes_10percDisr",
+    "processed_data_directory": "Output/allValidationDatasets/ARLIE_len146",
+    "filename_gwp_arlie_matching_summary": "all_arlie_lakes_10percDisr_len146",
     "max_area_difference": 0.10,
     "maximum_disruption_threshold_perc": 10.0,
-    "min_length_to_keep_df": 50
+    "min_length_to_keep_df": 146
   }
 }
