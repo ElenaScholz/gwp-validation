@@ -2,10 +2,27 @@
   "aoi": "world",
   "root_dir": "T:/DLR/Analysis3",
   "preprocessing": {
-    "output_dir_hydrolakes": "T:/DLR/Analysis3/Output/Hydrolakes",
+    "output_dir_hydrolakes": "Output/Hydrolakes",
     "MWP_WorldMap_Dir": "Input/NasaFlood/01_MWP",
     "GWP_WorldMap_Dir": "Input/NasaFlood/01_GlobalGWP",
     "output_dir_nasaflood": "Input/NasaFlood/02_MWP_gtiff",
     "output_dir_gwp_nasaflood": "Input/NasaFlood/02_GWP_gtiff"
+  },
+  "zonal_statistics": {
+    "output":"Output/NasaFlood",
+    "years": [2010,2021],
+    "tiles": [ "h22v04", "h29v06", "h09v05", "h11v10", "h08v05","h24v04", "h06v04" , "h30v10", "h22v04", "h19v07", "h14v09", "h11v11", "h09v04", "h10v05", "h27v06", "h26v06","h25v02", "h23v04","h21v09", "h21v05", "h19v02","h17v07", "h14v02", "h12v12", "h12v08", "h19v12"],
+    "max_extent_path": "Input/NasaFlood/max_extent_tiles",
+    "num_workers": 4,
+    "chunk_size": 10,
+    "max_files_per_tile_year": 100
+  },
+  "matching":{
+    "output_directory": "Output/allValidationDatasets/NasaFlood",
+    "gwp_hydrolakes_max_extent": "gwp_withHylaks_world_withMaxExtent.gpkg",
+    "output": "Output/AllValidationDatasets/NasaFlood/",
+    "disruption_threshold": 0.0,
+    "minimum_length_to_keep_df": 50,
+    "maximum_area_difference": 0.10
   }
 }

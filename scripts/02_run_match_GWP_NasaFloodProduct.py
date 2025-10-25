@@ -3,21 +3,32 @@ from pathlib import Path
 import geopandas as gpd
 import json
 import argparse
-
+from globallakevariability.preprocessing.zonal_statistics import apply_area_deviation_check
 # Define Paths and variables
+
+
+def apply_disruption_threshold(df, disruption_threshold=10):
+    filtered_df = df[df['mwp-insufficientData-perc'] <= disruption_threshold]
+    return filtered_df
+
 def main(config):
-        
-    ROOT = Path(r"T:\DLR\Analysis2\Output")
-    lakes_df = ROOT / r"MWP_Output\zonal_stats_per_lake_July2\all_lakes_combined.csv"
-    hydrolakes = ROOT / r"Hydrolakes\gwp_withHylaksAndMaxExtent_world_AndMaxExtent_withAreaSum.gpkg"
-    OUTPUT_ROOT = Path(r"T:\DLR\Analysis2\Output\NasaFlood")
 
-    excelfile = OUTPUT_ROOT / "all_lakes_percentage_0percDisr.xlsx"
-    csvfile = OUTPUT_ROOT / "all_lakes_percentage_0percDisr.csv"
+    disruption_threshold = config['matching']['disruption_threshold']
+    minimum_length_of_dataframes = config['matching']['minimum_length_to_keep_df']
+    maximum_area_difference = config['matching']['maximum_area_difference']
 
-    disruption_threshold = 0.0
-    minimum_length_of_dataframes = 50
-    maximum_area_difference = 0.1 # = 10%
+    ROOT = Path(config["root_dir"])
+    lakes_df = ROOT / config["zonal_statistics"]["output"] / "all_lakes_combined.csv"
+    hydrolakes = ROOT / config['preprocessing']['output_dir_hydrolakes'] / config['matching']['gwp_hydrolakes_max_extent']
+    OUTPUT_ROOT = Path(config["matching"]["output_directory"])
+
+
+    # drop number after comma in disruption threshold
+    disruption_threshold_filename = int(disruption_threshold * 100)
+    excelfile = OUTPUT_ROOT / f"all_lakes_percentage_{disruption_threshold_filename}percDisr.xlsx"
+    csvfile = OUTPUT_ROOT / f"all_lakes_percentage_{disruption_threshold_filename}percDisr.csv"
+
+
     ''' 
     Preparations:
     1. there are still no-Data Values inside the dataframe - those will be saved as 0 -> Define a vector with all columns that need to be processed
@@ -66,8 +77,6 @@ def main(config):
         df_grouped['mwp-total-water-perc'] = (df_grouped['mwp-surfaceWater'] + df_grouped['mwp-Flood'])*100 / df_grouped['mwp-count']
         df_grouped['gwp-water-perc'] = df_grouped['gwp-Water']*100 / df_grouped['gwp-count']
         df_grouped['gwp-no-water-perc'] = df_grouped['gwp-noWater']*100 / df_grouped['gwp-count']
-        #df_grouped['gwp-z-score-water'] = zscore(df_grouped['gwp-Water'], nan_policy="omit")
-        #df_grouped['mwp-z-score-water'] = zscore(df_grouped['mwp-surfaceWater'], nan_policy="omit")
         grouped_dict[key] = df_grouped
 
     # Step 5
@@ -83,7 +92,6 @@ def main(config):
     for lake, df in grouped_dict.items():
 
         min_lake_area = 20 # lake area must be minimum of 20km²
-        max_area_difference = 0.10 # maximum difference between mwp pixel count and gwp pixel count ? 
 
         if 'Lake_area' in df.columns and df['Lake_area'].iloc[0] > min_lake_area:
             filtered_dict[lake] = df
@@ -97,39 +105,6 @@ def main(config):
     # Step 6
     import numpy as np
     from tqdm import tqdm
-    def apply_area_deviation_check(df, max_area_difference=0.1):
-        """
-        Überprüft die Pixel-Konsistenz zwischen GWP und MWP Daten
-        
-        Parameters:
-        -----------
-        df : DataFrame
-            See-Daten mit gwp-count und mwp-count Spalten
-        max_area_difference : float, default=0.1
-            Maximale erlaubte relative Abweichung (0.1 = 10%)
-        
-        Returns:
-        --------
-        clean_df : DataFrame
-            Datenpunkte die den Konsistenz-Check bestehen
-        removed_df : DataFrame
-            Datenpunkte die den Check nicht bestehen
-        """
-        
-        # Pixel-Konsistenz Check
-        df['pixel_deviation'] = np.where(
-            df['gwp-count'] != 0,
-            abs(df['gwp-count'] - df['mwp-count']) / df['gwp-count'],
-            0
-        )
-        
-        # Filter anwenden
-        consistency_mask = df['pixel_deviation'] <= max_area_difference
-        
-        clean_df = df[consistency_mask].copy()
-        removed_df = df[~consistency_mask].copy()
-        
-        return clean_df, removed_df
 
 
     area_consistent_dict = {}
@@ -156,11 +131,7 @@ def main(config):
     print(f"Seen vor Area Check: {len(filtered_dict)}")
     print(f"Seen nach Area Check: {len(area_consistent_dict)}")
     print(f"Seen mit inkonsistenten Datenpunkten: {len(area_inconsistent_data)}")
-
-    from utils.arlieProcessing import find_min_max_length
-    def apply_disruption_threshold(df, disruption_threshold=10):
-        filtered_df = df[df['mwp-insufficientData-perc'] <= disruption_threshold]
-        return filtered_df
+    from globallakevariability.utils.helper import find_min_max_length
 
 
     # Step 7 
@@ -199,7 +170,7 @@ def main(config):
     print("Überprüfung der Mindestanzahl von Datenpunkten...")
     min_length, max_length, final_cleaned_dict, length_stats = find_min_max_length(
         no_disruption_dict, 
-        min_length_to_keep_df=50
+        min_length_to_keep_df=minimum_length_of_dataframes
     )
 
     # Dokumentiere zusätzlich entfernte Seen (wegen zu wenig Datenpunkte)
@@ -277,7 +248,7 @@ def main(config):
         #   final_cleaned_dict[key].loc[:, 'latitude'] = latitude
         #   final_cleaned_dict[key].loc[:, 'longitude'] = longitude
 
-        #print(f"Number of lakes after adding coordinates: {len(final_cleaned_dict.items())} ")
+        print(f"Number of lakes after adding coordinates: {len(final_cleaned_dict.items())} ")
     # # Überprüfe, ob die latitude und longitude zu filtered_dict hinzugefügt wurden
     # print("Spalten nach dem Hinzufügen:")
     # for key in final_cleaned_dict:

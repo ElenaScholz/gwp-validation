@@ -10,9 +10,10 @@ You will use the uv environment vor nearly all scripts. There is one Script that
 
 # Prerequesites
 1. Download ARLIE Dataset for the whole time series (script 00_arlie_download_hda_files.py)
-2. Extract Arlie zip files - script 00_extract_arlie_zipfiles.py
-3. Download the GWP Raster datasets: use the script 00_Download_GWP_raster.py
-4. Convert Nasa Flood Product files from HDF to GeoTIFFS (windows Power Shell:   
+2. Download Hydrolakes datset
+3. Extract Arlie zip files - script 00_extract_arlie_zipfiles.py
+4. Download the GWP Raster datasets: use the script 00_Download_GWP_raster.py
+5. Convert Nasa Flood Product files from HDF to GeoTIFFS (windows Power Shell:   
 pixi run python .\scripts\NasaFloodProduct\00_NasaFlood_extract_HDF.py --config .\configs\nasaflood.json)
 
 # Repository Structure
@@ -33,26 +34,35 @@ DLR-GWPIntercomparison/
 │   ├── world_hydrolakes.json  
 ├── scripts/  
 │   ├── arlie
-│   │   ├──  
-│   │   ├──    
+│   │   ├── 00_arlie_download_hda_files.py    
+│   │   ├── 00_extract_arlie_zipfiles.py  
+│   │   ├── 02.1_run_arlie_gwp_geom_matching.py  
+│   │   ├── 02.2_run_arlie_gwp_ts_matching.py  
 │   ├── NasaFloodProduct
-│   │   ├── 00_NasaFlood_extractHDF.py    
-│   │   ├──  
-│   ├── 01_run_hydrolakes_processing.py  
-│   ├──   
+│   │   ├── 00_NasaFlood_extractHDF.py      
+│   │   ├── 00_Download_GWP_raster.py   
+│   ├── 01_run_hydrolakes_processing.py   
+│   ├── 01.1_run_GWPNasaFlood_calculate_zonal_statistics.py    
+│   └── 02_run_match_arlie_complete.py    
+│   └── 02_run_match_GWP_NasaFloodProduct.py  
 │   └── ...  
 ├── src/globallakevariability  
 │   ├── preprocessing  
 │   │   ├── add_maximum_extent.py  
 │   │   ├── HydrolakesDataloader.py    
+│   │   ├── add_max_extent.py    
+│   │   ├── zonal_statistics.py    
 │   │   ├── ...  
 │   └── utils  
 │   │   ├── filehandling.py  
-│   │   ├── ...  
+│   │   ├── helper.py    
 ├── notebooks/  
 │   ├── exploration.ipynb  
 │   └── validation.ipynb  
-├── pyproject.toml  
+├── pyproject.toml
+├── uv.lock    
+├── pixi.toml  
+├── pixi.lock  
 └── README.md  
 
 # Workflow
