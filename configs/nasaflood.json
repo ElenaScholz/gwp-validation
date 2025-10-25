@@ -1,0 +1,11 @@
+{
+  "aoi": "world",
+  "root_dir": "T:/DLR/Analysis3",
+  "preprocessing": {
+    "output_dir_hydrolakes": "T:/DLR/Analysis3/Output/Hydrolakes",
+    "MWP_WorldMap_Dir": "Input/NasaFlood/01_MWP",
+    "GWP_WorldMap_Dir": "Input/NasaFlood/01_GlobalGWP",
+    "output_dir_nasaflood": "Input/NasaFlood/02_MWP_gtiff",
+    "output_dir_gwp_nasaflood": "Input/NasaFlood/02_GWP_gtiff"
+  }
+}
