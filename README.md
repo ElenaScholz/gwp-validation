@@ -66,8 +66,13 @@ this script needs to be run twice: once for the ARLIE dataset and once for the w
 uv run .\scripts\01_run_hydrolakes_processing.py --config .\configs\arlie.json
 
 
-Input:
+Input:  
+- hydrolakes Shapefile
+- gwp coordinate files
+- gwp timeseries files
 Output:
+- gpkg/csv file where each point of gwp also contains information of hydrolakes id as well as the laximum area extent.
+  
 ## Matching Global Waterpack with validation Datasets
 ### ARLIE: 02_run_match_arlie_complete.py
 
