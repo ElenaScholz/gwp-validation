@@ -24,7 +24,7 @@ def main(config):
 
 
     # drop number after comma in disruption threshold
-    disruption_threshold_filename = int(disruption_threshold * 100)
+    disruption_threshold_filename = int(disruption_threshold)
     excelfile = OUTPUT_ROOT / f"all_lakes_percentage_{disruption_threshold_filename}percDisr.xlsx"
     csvfile = OUTPUT_ROOT / f"all_lakes_percentage_{disruption_threshold_filename}percDisr.csv"
 

@@ -11,6 +11,13 @@
     "monthly_li_lse": "Input/Li/monthly_lake_surface_extent.csv",
     "monthly_li_long": "Input/Li/monthly_lake_surface_extent_long.csv",
     "prepared_glakes_ds": "Input/Li/Glakes_Prepared/glakes_hylak_30_subset.gpkg",
-    "li_monthly_lakes_dir": "Input/Li/Monthly_Lakes"
+    "glakes_hylak_strict": "Input/Li/Glakes_Prepared/gwp_glakes_hylak_30_merged_strict.gpkg",
+    "li_monthly_lakes_dir": "Input/Li/Monthly_Lakes",
+    "monthly_gwp_folder": "Input/GWP/06_timeseries_8247_rm2902_monthly_hylakIDs"
+  },
+  "matching": {
+    "output_dir": "Output/Li/01_glakes_based_datasets",
+    "statistics_output": "Output/AllValidationDatasets/LiData",
+    "output_ts_plots": "Output/Li/02_dataForTimeSeriesPlots"
   }
 }

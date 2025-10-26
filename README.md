@@ -34,18 +34,25 @@ DLR-GWPIntercomparison/
 │   ├── world_hydrolakes.json  
 │   ├── europe_hydrolakes.json  
 ├── scripts/  
-│   ├── arlie
+│   ├── arlie  
 │   │   ├── 00_arlie_download_hda_files.py    
 │   │   ├── 00_extract_arlie_zipfiles.py  
 │   │   ├── 02.1_run_arlie_gwp_geom_matching.py  
 │   │   ├── 02.2_run_arlie_gwp_ts_matching.py  
-│   ├── NasaFloodProduct
-│   │   ├── 00_NasaFlood_extractHDF.py      
-│   │   ├── 00_Download_GWP_raster.py   
+│   ├── NasaFloodProduct  
+│   │   ├── 00_Download_GWP_raster.py        
+│   │   ├── 01_NasaFlood_extractHDF.py     
+│   │   ├── 01_clip_GWP_to_tiles.py   
+│   ├── Li  
+│   │   ├── 01.1_matchGlakesHydrolakesGWP.py  
+│   │   ├── 01.2_reshapeMonthly_LiLSE.py  
+│   │   ├── 01.3_reshape_monthlyGWP.py   
 │   ├── 01_run_hydrolakes_processing.py   
 │   ├── 01.1_run_GWPNasaFlood_calculate_zonal_statistics.py    
 │   └── 02_run_match_arlie_complete.py    
 │   └── 02_run_match_GWP_NasaFloodProduct.py  
+│   └── 02.1_run_matchGWPandLiByGlakes.py  
+│   └── 02.2_run_LiProcessData.py  
 │   └── ...  
 ├── src/globallakevariability  
 │   ├── preprocessing  
@@ -120,3 +127,8 @@ Firstly run the script 01.1_run_GWPNasaFlood_calculate_zonalStatistics.py with t
 uv run python .\scripts\01.1_run_GWPNasaFlood_calculate_zonalStatistics.py --config .\configs\nasaflood.json
 
 After this process is finished use the Script 02_run_match_GWP_NasaFloodProduct.py. 
+
+### Monthly Lake Surface Area by Li et al.
+
+Run the Scripts 02.1_run_matchGWPandLiByGlakes.py as well as 02.2_run_LiProcessData.py.
+

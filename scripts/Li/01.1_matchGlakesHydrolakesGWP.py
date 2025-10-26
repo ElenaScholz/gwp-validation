@@ -48,8 +48,8 @@ def main(config):
     # merged_lakes = merged_lakes.drop(columns=['glakes_geometry'])
     # 'glakes_geometry'
 
-
-    merged_lakes.to_file(r"T:\DLR\Analysis2\Input\LiDataset\GlakesPrepared\gwp_glakes_hylak_30_merged_strict.gpkg", driver="GPKG")
+    merged_path = ROOT / config['preprocessing']['glakes_output'] / "gwp_glakes_hylak_30_merged_strict.gpkg"
+    merged_lakes.to_file(merged_path, driver="GPKG")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="match GWP lakes with GLAKES and HydroLAKES datasets")
