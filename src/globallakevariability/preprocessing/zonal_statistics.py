@@ -45,6 +45,14 @@ def calculate_zonal_statistics(input_raster_path, max_extent, categories, count_
         affine = rf.transform
         nodata = rf.nodata
 
+        # Handle nodata based on raster data type
+        if rf_array.dtype == np.uint8:
+            if nodata == 255.0:
+                nodata = 6  # Use dummy value so 255 is counted as valid data
+            elif nodata is None or nodata < 0 or nodata > 255:
+                nodata = 6  # Use dummy value for uint8, all actual values will be counted
+
+
         if nodata is not None:
             valid_pixels = np.sum(rf_array != nodata)
         else:
@@ -53,7 +61,7 @@ def calculate_zonal_statistics(input_raster_path, max_extent, categories, count_
         if valid_pixels == 0:
             print(f"No valid data in {input_raster_path}")
             return pd.DataFrame()
-        
+
         # calcualte zonal statistics
         zonal_stats = rasterstats.zonal_stats(lakes, rf_array,
                                             #nodata = -999, 

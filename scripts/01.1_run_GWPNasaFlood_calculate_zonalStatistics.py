@@ -5,8 +5,8 @@ import geopandas as gpd
 import numpy as np 
 import os
 from pathlib import Path
-from globallakevariability.preprocessing.filehandling import get_filepaths_from_folder 
-from globallakevariability.preprocessing.zonal_statistics import concat_gwp_and_mwp, calculate_zonal_statistics, find_matching_files, process_in_batches, process_file_pair, process_tile_year
+
+from globallakevariability.preprocessing.zonal_statistics import  process_tile_year
 import argparse
 import re
 from datetime import datetime
