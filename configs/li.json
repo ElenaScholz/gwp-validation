@@ -2,11 +2,11 @@
   "aoi": "world",
   "root_dir": "T:/DLR/Analysis3",
   "path_to_gwp_timeseries_folder": "Input/GWP/05_timeseries_8247_rm2902",
-  "path_to_hydrolakes_folder": "Input/Hydrolakes",
   "preprocessing": {
+    "hydrolakes_shp": "Input/HydroLAKES_polys_v10/hydrolakes_poly_greater20m.gpkg",
+    "glakes_directory": "Input/Li/GLAKES/GLAKES/GLAKES",
+    "max_extent_dataset": "Output/Hydrolakes/gwp_withHylaks_world_withMaxExtent.gpkg",
     "output_dir": "/Output/Hydrolakes",
-    "glakes_directory": "T:/DLR/OtherDatasets/GLAKES/GLAKES/GLAKES",
-    "hydrolakes": "Input/HydroLAKES_polys_v10/hydrolakes_poly_greater20m.gpkg",
-    "max_extent_dataset": "gwp_withHylaks_world_withMaxExtent.gpkg"
+    "glakes_output": "Input/Li/Glakes_Prepared"
   }
 }
