@@ -10,7 +10,7 @@ from globallakevariability.preprocessing.postprocessingGlakes import merge_hylak
 def main(config):
     ROOT = Path(config['root_dir'])
     print("ROOT directory is set to:", ROOT)
-    gwp_lakes = ROOT / config['preprocessing']['max_extent_dataset']
+    gwp_lakes = gpd.read_file(ROOT / config['preprocessing']['max_extent_dataset'])
     print("Loading GWP lakes from:", gwp_lakes)
     hydrolakes = ROOT / config['preprocessing']['hydrolakes_shp']
     print("Loading HydroLAKES shapefile from:", hydrolakes)
@@ -31,25 +31,25 @@ def main(config):
         glakes_hylak_30.rename(columns={"intersection_pct": "Hylak_Glakes_intersection_pct", "geometry": "glakes_geometry"}, inplace=True)
         glakes_hylak_30.to_file(glakes_prepared_dir, driver="GPKG")
 
-    print(gwp_lakes.columns)
-    # gwp_lakes_subset = gwp_lakes[['id', 'latitude', 'longitude', 'Hylak_id', 'Filename', 'geometry', "gwp_Area_max"]]
+    
+    gwp_lakes_subset = gwp_lakes[['id', 'latitude', 'longitude', 'Hylak_id', 'Filename', 'geometry', "gwp_Area_max"]]
 
-    # merged_lakes , hylak_ids_for_merge_with_liData = merge_hylak_glakes_strict(
-    #     gwp_lakes_subset,
-    #     glakes_hylak_30,
-    #     hylak_key='Hylak_id',
-    #     glakes_key='GLAKES_id',
-    #     how='inner',
-    #     verbose=True
-    # )
+    merged_lakes , hylak_ids_for_merge_with_liData = merge_hylak_glakes_strict(
+        gwp_lakes_subset,
+        glakes_hylak_30,
+        hylak_key='Hylak_id',
+        glakes_key='GLAKES_id',
+        how='inner',
+        verbose=True
+    )
+
+    print(merged_lakes.columns)
+    # # drop glakes geometry column
+    # merged_lakes = merged_lakes.drop(columns=['glakes_geometry'])
+    # 'glakes_geometry'
 
 
-# # drop glakes geometry column
-# merged_lakes = merged_lakes.drop(columns=['glakes_geometry'])
-# 'glakes_geometry'
-
-
-    # merged_lakes.to_file(r"T:\DLR\Analysis2\Input\LiDataset\GlakesPrepared\gwp_glakes_hylak_30_merged_strict.gpkg", driver="GPKG")
+    merged_lakes.to_file(r"T:\DLR\Analysis2\Input\LiDataset\GlakesPrepared\gwp_glakes_hylak_30_merged_strict.gpkg", driver="GPKG")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="match GWP lakes with GLAKES and HydroLAKES datasets")
