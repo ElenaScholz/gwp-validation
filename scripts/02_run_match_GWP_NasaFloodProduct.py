@@ -231,34 +231,39 @@ def main(config):
     # Step 9
 
     hydrolakes = gpd.read_file(hydrolakes)
-    hydrolakes.columns
     coordinates_df = hydrolakes[['latitude', 'longitude', 'Hylak_id']].drop_duplicates(subset='Hylak_id').reset_index(drop=True)
-    coordinates_df['Hylak_id'] = coordinates_df['Hylak_id'].astype("float64")
-    # Füge 'Lake_' Präfix hinzu und erstelle das Dictionary
+
+    # Normalize Hylak_id to integer strings to avoid "123.0" vs "123" mismatches
+    coordinates_df['Hylak_id'] = coordinates_df['Hylak_id'].apply(lambda x: int(x) if pd.notnull(x) else x)
     coordinates_df['Lake_Hylak_id'] = 'Lake_' + coordinates_df['Hylak_id'].astype(str)
     lat_lon_dict = coordinates_df.set_index('Lake_Hylak_id')[['latitude', 'longitude']].to_dict(orient='index')
 
-    for key, value in final_cleaned_dict.items():
-        hylak_id = value['Hylak_id'].iloc[0]
-        lake_key = f"Lake_{hylak_id}"
+    # Add coordinates to each lake dataframe; use NaN when coordinates are missing
+    for key, df in final_cleaned_dict.items():
+        hylak_id = df['Hylak_id'].iloc[0]
+        try:
+            lake_key = f"Lake_{int(hylak_id)}"
+        except Exception:
+            lake_key = f"Lake_{hylak_id}"
 
         if lake_key in lat_lon_dict:
-            latitude, longitude = lat_lon_dict[lake_key]['latitude'], lat_lon_dict[lake_key]['longitude']
-            df = final_cleaned_dict[key].copy()
-            df['latitude'] = latitude
-            df['longitude'] = longitude
-            final_cleaned_dict[key] = df
+            latitude = lat_lon_dict[lake_key]['latitude']
+            longitude = lat_lon_dict[lake_key]['longitude']
+        else:
+            latitude = np.nan
+            longitude = np.nan
 
-        #   final_cleaned_dict[key].loc[:, 'latitude'] = latitude
-        #   final_cleaned_dict[key].loc[:, 'longitude'] = longitude
+        df = df.copy()
+        df['latitude'] = latitude
+        df['longitude'] = longitude
+        final_cleaned_dict[key] = df
 
-        print(f"Number of lakes after adding coordinates: {len(final_cleaned_dict.items())} ")
-    # # Überprüfe, ob die latitude und longitude zu filtered_dict hinzugefügt wurden
-    # print("Spalten nach dem Hinzufügen:")
-    # for key in final_cleaned_dict:
-    #     print(f"Key: {key}, Spalten: {filtered_dict[key].columns.tolist()}")
+    print(f"Number of lakes after adding coordinates: {len(final_cleaned_dict)} ")
+    print("Spalten nach dem Hinzufügen:")
+    for key in final_cleaned_dict:
+        print(f"Key: {key}, Spalten: {final_cleaned_dict[key].columns.tolist()}")
 
-    # Step 10
+    #  Step 10
 
     final_df = pd.concat(final_cleaned_dict.values())
     final_df.to_csv(csvfile)

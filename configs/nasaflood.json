@@ -21,7 +21,7 @@
     "output_directory": "Output/allValidationDatasets/NasaFlood",
     "gwp_hydrolakes_max_extent": "gwp_withHylaks_world_withMaxExtent.gpkg",
     "output": "Output/AllValidationDatasets/NasaFlood/",
-    "disruption_threshold": 0,
+    "disruption_threshold": 10,
     "minimum_length_to_keep_df": 37,
     "maximum_area_difference": 0.10
   }

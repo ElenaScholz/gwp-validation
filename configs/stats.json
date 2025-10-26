@@ -1,0 +1,16 @@
+{"root": "T:/DLR/Analysis3",
+    "input":{
+        "li_data" : "Output/AllValidationDatasets/LiData/Li_all_lakes_no_frozen.csv",
+        "arlie_data": "Output/AllValidationDatasets/Arlie_len146/all_arlie_lakes_10percDisr_len146.csv",
+        "nasaflood_data": "Output/AllValidationDatasets/NasaFlood/all_lakes_percentage_0percDisr.csv",
+        "hydrolakes": "Output/Hydrlakes/gwp_withHylaksAndMaxExtent_world.gpkg"
+    },
+    "stats": {
+        "arlie_number_of_sample": 146,
+        "nasaflood_number_of_sample": 37,
+        "li_number_of_sample" :14
+    },
+    "output":{
+        "dir": "Results"
+    }
+}

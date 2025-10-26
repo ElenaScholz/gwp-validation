@@ -53,7 +53,8 @@ DLR-GWPIntercomparison/
 │   └── 02_run_match_GWP_NasaFloodProduct.py  
 │   └── 02.1_run_matchGWPandLiByGlakes.py  
 │   └── 02.2_run_LiProcessData.py  
-│   └── ...  
+│   └── 03_statistics.py  
+│   └── 04_visualisations.py
 ├── src/globallakevariability  
 │   ├── preprocessing  
 │   │   ├── add_maximum_extent.py  
@@ -61,6 +62,10 @@ DLR-GWPIntercomparison/
 │   │   ├── add_max_extent.py    
 │   │   ├── zonal_statistics.py    
 │   │   ├── ...  
+│   ├── matching
+│   │   ├── arlieProcessor.py  
+│   ├── stats  
+│   │   ├── statistics.py  
 │   └── utils  
 │   │   ├── filehandling.py  
 │   │   ├── helper.py    
@@ -132,3 +137,6 @@ After this process is finished use the Script 02_run_match_GWP_NasaFloodProduct.
 
 Run the Scripts 02.1_run_matchGWPandLiByGlakes.py as well as 02.2_run_LiProcessData.py.
 
+## Statistics
+
+## Visualisations
