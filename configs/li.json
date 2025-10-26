@@ -7,6 +7,10 @@
     "glakes_directory": "Input/Li/GLAKES/GLAKES/GLAKES",
     "max_extent_dataset": "Output/Hydrolakes/gwp_withHylaks_world_withMaxExtent.gpkg",
     "output_dir": "/Output/Hydrolakes",
-    "glakes_output": "Input/Li/Glakes_Prepared"
+    "glakes_output": "Input/Li/Glakes_Prepared",
+    "monthly_li_lse": "Input/Li/monthly_lake_surface_extent.csv",
+    "monthly_li_long": "Input/Li/monthly_lake_surface_extent_long.csv",
+    "prepared_glakes_ds": "Input/Li/Glakes_Prepared/glakes_hylak_30_subset.gpkg",
+    "li_monthly_lakes_dir": "Input/Li/Monthly_Lakes"
   }
 }
