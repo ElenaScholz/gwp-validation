@@ -8,9 +8,9 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from highlight_text import ax_text
 import os
-from globallakevariability.vis.visualisation import geographic_world_hexbin, geographic_europe_hexbin
-
-
+from globallakevariability.vis.visualisation import plot_world_map, plot_europe_map
+from pypalettes import load_cmap
+cmap = load_cmap("Blue2Orange12Steps", cmap_type = "continuous")
 ROOT = Path(r"T:\DLR\Analysis3\Results")
 OUTPUT_DIR = Path(r"T:\DLR\Analysis3\Maps")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -28,12 +28,7 @@ arlie = (statistic_data['arlie_stats_df'], statistic_data['arlie_stats_df_z'])
 nasa = (statistic_data['nasa_stats_df'], statistic_data['nasa_stats_df_z'])
 li = (statistic_data['li_stats_df'], statistic_data['li_stats_df_z'])
 
-print(li[0].columns)
-print(li[1].columns)
-print(nasa[0].columns)
-print(nasa[1].columns)
-print(arlie[0].columns)
-print(arlie[1].columns)
+
 arlie_plots = []
 nasa_plots = []
 li_plots = []
@@ -46,9 +41,10 @@ for ds in arlie:
         plottitle = "Arlie - "
 
     for stat in statistic_values_to_plot:
-        filename = f"{plottitle}{stat}.png"
-        p = geographic_europe_hexbin(ds, stat, plottitle, aggregation='median', gridsize=50, save=save_tag, out_dir=OUTPUT_DIR) 
+        filename = f"{plottitle}{stat}"
+        p = plot_europe_map(ds, stat, plottitle, aggregation='median', gridsize=50, plot_type = "scatter", cmap = cmap, save=save_tag, out_dir=OUTPUT_DIR, filename=filename) 
         arlie_plots.append(p)
+
 
 for ds in nasa:
     columnnames = ds.columns
@@ -60,9 +56,9 @@ for ds in nasa:
 
 
     for stat in statistic_values_to_plot:
-        filename = f"{plottitle}{stat}.png"
+        filename = f"{plottitle}{stat}"
 
-        p = geographic_world_hexbin(ds, stat, plottitle, aggregation='median', gridsize=50, save=save_tag, out_dir=OUTPUT_DIR ) 
+        p = plot_world_map(ds, stat, plottitle, aggregation='median', gridsize=50, plot_type="scatter", cmap = cmap, save=save_tag, out_dir=OUTPUT_DIR, filename = filename ) 
         nasa_plots.append(p)
 
 for ds in li:
@@ -74,8 +70,8 @@ for ds in li:
         plottitle = "Li - "
     print(plottitle)
     for stat in statistic_values_to_plot:
-        filename = f"{plottitle}{stat}.png"
-        p = geographic_world_hexbin(ds, stat, plottitle, aggregation='median', gridsize=50, save=save_tag, out_dir=OUTPUT_DIR ) 
+        filename = f"{plottitle}{stat}"
+        p = plot_world_map(ds, stat, plottitle, aggregation='median', gridsize=50, plot_type = "scatter", cmap = cmap, save=save_tag, out_dir=OUTPUT_DIR, filename = filename ) 
         li_plots.append(p)
 
 
