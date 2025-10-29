@@ -56,8 +56,8 @@ class HydroLakesGWP_DataLoading:
 
         # Output-Pfade
         self.output_root = self.root / "Output"
-        self.output_arlie = self.output_root / "ARLIE_Output"
-        self.output_gwp = self.output_root / "GWP_Output"
+        self.output_arlie = self.output_root / "ARLIE"
+        self.output_gwp = self.output_root / "GWP"
         self.output_hydrolakes = self.output_root / "Hydrolakes"
 
         # Falls Ordner noch nicht existieren, erstelle sie

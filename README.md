@@ -59,7 +59,7 @@ DLR-GWPIntercomparison/
 │   │   ├── 01.1_clip_GWP_to_tiles.py  
 │   │   ├── 01.2_NasaFlood_extractHDF.py      
 │   │   ├── 01.3_run_GWPNasaFlood_calculate_zonal_statistics.py    
-│   ├── 02_run_hydrolakes_processing.py   
+│   ├── 01_run_hydrolakes_processing.py   
 │   └── 02_run_match_arlie_complete.py    
 │   └── 02_run_match_GWP_NasaFloodProduct.py  
 │   └── 02.1_run_matchGWPandLiByGlakes.py  
@@ -88,34 +88,109 @@ DLR-GWPIntercomparison/
 ├── pixi.lock  
 └── README.md  
 
+
+# Folder Structure for Data processing
+Main Data Folder/  
+├── Input/  
+│   ├── ARLIE  
+│   │   ├── zip
+│   │   ├── files
+│   │   │   ├── 001_arlie.csv  
+│   │   │   ├── 001_geometries.csv  
+│   │   │   └── 00x_... .csv    
+│   │   └── arlie_bbox.gpkg
+│   ├── GWP  
+│   │   ├── 00_coordinates_8247
+│   │   ├── *Folders for preprocessed gwp timeseries*
+│   │   ├── 05_timeseries_8247_rm2902
+│   │   ├── 06_timeseries_8247_rm2902_monthly  
+│   │   └── 06_timeseries_8247_rm2902_monthly_hylakIDs  
+│   ├── HydroLAKES_polys_v10  
+│   ├── Li
+│   │   ├── GLAKES
+│   │   ├── Glakes_Prepared
+│   │   ├── Monthly_Lakes
+│   │   └── monthly_lake_surface_extent.csv  
+│   ├── NASAFlood  
+│   │   ├── 01_GlobalGWP  
+│   │   ├── 01_MWP  
+│   │   ├── 02_GWP-tiles  
+│   │   ├── 02_MWP_gtiff  
+│   │   └── max_extent_tiles  
+├── Output
+│   ├── allValidationDatasets  
+│   ├── ARLIE  
+│   ├── GWP  
+│   ├── Hydrolakes  
+│   ├── Li
+│   ├── NASAFlood  
+├── Results
+├── Maps
+└── Plots
+
+
 # Workflow
 ## Data download 
 ### Hydrolakes
 Download the Hydrolakes dataset in Shapefile-Format from this website: [Hydrolakes:](https://www.hydrosheds.org/products/hydrolakes#downloads). 
 
 ### Aggregated River and Lake Ice Extent (ARLIE)
-1. Download the ARLIE dataset for the whole time series (2003-2024). You can use the Script: 00_arlie_download_hda_files.py
+1. Download the ARLIE dataset for the whole time series (2003-2024). You can use the Script: *00_arlie_download_hda_files.py*
 
 We used the maximum spatial extent for the dataset. [Information about it can be found here](https://www.eea.europa.eu/en/datahub/datahubitem-view/b5c68a06-5dcf-42e5-baad-94f861189f91). 
 
-Note that the Area of interest needs to be geopackage file and that you need login credential for the hda-file donwload. 
-2. Afterwards the files need to be unzipped. To do so use the script: 00_extract_arlie_zipfiles.py
+Note that the Area of interest needs to be **geopackage file** and that you need login credential for the hda-file donwload. 
+
+Please download geometries as well as timeseries files. 
+
+2. Afterwards the files need to be unzipped. To do so use the script: *00_extract_arlie_zipfiles.py* 
 
 ### Global Water Pack Raster (GWP)
 Global Water Pack comes as global raster datasets. Those can be downloaded with the script `00_Download_GWP_raster.py`.
 
-Note: We used already processed time series containing daily Lake Area information in km² for the whole timeseries, as well as coordinates for each lake in form of latitude/longitude information.
-Each lake is stored in a seperate csv file. 
+**Note:** We used already processed time series dataset containing daily Lake Area information in km², as well as coordinates for each lake in form of latitude/longitude information.
+The information are stored in two corresponding files: one containing coordinates, one the time series.  
 
 Furthermore we removed the 29.02. for all leap years.
 
+### Near realtime Flood Product (Nasa Flood Product)
+
+The [near realtime global Flood Product](https://www.earthdata.nasa.gov/data/instruments/viirs/near-real-time-data/nrt-global-flood-products) provided by NASA is online available for recent years. We used historical data provided by NASA for the years 2010 and 2021. 
+
+The NASA Flood Product comes in hdf-fileformat. To extract the datasets use the script *00_NasaFlood_extract_HDF.py* in the terminal: 
+
+`pixi run python .\scripts\NasaFloodProduct\00_NasaFlood_extract_HDF.py --config .\configs\nasaflood.json`
+
+### Global Lake Surface Extent dataset 
+The Global Lake Surface Extent dataset was published in mid 2025 within the paper [Global dominance of seasonality in shaping lake-surface-extent dynamics](https://www.nature.com/articles/s41586-025-09046-3#data-availability) by Li et al. 
+
+Data is available [here:](https://zenodo.org/records/15536395)
+We used the *monthly_lake_surface_extent.csv* as a comparison dataset. 
+
+### GLAKES Dataset
+We also used information of the [GLAKES dataset](https://garslab.com/?p=234) as Li et al used the Information to update their maximum lake extents. 
+
+This dataset was published in the article [Mapping global lake dynamics reveals the emerging roles of small lakes](https://www.nature.com/articles/s41467-022-33239-3)
+
+## 01: Preprocessing
+During the preprocessing we match the Hydrolakes dataset with the GWP data. This mapping helps us to match Global Water Pack with the chosen data for the product comparison. Many datasets use either Hydrolakes as a basis for their analysis, or we can use the Hydrolakes geometries to spatially join lakes from other datasets to GWP.
+
+To get the preprocessing in the right order run:
+01_run_hydrolakes_processing.py twice: 
+
+1. `uv run .\scripts\01_run_hydrolakes_processing.py --config .\configs\europe_hydrolakes.json`
+ 
+2. `uv run .\scripts\01_run_hydrolakes_processing.py --config .\configs\world_hydrolakes.json`
+  
+This results in the following files: 
+
+Afterwards the preprocessing steps differ in respect to the corresponding dataset. 
+
+### Arlie 
+
 ### Nasa Flood Product
 
-pixi run python .\scripts\NasaFloodProduct\00_NasaFlood_extract_HDF.py --config .\configs\nasaflood.json)
-
-
-## Preprocessing
-The Preprocessing matches the Global Waterpack files with a corresponding Hydrolake-id. It also appends the maximum extent of each lake to the output dataset. 
+### Global Lake Surface Extent (Li)
 
 ### 01_run_hydrolakes_processing
 this script needs to be run twice: once for the ARLIE dataset and once for the whole wold. Use the world_hydrolakes.json for it.
