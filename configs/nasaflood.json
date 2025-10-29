@@ -5,6 +5,7 @@
     "output_dir_hydrolakes": "Output/Hydrolakes",
     "MWP_WorldMap_Dir": "Input/NasaFlood/01_MWP",
     "GWP_WorldMap_Dir": "Input/NasaFlood/01_GlobalGWP",
+    "used_tiles_file": "Input/NasaFlood/max_extent_tiles/FloodProductTiles_selection.gpkg",
     "output_dir_nasaflood": "Input/NasaFlood/02_MWP_gtiff",
     "output_dir_gwp_nasaflood": "Input/NasaFlood/02_GWP-tiles"
   },

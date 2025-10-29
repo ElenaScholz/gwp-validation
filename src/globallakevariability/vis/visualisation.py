@@ -10,7 +10,7 @@ import matplotlib.dates as mdates
 from highlight_text import ax_text
 
 
-def plot_world_map(df, statistic_value, title, aggregation='mean', 
+def plot_world_map(df, statistic_value, aggregation='mean', 
                             gridsize=30, plot_type='hexbin', cmap = load_cmap("Blue2Orange12Steps", cmap_type = "continuous"), save=False, 
                             out_dir=None, filename=None):
     '''
@@ -123,24 +123,16 @@ def plot_world_map(df, statistic_value, title, aggregation='mean',
             zorder=2
         )
 
-    # Colorbar
-    plt.subplots_adjust(bottom=0.12, top=0.92, left=0.05, right=0.95)
-    cax = fig.add_axes([0.2, 0.08, 0.6, 0.025])
-
-    if vmax is None:
-        vmax = int(mappable.get_array().max())
+    plt.subplots_adjust(left=0.15, right=0.95, top=0.92, bottom=0.08)
     ticks = np.linspace(vmin, vmax, 6)
+    # Vertikale Colorbar links
+    cax = fig.add_axes([0.05, 0.2, 0.02, 0.6])  # [x, y, width, height]
 
-    cbar = fig.colorbar(mappable, cax=cax, orientation='horizontal',
+    cbar = fig.colorbar(mappable, cax=cax, orientation='vertical',
                         label=cbar_label, ticks=ticks)
     cbar.ax.tick_params(labelsize=9)
-
-    # Title
-    plot_title = f'{title} {statistic_value}'
-    if plot_type == 'hexbin' and aggregation != 'mean':
-        plot_title += f' ({aggregation})'
-    ax.set_title(plot_title, fontsize=13, pad=10)
-
+    cbar.ax.yaxis.set_label_position('left')
+  
     # Save
     if save:
         if out_dir is None:
@@ -167,7 +159,7 @@ def plot_world_map(df, statistic_value, title, aggregation='mean',
     print(f"Anzahl der Datenpunkte: {len(df)}")
 
 
-def plot_europe_map(df, statistic_value, title, aggregation='mean', 
+def plot_europe_map(df, statistic_value, aggregation='mean', 
                              gridsize=30, plot_type='hexbin', cmap = load_cmap("Blue2Orange12Steps", cmap_type = "continuous"), save=False, out_dir=None, filename = None):
     """
     Erstellt eine Europakarte mit Hexbin- oder Scatter-Darstellung
@@ -289,26 +281,16 @@ def plot_europe_map(df, statistic_value, title, aggregation='mean',
             zorder=2
         )
 
-    # Colorbar
-    plt.subplots_adjust(bottom=0.12, top=0.92, left=0.05, right=0.95)
-    cax = fig.add_axes([0.2, 0.08, 0.6, 0.025])
-    
-    if vmax is None and hasattr(mappable, "get_array"):
-        try:
-            vmax = int(mappable.get_array().max())
-        except Exception:
-            vmax = 1
+        plt.subplots_adjust(left=0.15, right=0.95, top=0.92, bottom=0.08)
     ticks = np.linspace(vmin, vmax, 6)
+    # Vertikale Colorbar links
+    cax = fig.add_axes([0.05, 0.2, 0.02, 0.6])  # [x, y, width, height]
 
-    cbar = fig.colorbar(mappable, cax=cax, orientation='horizontal', 
-                       label=cbar_label, ticks=ticks)
+    cbar = fig.colorbar(mappable, cax=cax, orientation='vertical',
+                        label=cbar_label, ticks=ticks)
     cbar.ax.tick_params(labelsize=9)
-
-    # Title
-    plot_title = f'{title} {statistic_value}'
-    if plot_type == 'hexbin' and aggregation != 'mean':
-        plot_title += f' ({aggregation})'
-    ax.set_title(plot_title, fontsize=13, pad=10)
+    cbar.ax.yaxis.set_label_position('left')
+   
 
     if save:
         if out_dir is None:

@@ -28,6 +28,7 @@ def main(config):
     nasa_path = ROOT / config["input"]["nasaflood_data"]
     hydrolakes = ROOT / config["input"]["hydrolakes"]
     OUTPUT_DIR = ROOT / config['output']["dir"]
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     glakes = pd.read_csv( li_path, sep=',') 
     arlie = pd.read_csv (arlie_path, sep=',')
@@ -199,15 +200,15 @@ def main(config):
     li_stats_df['Dataset'] = 'Li'
 
 
-    # # # save results
-    # arlie_stats_df_z.to_csv(OUTPUT_DIR / "arlie_stats_df_z.csv", index=False)
-    # nasa_stats_df_z.to_csv(OUTPUT_DIR / "nasa_stats_df_z.csv", index=False)
-    # li_stats_df_z.to_csv(OUTPUT_DIR / "li_stats_df_z.csv", index=False)
+    # # save results
+    arlie_stats_df_z.to_csv(OUTPUT_DIR / "arlie_stats_df_z.csv", index=False)
+    nasa_stats_df_z.to_csv(OUTPUT_DIR / "nasa_stats_df_z.csv", index=False)
+    li_stats_df_z.to_csv(OUTPUT_DIR / "li_stats_df_z.csv", index=False)
 
-    # #    save results
-    # arlie_stats_df.to_csv(OUTPUT_DIR / "arlie_stats_df.csv", index=False)
-    # nasa_stats_df.to_csv(OUTPUT_DIR / "nasa_stats_df.csv", index=False)
-    # li_stats_df.to_csv(OUTPUT_DIR / "li_stats_df.csv", index=False)
+    #    save results
+    arlie_stats_df.to_csv(OUTPUT_DIR / "arlie_stats_df.csv", index=False)
+    nasa_stats_df.to_csv(OUTPUT_DIR / "nasa_stats_df.csv", index=False)
+    li_stats_df.to_csv(OUTPUT_DIR / "li_stats_df.csv", index=False)
 
 
     # make one long dataframe with all stats
@@ -226,25 +227,22 @@ def main(config):
     print(f"Total rows: {len(all_stats_combined)}")
     print(f"Value types:\n{all_stats_combined['value-type'].value_counts()}") 
 
-   # all_stats_combined.to_csv(OUTPUT_DIR / "all_stats_df.csv", index=False)
-
+    all_stats_combined.to_csv(OUTPUT_DIR / "all_stats_df.csv", index=False)
+    print(all_stats_combined.head())
     summary_compact = all_stats_combined.groupby(['Dataset', 'value-type']).agg({
-        'R2': ['mean', 'std', 'median'],
-        'RMSE': ['mean', 'std', 'median'],
-        'MAE': ['mean', 'std', 'median'],
-        'spearman_cor': ['mean', 'std', 'median'],
-        'Hylak_id': 'count'
+ #       'R2': ['mean', 'std', 'median'],
+        'RMSE': ['mean', 'std', 'median', 'min', 'max'],
+#        'MAE': ['mean', 'std', 'median'],
+        'spearman_cor': ['mean', 'std', 'median', 'min', 'max'],
+        'Hylak_id': 'count',
+        'Dataset': 'first',
+        'value-type': 'first'
     }).round(4)
 
     summary_compact.columns = ['_'.join(col).strip() for col in summary_compact.columns.values]
     summary_compact.rename(columns={'Hylak_id_count': 'n_lakes'}, inplace=True)
-
-    all_stats_combined.to_csv(OUTPUT_DIR / "stats_summary.csv", index=False)
-
-
-
-
-
+    print(summary_compact)
+    summary_compact.to_csv(OUTPUT_DIR / "stats_summary_compact.csv", index=False)
 
 
 

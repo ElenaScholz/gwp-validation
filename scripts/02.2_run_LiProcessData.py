@@ -41,11 +41,21 @@ def main(config):
         df_cleaned = df[df['frozen'] != True].copy()  # Remove rows where frozen is True
         non_frozen_dict[glake] = df_cleaned
 
+    non_frozen_strict = {}
+    # Remove all lakes where any month is frozen
+    for glake, df in li_files.items():
+        if df['frozen'].any():
+            print(f"Excluding {glake} entirely due to presence of frozen months.")
+            continue
+        non_frozen_strict[glake] = df
+
     # combine all dfs in this dictionary into a dataframe
     combined_df = pd.concat(non_frozen_dict.values(), ignore_index=True)
     combined_df.to_csv(OUTPUT_FOLDER_Statistics / "Li_all_lakes_no_frozen.csv", index=False)
     combined_df_with_frozen = pd.concat(li_files.values(), ignore_index=True)
     combined_df_with_frozen.to_csv(OUTPUT_FOLDER_Statistics / "Li_all_lakes_with_frozen.csv", index=False)
+    combined_df_strict = pd.concat(non_frozen_strict.values(), ignore_index=True)
+    combined_df_strict.to_csv(OUTPUT_FOLDER_Statistics / "Li_all_lakes_strict_no_frozen.csv", index=False)
 
 
 if __name__ == "__main__":

@@ -11,10 +11,10 @@ import os
 from globallakevariability.vis.visualisation import plot_world_map, plot_europe_map
 from pypalettes import load_cmap
 cmap = load_cmap("Blue2Orange12Steps", cmap_type = "continuous")
-ROOT = Path(r"T:\DLR\Analysis3\Results")
-OUTPUT_DIR = Path(r"T:\DLR\Analysis3\Maps")
+ROOT = Path(r"T:\DLR\Analysis3\Results_0percDisr")
+OUTPUT_DIR = Path(r"T:\DLR\Analysis3\Maps_0percDisr")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
-statistic_values_to_plot = ["spearman_cor", "R2", "RMSE"]
+statistic_values_to_plot = ["spearman_cor", "RMSE"]
 save_tag = "True"
 
 # Read in all files of the folder
@@ -42,7 +42,7 @@ for ds in arlie:
 
     for stat in statistic_values_to_plot:
         filename = f"{plottitle}{stat}"
-        p = plot_europe_map(ds, stat, plottitle, aggregation='median', gridsize=50, plot_type = "scatter", cmap = cmap, save=save_tag, out_dir=OUTPUT_DIR, filename=filename) 
+        p = plot_europe_map(ds, stat, aggregation='median', gridsize=50, plot_type = "scatter", cmap = cmap, save=save_tag, out_dir=OUTPUT_DIR, filename=filename) 
         arlie_plots.append(p)
 
 
@@ -58,7 +58,7 @@ for ds in nasa:
     for stat in statistic_values_to_plot:
         filename = f"{plottitle}{stat}"
 
-        p = plot_world_map(ds, stat, plottitle, aggregation='median', gridsize=50, plot_type="scatter", cmap = cmap, save=save_tag, out_dir=OUTPUT_DIR, filename = filename ) 
+        p = plot_world_map(ds, stat, aggregation='median', gridsize=50, plot_type="scatter", cmap = cmap, save=save_tag, out_dir=OUTPUT_DIR, filename = filename ) 
         nasa_plots.append(p)
 
 for ds in li:
@@ -71,7 +71,7 @@ for ds in li:
     print(plottitle)
     for stat in statistic_values_to_plot:
         filename = f"{plottitle}{stat}"
-        p = plot_world_map(ds, stat, plottitle, aggregation='median', gridsize=50, plot_type = "scatter", cmap = cmap, save=save_tag, out_dir=OUTPUT_DIR, filename = filename ) 
+        p = plot_world_map(ds, stat, aggregation='median', gridsize=50, plot_type = "scatter", cmap = cmap, save=save_tag, out_dir=OUTPUT_DIR, filename = filename ) 
         li_plots.append(p)
 
 
