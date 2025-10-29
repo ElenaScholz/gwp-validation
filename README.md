@@ -21,7 +21,7 @@ Each Processing step was assigend to a number:
 
 00 = Datadownload   
 01 = Preprocessing  
-02 = Matching GWP with a validation Dataset  
+02 = Matching GWP with a validation Dataset/Hydrolakes  
 03 = calculate statistics  
 04 = visualisation  
 
@@ -33,22 +33,26 @@ DLR-GWPIntercomparison/
 │   ├── nasaflood.json  
 │   ├── world_hydrolakes.json  
 │   ├── europe_hydrolakes.json  
+│   ├── stats.json  
+├── notebooks/  
+│   ├── getInfoForPaper.ipynb  
+│   └── plots.ipynb  
 ├── scripts/  
 │   ├── arlie  
 │   │   ├── 00_arlie_download_hda_files.py    
 │   │   ├── 00_extract_arlie_zipfiles.py  
 │   │   ├── 02.1_run_arlie_gwp_geom_matching.py  
 │   │   ├── 02.2_run_arlie_gwp_ts_matching.py  
-│   ├── NasaFloodProduct  
-│   │   ├── 00_Download_GWP_raster.py        
-│   │   ├── 01_NasaFlood_extractHDF.py     
-│   │   ├── 01_clip_GWP_to_tiles.py   
 │   ├── Li  
 │   │   ├── 01.1_matchGlakesHydrolakesGWP.py  
 │   │   ├── 01.2_reshapeMonthly_LiLSE.py  
 │   │   ├── 01.3_reshape_monthlyGWP.py   
-│   ├── 01_run_hydrolakes_processing.py   
-│   ├── 01.1_run_GWPNasaFlood_calculate_zonal_statistics.py    
+│   ├── NasaFloodProduct  
+│   │   ├── 00_Download_GWP_raster.py        
+│   │   ├── 01.1_clip_GWP_to_tiles.py  
+│   │   ├── 01.2_NasaFlood_extractHDF.py      
+│   │   ├── 01.3_run_GWPNasaFlood_calculate_zonal_statistics.py    
+│   ├── 02_run_hydrolakes_processing.py   
 │   └── 02_run_match_arlie_complete.py    
 │   └── 02_run_match_GWP_NasaFloodProduct.py  
 │   └── 02.1_run_matchGWPandLiByGlakes.py  
@@ -56,22 +60,21 @@ DLR-GWPIntercomparison/
 │   └── 03_statistics.py  
 │   └── 04_visualisations.py
 ├── src/globallakevariability  
-│   ├── preprocessing  
-│   │   ├── add_maximum_extent.py  
-│   │   ├── HydrolakesDataloader.py    
-│   │   ├── add_max_extent.py    
-│   │   ├── zonal_statistics.py    
-│   │   ├── ...  
 │   ├── matching
 │   │   ├── arlieProcessor.py  
+│   ├── preprocessing  
+│   │   ├── add_maximum_extent.py  
+│   │   ├── filehandling.py  
+│   │   ├── HydrolakesDataloader.py    
+│   │   ├── GlakesProcessor.py  
+│   │   ├── postprocessingGlakes.py  
+│   │   ├── zonal_statistics.py  
 │   ├── stats  
 │   │   ├── statistics.py  
-│   └── utils  
-│   │   ├── filehandling.py  
-│   │   ├── helper.py    
-├── notebooks/  
-│   ├── exploration.ipynb  
-│   └── validation.ipynb  
+│   ├── utils  
+│   │   ├── helper.py
+│   ├── vis  
+│   │   ├── visualisation.py    
 ├── pyproject.toml
 ├── uv.lock    
 ├── pixi.toml  
