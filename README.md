@@ -176,13 +176,22 @@ This dataset was published in the article [Mapping global lake dynamics reveals 
 During the preprocessing we match the Hydrolakes dataset with the GWP data. This mapping helps us to match Global Water Pack with the chosen data for the product comparison. Many datasets use either Hydrolakes as a basis for their analysis, or we can use the Hydrolakes geometries to spatially join lakes from other datasets to GWP.
 
 To get the preprocessing in the right order run:
-01_run_hydrolakes_processing.py twice: 
+01_run_hydrolakes_processing.py twice. Make sure your folder structure is the same as mentioned above: 
 
 1. `uv run .\scripts\01_run_hydrolakes_processing.py --config .\configs\europe_hydrolakes.json`
  
 2. `uv run .\scripts\01_run_hydrolakes_processing.py --config .\configs\world_hydrolakes.json`
-  
+
 This results in the following files: 
+\Output\Hydrolakes\gwp_withHylaks_arlie.gpkg"
+\Output\Hydrolakes\gwp_withHylaks_arlie_noMaxExtent.csv"
+\Output\Hydrolakes\gwp_withHylaks_arlie_withMaxExtent.csv"
+\Output\Hydrolakes\gwp_withHylaks_arlie_withMaxExtent.gpkg"
+\Output\Hydrolakes\gwp_withHylaks_world.gpkg"
+\Output\Hydrolakes\gwp_withHylaks_world_noMaxExtent.csv"
+\Hydrolakes\gwp_withHylaks_world_withMaxExtent.csv"
+\Output\Hydrolakes\gwp_withHylaks_world_withMaxExtent.gpkg"
+\Output\Hydrolakes\hydrolakes_clipped_europe.gpkg"
 
 Afterwards the preprocessing steps differ in respect to the corresponding dataset. 
 
