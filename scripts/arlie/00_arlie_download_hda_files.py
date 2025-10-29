@@ -20,7 +20,7 @@ import getpass
 input_file = Path(r"...\not_downloaded_bBoxes2.gpkg") # Type in your path!
 
 # Output directory for downloaded data
-OUTPUT_PATH = Path(".../ARLIE") 
+OUTPUT_PATH = Path(".../Input/ARLIE") 
 
 # Define Start- & Enddate
 start_date = "2016-09-01T00:00:00.000Z"

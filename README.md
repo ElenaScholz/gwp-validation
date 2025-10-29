@@ -1,21 +1,28 @@
 # DLR-GWPIntercomparison
-# Environment setup
-For this projects two virtual environments are used: One managed via uv and the other one via pixi. 
+# Get started
+1. Go to github and fork this repository. 
+2. Clone your fork to a directory of your choice:: `git clone <the github url to your fork>´
 
-You will use the uv environment vor nearly all scripts. There is one Script that processes Data of the NASA Flood Product that uses the pixi environment as it contains gdal. It is indicated in the script 
-## uv
+This project is setup as a Python Package. Therefore the scripts can be run with commands like this: 
 
-## pixi
+`uv python run ... `
 
+## Environment setup
+This project uses two virtual environments: one managed via uv and one via pixi.
 
-# Prerequesites
-1. Download ARLIE Dataset for the whole time series (script 00_arlie_download_hda_files.py)
-2. Download Hydrolakes datset
-3. Extract Arlie zip files - script 00_extract_arlie_zipfiles.py
-4. Download the GWP Raster datasets: use the script 00_Download_GWP_raster.py
-5. Convert Nasa Flood Product files from HDF to GeoTIFFS (windows Power Shell:   
-pixi run python .\scripts\NasaFloodProduct\00_NasaFlood_extract_HDF.py --config .\configs\nasaflood.json)
+uv environment: Used for nearly all scripts.
 
+pixi environment: Used only for the script that processes NASA Flood Product data, as it contains gdal.
+
+### uv Environment
+1. If you don't have uv installed yet, follow the official guide: [uv installation guide](https://docs.astral.sh/uv/getting-started/installation/).
+
+2. To set up the environment, run: `uv sync` in your terminal.  
+
+### pixi
+1. If you don't habe pixi installed yet, follow the official guide: [pixi installation guide](https://pixi.sh/dev/installation/)  
+
+2. To set up the envirnment, run `pixi sync` in your terminal.  
 # Repository Structure
 Each Processing step was assigend to a number:  
 
@@ -82,6 +89,30 @@ DLR-GWPIntercomparison/
 └── README.md  
 
 # Workflow
+## Data download 
+### Hydrolakes
+Download the Hydrolakes dataset in Shapefile-Format from this website: [Hydrolakes:](https://www.hydrosheds.org/products/hydrolakes#downloads). 
+
+### Aggregated River and Lake Ice Extent (ARLIE)
+1. Download the ARLIE dataset for the whole time series (2003-2024). You can use the Script: 00_arlie_download_hda_files.py
+
+We used the maximum spatial extent for the dataset. [Information about it can be found here](https://www.eea.europa.eu/en/datahub/datahubitem-view/b5c68a06-5dcf-42e5-baad-94f861189f91). 
+
+Note that the Area of interest needs to be geopackage file and that you need login credential for the hda-file donwload. 
+2. Afterwards the files need to be unzipped. To do so use the script: 00_extract_arlie_zipfiles.py
+
+### Global Water Pack Raster (GWP)
+Global Water Pack comes as global raster datasets. Those can be downloaded with the script `00_Download_GWP_raster.py`.
+
+Note: We used already processed time series containing daily Lake Area information in km² for the whole timeseries, as well as coordinates for each lake in form of latitude/longitude information.
+Each lake is stored in a seperate csv file. 
+
+Furthermore we removed the 29.02. for all leap years.
+
+
+
+pixi run python .\scripts\NasaFloodProduct\00_NasaFlood_extract_HDF.py --config .\configs\nasaflood.json)
+
 
 ## Preprocessing
 The Preprocessing matches the Global Waterpack files with a corresponding Hydrolake-id. It also appends the maximum extent of each lake to the output dataset. 

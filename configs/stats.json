@@ -2,7 +2,7 @@
     "input":{
         "li_data" : "Output/allValidationDatasets/LiData/Li_all_lakes_strict_no_frozen.csv",
         "arlie_data": "Output/AllValidationDatasets/Arlie_len146/all_arlie_lakes_10percDisr_len146.csv",
-        "nasaflood_data": "Output/AllValidationDatasets/NasaFlood/all_lakes_percentage_0percDisr.csv",
+        "nasaflood_data": "Output/AllValidationDatasets/NasaFlood/all_lakes_percentage_10percDisr.csv",
         "hydrolakes": "Output/Hydrlakes/gwp_withHylaksAndMaxExtent_world.gpkg"
     },
     "stats": {
@@ -11,6 +11,6 @@
         "li_number_of_sample" :14
     },
     "output":{
-        "dir": "Results_0percDisr"
+        "dir": "Results_10percDisr"
     }
 }
