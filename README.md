@@ -285,10 +285,10 @@ A folder *\Input\GWP\05_timeseries_8247_rm2902* with daily timeseries
 **Output:**
 A folder *\Input\GWP\06_timeseries_8247_rm2902_monthly_hylakIDs* with monthly timeseries
   
-## Matching Global Waterpack with validation Datasets
-### ARLIE: 02_run_match_arlie_complete.py
+## 02 Matching Global Waterpack with validation Datasets
+### ARLIE
 
-uv run .\scripts\02_run_match_arlie_complete.py --config .\configs\arlie.json
+`uv run .\scripts\02_run_match_arlie_complete.py --config .\configs\arlie.json`
 
 This script contains two subscripts saved in the arlie folder:
 1. 02.1_run_arlie_gwp_geom_matching.py
@@ -298,33 +298,32 @@ The first script joins all Arlie geometries spatially with Hydrolakes geometries
 
 Then the Arlie timeseries information are matched.
 
- uv run .\scripts\arlie\02_run_arlie_gwp_matching.py --config .\configs\arlie.json
 
 In the second script the gwp timeseries information are matched. The following checks are made:
 - Checking for Lake Area differences of more then 10%
 - Filtering out all dates where ARLIE has a disruption (Cloud Coverage + Other entities + XX) higher then 10%
-- then checking if there is a minimum length of 50 entries for each file. Removing all files with less entries. 
+- removing lakes with less then 5% matching data-coverage. 
 
 
-Input: 
+**Input:** 
 gwp_hydrolakes_max_extent
 path to unzipped arlie files
 
-Output: 
+**Output:** 
 csv files for each gwp sample with in arlie aoi. 
 containing the arlie timeseries + max extent information + gwp id 
 
-### Nasa Flood Product: Calculate Zonal statistics and match time series
+### Nasa Flood Product
+Use the Script *02_run_match_GWP_NasaFloodProduct.py* to match Nasa Flood Product timeseries with GWP timeseries. 
 
-Firstly run the script 01.1_run_GWPNasaFlood_calculate_zonalStatistics.py with the following command. 
-
-uv run python .\scripts\01.1_run_GWPNasaFlood_calculate_zonalStatistics.py --config .\configs\nasaflood.json
-
-After this process is finished use the Script 02_run_match_GWP_NasaFloodProduct.py. 
+`uv run python .\scripts\02_run_match_GWP_NasaFloodProduct.py --config .\configs\nasaflood.json` 
 
 ### Monthly Lake Surface Area by Li et al.
 
 Run the Scripts 02.1_run_matchGWPandLiByGlakes.py as well as 02.2_run_LiProcessData.py.
+
+`uv run python .\scripts\02.1_run_matchGWPandLiByGlakes.py --config .\configs\li.json` 
+`uv run python .\scripts\02.2_run_LiProcessData.py --config .\configs\nasaflood.json` 
 
 ## Statistics
 
