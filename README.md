@@ -156,7 +156,7 @@ Download the rasterfiles into this folder:
 \Input\NasaFlood\01_GlobalGWP  
 
 **Note:** We used already processed time series dataset containing daily Lake Area information in km², as well as coordinates for each lake in form of latitude/longitude information.
-The information are stored in two corresponding files: one containing coordinates, one the time series.  
+The information is stored in two corresponding files: one containing coordinates, one the time series.  
 
 Furthermore we removed the 29.02. for all leap years.
 
@@ -296,10 +296,10 @@ This script contains two subscripts saved in the arlie folder:
 
 The first script joins all Arlie geometries spatially with Hydrolakes geometries created in the Script 01_run_hydrolakes. 
 
-Then the Arlie timeseries information are matched.
+Then the Arlie timeseries information is matched.
 
 
-In the second script the gwp timeseries information are matched. The following checks are made:
+In the second script the gwp timeseries information is matched. The following checks are made:
 - Checking for Lake Area differences of more then 10%
 - Filtering out all dates where ARLIE has a disruption (Cloud Coverage + Other entities + XX) higher then 10%
 - removing lakes with less then 5% matching data-coverage. 
@@ -326,5 +326,6 @@ Run the Scripts 02.1_run_matchGWPandLiByGlakes.py as well as 02.2_run_LiProcessD
 `uv run python .\scripts\02.2_run_LiProcessData.py --config .\configs\nasaflood.json` 
 
 ## Statistics
+`uv run python .\scripts\03_calculateStatistics.py --config .\configs\stats.json` 
 
 ## Visualisations

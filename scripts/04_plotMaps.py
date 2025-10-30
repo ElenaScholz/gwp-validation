@@ -10,6 +10,7 @@ from highlight_text import ax_text
 import os
 from globallakevariability.vis.visualisation import plot_world_map, plot_europe_map
 from pypalettes import load_cmap
+
 cmap = load_cmap("Blue2Orange12Steps", cmap_type = "continuous")
 ROOT = Path(r"T:\DLR\Analysis3\Results_0percDisr")
 OUTPUT_DIR = Path(r"T:\DLR\Analysis3\Maps_0percDisr")
