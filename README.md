@@ -1,4 +1,7 @@
 # DLR-GWPIntercomparison
+
+![Temporal Coverage of Comparison Datasets](/images/temporalCoverage.png)
+
 # Get started
 1. Go to github and fork this repository. 
 2. Clone your fork to a directory of your choice:: `git clone <the github url to your fork>´
