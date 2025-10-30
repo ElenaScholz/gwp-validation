@@ -131,6 +131,7 @@ Main Data Folder/
 ├── Maps
 └── Plots
 
+**Note: The configuration files stored within the reporitory display the same folder structure, and if you don't change it, you just need to adjust the Root-directory**
 
 # Workflow
 ## Data download 
@@ -151,6 +152,9 @@ Please download geometries as well as timeseries files.
 ### Global Water Pack Raster (GWP)
 Global Water Pack comes as global raster datasets. Those can be downloaded with the script `00_Download_GWP_raster.py`.
 
+Download the rasterfiles into this folder:  
+\Input\NasaFlood\01_GlobalGWP  
+
 **Note:** We used already processed time series dataset containing daily Lake Area information in km², as well as coordinates for each lake in form of latitude/longitude information.
 The information are stored in two corresponding files: one containing coordinates, one the time series.  
 
@@ -159,10 +163,6 @@ Furthermore we removed the 29.02. for all leap years.
 ### Near realtime Flood Product (Nasa Flood Product)
 
 The [near realtime global Flood Product](https://www.earthdata.nasa.gov/data/instruments/viirs/near-real-time-data/nrt-global-flood-products) provided by NASA is online available for recent years. We used historical data provided by NASA for the years 2010 and 2021. 
-
-The NASA Flood Product comes in hdf-fileformat. To extract the datasets use the script *00_NasaFlood_extract_HDF.py* in the terminal: 
-
-`pixi run python .\scripts\NasaFloodProduct\00_NasaFlood_extract_HDF.py --config .\configs\nasaflood.json`
 
 ### Global Lake Surface Extent dataset 
 The Global Lake Surface Extent dataset was published in mid 2025 within the paper [Global dominance of seasonality in shaping lake-surface-extent dynamics](https://www.nature.com/articles/s41586-025-09046-3#data-availability) by Li et al. 
@@ -185,7 +185,7 @@ To get the preprocessing in the right order run:
  
 2. `uv run .\scripts\01_run_hydrolakes_processing.py --config .\configs\world_hydrolakes.json`
 
-This results in the following files: 
+**This results in the following files:** 
 \Output\Hydrolakes\gwp_withHylaks_arlie.gpkg"
 \Output\Hydrolakes\gwp_withHylaks_arlie_noMaxExtent.csv"
 \Output\Hydrolakes\gwp_withHylaks_arlie_withMaxExtent.csv"
@@ -198,11 +198,56 @@ This results in the following files:
 
 Afterwards the preprocessing steps differ in respect to the corresponding dataset. 
 
-### Arlie 
+### 01 Nasa Flood Product
 
-### Nasa Flood Product
+1. The Global Water Pack Raster Datasets need to be clipped to the extent of the Nasa Flood Product tiles. This can be done through the script `01.1_clip_GWP_to_tiles.py`. 
 
-### Global Lake Surface Extent (Li)
+**Input:**  
+The Global Water Pack raster all lie within one directory, to which they were downloaded. 
+\Input\NasaFlood\01_GlobalGWP\GWP.OSWF.DAILY.20100101.v1.tif  
+\Input\NasaFlood\01_GlobalGWP\GWP.OSWF.DAILY.20100102.v1.tif  
+\Input\NasaFlood\01_GlobalGWP\GWP.OSWF.DAILY.20100103.v1.tif  
+\Input\NasaFlood\01_GlobalGWP\....tif  
+...   
+
+**Output:**  
+As you can see below the output results in one folder per MODIS tile with all corresponding raster files for all used years.   
+\Input\NasaFlood\02_GWP-tiles\h06v04\GWP.OSWF.DAILY.20100101.h06v04.tif  
+\Input\NasaFlood\02_GWP-tiles\h06v04\GWP.OSWF.DAILY.20100102.h06v04.tif  
+\Input\NasaFlood\02_GWP-tiles\h08v05  
+...  
+
+
+2. The NASA Flood Product comes in hdf-fileformat. To extract the datasets use the script *01.1_NasaFlood_extract_HDF.py* in the terminal: 
+
+`pixi run python .\scripts\NasaFloodProduct\01.2_NasaFlood_extract_HDF.py --config .\configs\nasaflood.json`
+
+**Input:**  
+The Nasa Flood Product tiles are stored within a folder per tile and year.
+\Input\NasaFlood\01_MWP\MCDWD.h06v04.2010  
+\Input\NasaFlood\01_MWP\MCDWD.h06v04.2021  
+...  
+
+**Output:**  
+The Output folder follow the same structure stored within a different folder. 
+\Input\NasaFlood\02_MWP_gtiff\MCDWD.h06v04.2010  
+\Input\NasaFlood\02_MWP_gtiff\MCDWD.h06v04.2021  
+...  
+
+3. **Calculate the zonal statistics** as a last step of preprocessing for the Nasa Flood Product. 
+
+`uv run python .\scripts\NasaFloodProduct\01.3_run_GWPNasaFlood_calculate_zonalStatistics.py --config .\configs\nasaflood.json`
+
+**Input:**
+- The tiff files for GWP and Nasa Flood Product generated with the steps above. 
+- the max_extent_tiles (/Input/NasaFlood/max_extent_tiles)
+- adjust the chunk size, number of workers etc to your needs in the config file *nasaflood.json*
+
+**Output:**
+The results are stored in this folder *\Output\NasaFlood*. They are in .csv format.
+
+### 01 Global Lake Surface Extent (Li)
+
 
 ### 01_run_hydrolakes_processing
 this script needs to be run twice: once for the ARLIE dataset and once for the whole wold. Use the world_hydrolakes.json for it.
