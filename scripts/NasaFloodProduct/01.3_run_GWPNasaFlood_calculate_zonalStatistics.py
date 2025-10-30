@@ -34,7 +34,7 @@ def main(config):
     root = Path(config["root_dir"])
     gwp_path = root / config['preprocessing']['output_dir_gwp_nasaflood']
     mwp_basepath = root / config['preprocessing']['output_dir_nasaflood']
-    max_extent_path = root / config['zonal_statistics']['max_extent_path']
+    max_extent_path = root / config['zonal_statistics']['max_extent_path'] 
 
     output_path = root / config["zonal_statistics"]["output"]
     # Erstelle Output-Verzeichnis, falls es nicht existiert

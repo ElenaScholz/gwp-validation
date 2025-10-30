@@ -186,15 +186,15 @@ To get the preprocessing in the right order run:
 2. `uv run .\scripts\01_run_hydrolakes_processing.py --config .\configs\world_hydrolakes.json`
 
 **This results in the following files:** 
-\Output\Hydrolakes\gwp_withHylaks_arlie.gpkg"
-\Output\Hydrolakes\gwp_withHylaks_arlie_noMaxExtent.csv"
-\Output\Hydrolakes\gwp_withHylaks_arlie_withMaxExtent.csv"
-\Output\Hydrolakes\gwp_withHylaks_arlie_withMaxExtent.gpkg"
-\Output\Hydrolakes\gwp_withHylaks_world.gpkg"
-\Output\Hydrolakes\gwp_withHylaks_world_noMaxExtent.csv"
-\Hydrolakes\gwp_withHylaks_world_withMaxExtent.csv"
-\Output\Hydrolakes\gwp_withHylaks_world_withMaxExtent.gpkg"
-\Output\Hydrolakes\hydrolakes_clipped_europe.gpkg"
+\Output\Hydrolakes\gwp_withHylaks_arlie.gpkg
+\Output\Hydrolakes\gwp_withHylaks_arlie_noMaxExtent.csv
+\Output\Hydrolakes\gwp_withHylaks_arlie_withMaxExtent.csv
+\Output\Hydrolakes\gwp_withHylaks_arlie_withMaxExtent.gpkg
+\Output\Hydrolakes\gwp_withHylaks_world.gpkg
+\Output\Hydrolakes\gwp_withHylaks_world_noMaxExtent.csv
+\Hydrolakes\gwp_withHylaks_world_withMaxExtent.csv
+\Output\Hydrolakes\gwp_withHylaks_world_withMaxExtent.gpkg
+\Output\Hydrolakes\hydrolakes_clipped_europe.gpkg
 
 Afterwards the preprocessing steps differ in respect to the corresponding dataset. 
 
@@ -248,19 +248,42 @@ The results are stored in this folder *\Output\NasaFlood*. They are in .csv form
 
 ### 01 Global Lake Surface Extent (Li)
 
+1. match Glakes with Hydrolakes and GWP
+We match the Glakes geometries with Hydrolakes geometries. We use all Lakes that overlap with a minimum area of 30%. Then we keep all intersecting lakes, where there is a 1:1 match or were multiple Hydrolakes are assigend to one Lake of the Glakes dataset. All other matches lead to the exclusion of samples. 
 
-### 01_run_hydrolakes_processing
-this script needs to be run twice: once for the ARLIE dataset and once for the whole wold. Use the world_hydrolakes.json for it.
+For more information check out the *GLAKESProcessir.py* and the *postprocessingGlakes.py* files. 
 
-uv run .\scripts\01_run_hydrolakes_processing.py --config .\configs\arlie.json
+`uv run python .\scripts\Li\01.1_matchGlakesHydrolakesGWP.py --config .\configs\li.json`
 
+**Input:**  
+- Output/Hydrolakes/gwp_withHylaks_world_withMaxExtent.gpkg  
+- Input/HydroLAKES_polys_v10/hydrolakes_poly_greater20m.gpkg - generate this file by removing all lakes with an area smaller then 20km²  
+- Input/Li/GLAKES/GLAKES/GLAKES
 
-Input:  
-- hydrolakes Shapefile
-- gwp coordinate files
-- gwp timeseries files
-Output:
-- gpkg/csv file where each point of gwp also contains information of hydrolakes id as well as the laximum area extent.
+**Output:**
+Outputs are stored within this directory: 
+Input\Li\Glakes_Prepared  
+\Input\Li\Glakes_Prepared\glakes_hylak_30_subset.gpkg  
+\Input\Li\Glakes_Prepared\gwp_glakes_hylak_30_merged_strict.gpkg  
+
+2. reshape the Lake Surface Extent file from Li et al. 
+This script reshaped the wide dataframe format of the Li dataset into Long. 
+
+`uv run python .\scripts\Li\01.2_reshapeMonthly_LiLSE.py --config .\configs\li.json`
+
+**Input:**
+\Input\Li\monthly_lake_surface_extent.csv  
+**Output:**
+- \Input\Li\monthly_lake_surface_extent_long.csv  
+
+3. reshape the GWP timeseries to monthly medians
+
+As GWP Timeseries contains daily information this script calculates monthly medians for each lake.
+
+**Input:**  
+A folder *\Input\GWP\05_timeseries_8247_rm2902* with daily timeseries
+**Output:**
+A folder *\Input\GWP\06_timeseries_8247_rm2902_monthly_hylakIDs* with monthly timeseries
   
 ## Matching Global Waterpack with validation Datasets
 ### ARLIE: 02_run_match_arlie_complete.py
