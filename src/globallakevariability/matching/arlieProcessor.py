@@ -13,7 +13,7 @@ class ArlieProcessor:
                  gwp_dataset_with_hylak_ids # # dataframe that contains only the hylak ids and corresponding names of statistical gwp data
                  ):
         self.arlie_files = [Path(root_to_arlie_folder) / file for file in os.listdir(Path(root_to_arlie_folder))]
-        self.hylak_dataset = gpd.read_file(path_to_hylak_dataset)
+        self.hylak_dataset = gpd.read_file( path_to_hylak_dataset)
         self.gwp_with_hylak_id = gwp_dataset_with_hylak_ids
         self.gwp_arlie_dict = {}
 

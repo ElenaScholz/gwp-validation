@@ -131,6 +131,8 @@ def plot_world_map(df, statistic_value, aggregation='mean',
     cbar = fig.colorbar(mappable, cax=cax, orientation='vertical',
                         label=cbar_label, ticks=ticks)
     cbar.ax.tick_params(labelsize=9)
+    # Round colorbar labels to 1 decimal place
+    cbar.ax.set_yticklabels([f'{tick:.1f}' for tick in ticks])
     cbar.ax.yaxis.set_label_position('left')
   
     # Save
@@ -140,23 +142,11 @@ def plot_world_map(df, statistic_value, aggregation='mean',
         out_dir = Path(out_dir)
         out_dir.mkdir(parents=True, exist_ok=True)
         suffix = f"_{aggregation}" if plot_type == 'hexbin' else "scatter"
-        output_path = out_dir / f"{filename}_{plot_type}{suffix}.png"
+        output_path = out_dir / f"{filename}_{plot_type}{suffix}.tif"
         plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='white')
 
     plt.close()
 
-    # Statistics output
-    print(f"Statistik für {statistic_value} (Plot: {plot_type}):")
-    if plot_type == 'hexbin':
-        if aggregation == 'count':
-            print(f"Maximale Anzahl von Punkten in einem Hexagon: {mappable.get_array().max()}")
-            print(f"Gesamtzahl der Hexagone: {len(mappable.get_array())}")
-        else:
-            print(f"Aggregation: {aggregation}")
-    print(f"Minimum: {df[statistic_value].min():.4f}")
-    print(f"Maximum: {df[statistic_value].max():.4f}")
-    print(f"Mittelwert: {df[statistic_value].mean():.4f}")
-    print(f"Anzahl der Datenpunkte: {len(df)}")
 
 
 def plot_europe_map(df, statistic_value, aggregation='mean', 
@@ -289,6 +279,8 @@ def plot_europe_map(df, statistic_value, aggregation='mean',
     cbar = fig.colorbar(mappable, cax=cax, orientation='vertical',
                         label=cbar_label, ticks=ticks)
     cbar.ax.tick_params(labelsize=9)
+    # Round colorbar labels to 1 decimal place
+    cbar.ax.set_yticklabels([f'{tick:.1f}' for tick in ticks])
     cbar.ax.yaxis.set_label_position('left')
    
 
@@ -298,24 +290,11 @@ def plot_europe_map(df, statistic_value, aggregation='mean',
         out_dir = Path(out_dir)
         out_dir.mkdir(parents=True, exist_ok=True)
         suffix = f"_{aggregation}" if plot_type == 'hexbin' else "_scatter"
-        output_path = out_dir / f"{filename}_{plot_type}{suffix}.png"
+        output_path = out_dir / f"{filename}_{plot_type}{suffix}.tif"
         plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='white')
 
     plt.close()
 
-    # Statistics
-    print(f"Statistik für {statistic_value} (Plot: {plot_type}):")
-    if plot_type == 'hexbin':
-        if aggregation == 'count':
-            print(f"Maximale Anzahl von Punkten in einem Hexagon: {mappable.get_array().max()}")
-            print(f"Gesamtzahl der Hexagone: {len(mappable.get_array())}")
-        else:
-            print(f"Aggregation: {aggregation}")
-    if statistic_value in df.columns:
-        print(f"Minimum: {df[statistic_value].min():.4f}")
-        print(f"Maximum: {df[statistic_value].max():.4f}")
-        print(f"Mittelwert: {df[statistic_value].mean():.4f}")
-    print(f"Anzahl der Datenpunkte: {len(df)}")
 
 
 def quick_monthly_plot(*datasets_and_titles, figwidth=14, subplot_height=3.5):

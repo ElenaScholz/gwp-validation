@@ -18,16 +18,16 @@ def main(config):
     #     # Umbenennen der 'id' Spalte zu 'gwp_id'
     
     path_hydolakes_with_gwp = config['preprocessing']['gwp_hydrolakes_max_extent']
-    df_gwp_hylakIds = gpd.read_file(path_hydolakes_with_gwp)
+    df_gwp_hylakIds = gpd.read_file(input_root / path_hydolakes_with_gwp)
     #print(df_gwp_hylakIds.columns)
     df_gwp_hylakIds = df_gwp_hylakIds.rename(columns={'id': 'gwp_id'})
     df_gwp_hylakIds = df_gwp_hylakIds[['Hylak_id', 'gwp_id', 'gwp_Area_max']].copy()
     
     out_dir = input_root / config["matching"]["output_directory"]
-
+    path_to_hylak_dataset= f"{config['root_dir']}/{config["path_to_hydrolake_dataset"]}"
 
     arlieProcessor = ArlieProcessor(root_to_arlie_folder= arlie_root,
-                                  path_to_hylak_dataset= config["path_to_hydrolake_dataset"],
+                                  path_to_hylak_dataset= path_to_hylak_dataset,
                                   gwp_dataset_with_hylak_ids= df_gwp_hylakIds)
 
     arlie_geoms = arlieProcessor.prepareArlieGeometries()
@@ -35,8 +35,8 @@ def main(config):
     arlieProcessor.matchArlieAndGWP()
     stats_dict = arlieProcessor.mergeArlieStatsWithGeoms()
 
-    print(arlie_geoms.keys())
-    print(f"lenght of arlie statistics dict: {len(stats_dict.items())}")
+    print("Number of statistics dict:", len(stats_dict))
+
 
     gwp_arlie_dicts = create_gwp_based_dict(stats_dict)
     arlie_to_hylak, multiple_assignments = find_multiple_assignments(gwp_arlie_dicts)

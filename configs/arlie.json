@@ -3,11 +3,11 @@
   "root_dir": "T:/DLR/Analysis3",
   "path_to_gwp_timeseries_folder": "Input/GWP/05_timeseries_8247_rm2902",
   "path_to_coordinate_folder": "Input/GWP/00_coordinates_8247",
-  "path_to_arlie_folder": "T:/DLR/Analysis3/Input/ARLIE/files",
-  "path_to_hydrolake_dataset": "T:/DLR/Analysis3/Output/Hydrolakes/hydrolakes_clipped_europe.gpkg",
+  "path_to_arlie_folder": "Input/ARLIE/files",
+  "path_to_hydrolake_dataset": "Output/Hydrolakes/hydrolakes_clipped_europe.gpkg",
   "preprocessing": {
-    "gwp_hydrolakes_max_extent": "T:/DLR/Analysis3/Output/Hydrolakes/gwp_withHylaks_arlie_withMaxExtent.csv",
-    "gwp_hylaks_gpkg": "T:/DLR/Analysis3/Output/Hydrolakes/gwp_withHylaks_arlie.gpkg"
+    "gwp_hydrolakes_max_extent": "Output/Hydrolakes/gwp_withHylaks_arlie_withMaxExtent.csv",
+    "gwp_hylaks_gpkg": "Output/Hydrolakes/gwp_withHylaks_arlie.gpkg"
   },
   "matching":{
     "output_directory": "Output/ARLIE/matching",

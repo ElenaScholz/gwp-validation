@@ -27,7 +27,7 @@ def main(config):
 
     print(f"Found {len(arlie_dict)} valid ARLIE lakes")
     print(f"Lakes to check: {len(lakes_to_check)}")
-    print(lakes_to_check)
+ 
     # Filter problematic lakes
 
     hylak_ids_to_filter = set(lakes_to_check['Hylak_id'])
@@ -36,7 +36,7 @@ def main(config):
         if not any(hylak_id in hylak_ids_to_filter for hylak_id in v['Hylak_id'].values)
     }
     
-    print(f"After filtering problematic lakes: {len(gwp_arlie_dict_filtered)} lakes")
+    print(f"After removing problematic lakes: {len(gwp_arlie_dict_filtered)} lakes")
     
 
     # Process GWP files

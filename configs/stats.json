@@ -1,6 +1,7 @@
 {"root": "T:/DLR/Analysis3",
     "input":{
-        "li_data" : "Output/allValidationDatasets/LiData/Li_all_lakes_strict_no_frozen.csv",
+        "li_data_strict" : "Output/allValidationDatasets/LiData/Li_all_lakes_strict_no_frozen.csv",
+        "li_data_no_frozen" : "Output/allValidationDatasets/LiData/Li_all_lakes_no_frozen.csv",
         "arlie_data": "Output/AllValidationDatasets/Arlie_len146/all_arlie_lakes_10percDisr_len146.csv",
         "nasaflood_data": "Output/AllValidationDatasets/NasaFlood/all_lakes_percentage_10percDisr.csv",
         "hydrolakes": "Output/Hydrlakes/gwp_withHylaksAndMaxExtent_world.gpkg"
