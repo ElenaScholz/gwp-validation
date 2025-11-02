@@ -13,7 +13,7 @@ from pypalettes import load_cmap
 
 cmap = load_cmap("Blue2Orange12Steps", cmap_type = "continuous")
 ROOT = Path(r"T:\DLR\Analysis3\Results_10percDisr")
-OUTPUT_DIR = Path(r"T:\DLR\Analysis3\Maps_10percDisr")
+OUTPUT_DIR = Path(r"T:\DLR\Analysis3\Maps_10percDisr_colors")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 statistic_values_to_plot = ["spearman_cor", "RMSE"]
 save_tag = "True"

@@ -9,6 +9,46 @@ import pandas as pd
 import matplotlib.dates as mdates
 from highlight_text import ax_text
 
+# helper: determine nice colorbar ticks for known statistics
+def _get_colorbar_ticks(statistic_value, vmin, vmax):
+    # ensure vmin < vmax
+    if vmin is None or vmax is None or vmin == vmax:
+        return np.linspace(0, 1, 6)
+    # spearman: fixed -1..1 in 0.1 steps
+    if statistic_value == "spearman_cor":
+        return np.round(np.arange(-1.0, 1.0 + 1e-9, 0.2), 2)
+    # R2: 0..1 in 0.1 steps
+    if statistic_value == "R2":
+        start, stop = max(0, vmin), min(1, vmax)
+        return np.round(np.arange(start, stop + 1e-9, 0.1), 2)
+    # RMSE: try to infer units by range
+    if statistic_value == "RMSE":
+        span = vmax - vmin
+        # normalized small numbers -> 0.5 steps
+        if vmax <= 12:
+            step = 0.5
+        # typical percent-ish values up to ~100 -> 5% steps
+        elif vmax <= 100:
+            step = 5
+        # otherwise 10/20/30 style steps approximate
+        else:
+            # choose an integer step so we get ~6 ticks
+            step = max(1, int(np.ceil(span / 6.0)))
+            # round to a "nice" decade (1,2,5,10...)
+            if step > 10:
+                step = int(10 ** np.floor(np.log10(step)))
+        # build ticks anchored to a round multiple of step
+        first = math.floor(vmin / step) * step
+        last = math.ceil(vmax / step) * step
+        ticks = np.arange(first, last + 1e-9, step)
+        # clip to original bounds
+        ticks = ticks[(ticks >= vmin) & (ticks <= vmax)]
+        if len(ticks) == 0:
+            ticks = np.linspace(vmin, vmax, 6)
+        return np.round(ticks, 3)
+    # default: ~6 ticks linear
+    return np.round(np.linspace(vmin, vmax, 6), 3)
+
 
 def plot_world_map(df, statistic_value, aggregation='mean', 
                             gridsize=30, plot_type='hexbin', cmap = load_cmap("Blue2Orange12Steps", cmap_type = "continuous"), save=False, 
@@ -124,15 +164,26 @@ def plot_world_map(df, statistic_value, aggregation='mean',
         )
 
     plt.subplots_adjust(left=0.15, right=0.95, top=0.92, bottom=0.08)
-    ticks = np.linspace(vmin, vmax, 6)
+    ticks = _get_colorbar_ticks(statistic_value, vmin, vmax)
+
     # Vertikale Colorbar links
     cax = fig.add_axes([0.05, 0.2, 0.02, 0.6])  # [x, y, width, height]
 
     cbar = fig.colorbar(mappable, cax=cax, orientation='vertical',
                         label=cbar_label, ticks=ticks)
     cbar.ax.tick_params(labelsize=9)
-    # Round colorbar labels to 1 decimal place
-    cbar.ax.set_yticklabels([f'{tick:.1f}' for tick in ticks])
+
+    # Format labels: integers when ticks are near-integers, otherwise use 1-3 decimals
+    def _fmt(t):
+        if np.allclose(t, np.round(t)):
+            return f"{int(round(t))}"
+        if abs(t) < 1:
+            return f"{t:.2f}"
+        return f"{t:.1f}"
+
+    # show label only for every 2nd tick, keep all tick marks
+    labels = [(_fmt(t) if (i % 2 == 0) else "") for i, t in enumerate(ticks)]
+    cbar.ax.set_yticklabels(labels)
     cbar.ax.yaxis.set_label_position('left')
   
     # Save
@@ -272,15 +323,20 @@ def plot_europe_map(df, statistic_value, aggregation='mean',
         )
 
         plt.subplots_adjust(left=0.15, right=0.95, top=0.92, bottom=0.08)
-    ticks = np.linspace(vmin, vmax, 6)
+    ticks = _get_colorbar_ticks(statistic_value, vmin, vmax)
     # Vertikale Colorbar links
     cax = fig.add_axes([0.05, 0.2, 0.02, 0.6])  # [x, y, width, height]
 
     cbar = fig.colorbar(mappable, cax=cax, orientation='vertical',
                         label=cbar_label, ticks=ticks)
     cbar.ax.tick_params(labelsize=9)
-    # Round colorbar labels to 1 decimal place
-    cbar.ax.set_yticklabels([f'{tick:.1f}' for tick in ticks])
+    def _fmt_e(t):
+        if np.allclose(t, np.round(t)):
+            return f"{int(round(t))}"
+        if abs(t) < 1:
+            return f"{t:.2f}"
+        return f"{t:.1f}"
+    cbar.ax.set_yticklabels([_fmt_e(t) for t in ticks])
     cbar.ax.yaxis.set_label_position('left')
    
 
