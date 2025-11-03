@@ -11,7 +11,7 @@ def main(config):
     aoi = config["aoi"]
     root_dir = config["root_dir"]
     path_to_time_series_folder = config["path_to_gwp_timeseries_folder"]
-    output_dir = config["preprocessing"]["output_dir"]
+    output_dir = root_dir + "/" + config["preprocessing"]["output_dir"]
 
     clip_to_arlie = (aoi == 'arlie')
     print(f"Processing Hydrolakes for AOI: {aoi}")
