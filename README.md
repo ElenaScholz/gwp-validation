@@ -1,7 +1,5 @@
 # DLR-GWPIntercomparison
 
-![Methodology for Validation](/images/methodology.png)
-
 # Get started
 1. Go to github and fork this repository. 
 2. Clone your fork to a directory of your choice:: `git clone <the github url to your fork>´
@@ -96,47 +94,51 @@ DLR-GWPIntercomparison/
 Main Data Folder/  
 ├── Input/  
 │   ├── ARLIE  
-│   │   ├── zip
-│   │   ├── files
-│   │   │   ├── 001_arlie.csv  
-│   │   │   ├── 001_geometries.csv  
+│   │   ├── zip  
+│   │   ├── files  
+│   │   │   ├── 001_arlie.csv    
+│   │   │   ├── 001_geometries.csv    
 │   │   │   └── 00x_... .csv    
-│   │   └── arlie_bbox.gpkg
+│   │   └── arlie_bbox.gpkg  
 │   ├── GWP  
-│   │   ├── 00_coordinates_8247
-│   │   ├── *Folders for preprocessed gwp timeseries*
-│   │   ├── 05_timeseries_8247_rm2902
-│   │   ├── 06_timeseries_8247_rm2902_monthly  
+│   │   ├── 00_coordinates_8247  
+│   │   ├── *Folders for preprocessed gwp timeseries*  
+│   │   ├── 05_timeseries_8247_rm2902  
+│   │   ├── 06_timeseries_8247_rm2902_monthly    
 │   │   └── 06_timeseries_8247_rm2902_monthly_hylakIDs  
 │   ├── HydroLAKES_polys_v10  
-│   ├── Li
-│   │   ├── GLAKES
-│   │   ├── Glakes_Prepared
-│   │   ├── Monthly_Lakes
-│   │   └── monthly_lake_surface_extent.csv  
+│   ├── Li  
+│   │   ├── GLAKES  
+│   │   ├── Glakes_Prepared  
+│   │   ├── Monthly_Lakes  
+│   │   └── monthly_lake_surface_extent.csv    
 │   ├── NASAFlood  
 │   │   ├── 01_GlobalGWP  
 │   │   ├── 01_MWP  
 │   │   ├── 02_GWP-tiles  
 │   │   ├── 02_MWP_gtiff  
 │   │   └── max_extent_tiles  
-├── Output
-│   ├── allValidationDatasets  
+├── Output  
+│   ├── allValidationDatasets    
 │   ├── ARLIE  
 │   ├── GWP  
 │   ├── Hydrolakes  
-│   ├── Li
-│   ├── NASAFlood  
-├── Results
-├── Maps
-└── Plots
+│   ├── Li  
+│   ├── NASAFlood    
+├── Results  
+├── Maps  
+└── Plots  
 
 **Note: The configuration files stored within the reporitory display the same folder structure, and if you don't change it, you just need to adjust the Root-directory**
 
 # Workflow
+The workflow follows the described steps within the paper. An overview is depicted in the flowchart below:
+
+![Flowchart](images/FlowChartGWPvalidation.png)
+
 ## Data download 
 ### Hydrolakes
-Download the Hydrolakes dataset in Shapefile-Format from this website: [Hydrolakes:](https://www.hydrosheds.org/products/hydrolakes#downloads). 
+Download the Hydrolakes dataset in Shapefile-Format from this website [Hydrolakes:](https://www.hydrosheds.org/products/hydrolakes#downloads). 
 
 ### Aggregated River and Lake Ice Extent (ARLIE)
 1. Download the ARLIE dataset for the whole time series (2003-2024). You can use the Script: *00_arlie_download_hda_files.py*
@@ -326,6 +328,37 @@ Run the Scripts 02.1_run_matchGWPandLiByGlakes.py as well as 02.2_run_LiProcessD
 `uv run python .\scripts\02.2_run_LiProcessData.py --config .\configs\nasaflood.json` 
 
 ## Statistics
+The statistics script uses the stats.json as a config file. 
+In this script the lake areas are all calculated in % and will be z-transformed.  
+The RMSE as well as spearman correlation are calculated.  
+
+**Input:**  
+"li_data_strict" : "Output/allValidationDatasets/LiData/Li_all_lakes_strict_no_frozen.csv",  
+"li_data_no_frozen" : "Output/allValidationDatasets/LiData/Li_all_lakes_no_frozen.csv",  
+"arlie_data": "Output/AllValidationDatasets/Arlie_len146/all_arlie_lakes_10percDisr_len146.csv",  
+"nasaflood_data": "Output/AllValidationDatasets/NasaFlood/all_lakes_percentage_10percDisr.csv",  
+"hydrolakes": "Output/Hydrlakes/gwp_withHylaksAndMaxExtent_world.gpkg"  
+
+**Output:**  
+All outputs will be stored within the Results output directory (Results_10percDisr):  
+Results_10percDisr\all_stats_df.csv  
+Results_10percDisr\arlie_stats_df.csv  
+Results_10percDisr\arlie_stats_df_z.csv  
+Results_10percDisr\li_stats_df.csv  
+Results_10percDisr\li_stats_df_no_frozen.csv  
+Results_10percDisr\li_stats_df_z.csv  
+Results_10percDisr\li_stats_df_z_no_frozen.csv  
+Results_10percDisr\nasa_stats_df.csv  
+Results_10percDisr\nasa_stats_df_z.csv  
+Results_10percDisr\stats_summary_compact.csv  
+
+To run the script use to following command in the terminal.  
 `uv run python .\scripts\03_calculateStatistics.py --config .\configs\stats.json` 
 
 ## Visualisations
+Final results will be displayed in form of maps. The used script is named `04_plotMaps.py`
+
+The final results will look like this:   
+![Worldmap global LSE extent (Li et al. 2025)](images/LiRMSE_scatterscatter.tif)
+
+# Sources
