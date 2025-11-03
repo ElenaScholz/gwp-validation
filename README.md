@@ -138,7 +138,7 @@ The workflow follows the described steps within the paper. An overview is depict
 
 ## Data download 
 ### Hydrolakes
-Download the Hydrolakes dataset in Shapefile-Format from this website [Hydrolakes:](https://www.hydrosheds.org/products/hydrolakes#downloads). 
+Download the Hydrolakes dataset in Shapefile-Format from this website [Hydrolakes](https://www.hydrosheds.org/products/hydrolakes#downloads). 
 
 ### Aggregated River and Lake Ice Extent (ARLIE)
 1. Download the ARLIE dataset for the whole time series (2003-2024). You can use the Script: *00_arlie_download_hda_files.py*
@@ -169,7 +169,7 @@ The [near realtime global Flood Product](https://www.earthdata.nasa.gov/data/ins
 ### Global Lake Surface Extent dataset 
 The Global Lake Surface Extent dataset was published in mid 2025 within the paper [Global dominance of seasonality in shaping lake-surface-extent dynamics](https://www.nature.com/articles/s41586-025-09046-3#data-availability) by Li et al. 
 
-Data is available [here:](https://zenodo.org/records/15536395)
+Data is available [here](https://zenodo.org/records/15536395)
 We used the *monthly_lake_surface_extent.csv* as a comparison dataset. 
 
 ### GLAKES Dataset
@@ -362,3 +362,10 @@ The final results will look like this:
 ![Worldmap global LSE extent (Li et al. 2025)](images/LiRMSE_scatterscatter.tif)
 
 # Sources
+- [Global dominance of seasonality in shaping lake-surface-extent dynamics](https://www.nature.com/articles/s41586-025-09046-3)  
+- [global LSE Dataset](https://zenodo.org/records/15536395)  
+- [near realtime global Flood Product](https://www.earthdata.nasa.gov/data/instruments/viirs/near-real-time-data/nrt-global-flood-products)  
+- [Hydrolakes](https://www.hydrosheds.org/products/hydrolakes#downloads).   
+- [ARLIE](https://www.eea.europa.eu/en/datahub/datahubitem-view/b5c68a06-5dcf-42e5-baad-94f861189f91).  
+- [GLAKES dataset](https://garslab.com/?p=234)  
+- [Mapping global lake dynamics reveals the emerging roles of small lakes](https://www.nature.com/articles/s41467-022-33239-3)  
