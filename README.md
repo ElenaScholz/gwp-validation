@@ -325,7 +325,7 @@ Use the Script *02_run_match_GWP_NasaFloodProduct.py* to match Nasa Flood Produc
 Run the Scripts 02.1_run_matchGWPandLiByGlakes.py as well as 02.2_run_LiProcessData.py.
 
 `uv run python .\scripts\02.1_run_matchGWPandLiByGlakes.py --config .\configs\li.json` 
-`uv run python .\scripts\02.2_run_LiProcessData.py --config .\configs\nasaflood.json` 
+`uv run python .\scripts\02.2_run_LiProcessData.py --config .\configs\li.json` 
 
 ## Statistics
 The statistics script uses the stats.json as a config file. 

@@ -31,9 +31,12 @@ def main(config):
     hydrolakes = ROOT / config["input"]["hydrolakes"]
     OUTPUT_DIR = ROOT / config['output']["dir"]
     os.makedirs(OUTPUT_DIR, exist_ok=True)
+# I changed hte variable assignment from glakes and glakes not frozen to li_strict and li_no_frozen_month to avoid confusion with the original glakes dataset which is not used in the stats calculation. The new variable names also reflect that these datasets are based on the Li data and represent strict and no-frozen versions respectively.
+    li_strict = pd.read_csv( li_path_strict, sep=',') 
+    li_no_frozen_month = pd.read_csv( li_path_no_frozen, sep=',') 
 
-    glakes = pd.read_csv( li_path_strict, sep=',') 
-    glakes_no_frozen = pd.read_csv( li_path_no_frozen, sep=',') 
+    # glakes = pd.read_csv( li_path_strict, sep=',') 
+    # glakes_no_frozen = pd.read_csv( li_path_no_frozen, sep=',') 
     arlie = pd.read_csv (arlie_path, sep=',')
     nasaflood = pd.read_csv(nasa_path , sep=',')
 
@@ -107,16 +110,25 @@ def main(config):
     })
 
 
-    glakes_subset = glakes[["Date", "GLAKES_id", "Hylak_id", "GWP_lake_surface_area", "gwp_Area_max_km2", "li_lake_surface_area_km2", "latitude", "longitude", "glakes_area"]].copy()
-    glakes_subset_no_frozen = glakes_no_frozen[["Date", "GLAKES_id", "Hylak_id", "GWP_lake_surface_area", "gwp_Area_max_km2", "li_lake_surface_area_km2", "latitude", "longitude", "glakes_area"]].copy()
-    
-    # Process glakes_subset (strict)
-    glakes_subset['gwp-max-area-km2'] = glakes_subset['GWP_lake_surface_area'].groupby(glakes_subset['GLAKES_id']).transform("max")
-    glakes_subset['gwp-water-perc'] = glakes_subset['GWP_lake_surface_area'] / glakes_subset['gwp-max-area-km2'] * 100
-    glakes_subset['li_max_area'] = glakes_subset.groupby('GLAKES_id')['li_lake_surface_area_km2'].transform('max')
-    glakes_subset['validation-water-perc_li'] = glakes_subset['li_lake_surface_area_km2'] * 100 / glakes_subset['li_max_area'] 
+    # glakes_subset = glakes[["Date", "GLAKES_id", "Hylak_id", "GWP_lake_surface_area", "gwp_Area_max_km2", "li_lake_surface_area_km2", "latitude", "longitude", "glakes_area"]].copy()
+    # glakes_subset_no_frozen = glakes_no_frozen[["Date", "GLAKES_id", "Hylak_id", "GWP_lake_surface_area", "gwp_Area_max_km2", "li_lake_surface_area_km2", "latitude", "longitude", "glakes_area"]].copy()
 
-    glakes_subset = glakes_subset.rename(columns ={
+    li_strict_subset = li_strict[["Date", "GLAKES_id", "Hylak_id", "GWP_lake_surface_area", "gwp_Area_max_km2", "li_lake_surface_area_km2", "latitude", "longitude", "glakes_area"]].copy()
+    li_subset_no_frozen = li_no_frozen_month[["Date", "GLAKES_id", "Hylak_id", "GWP_lake_surface_area", "gwp_Area_max_km2", "li_lake_surface_area_km2", "latitude", "longitude", "glakes_area"]].copy()
+     
+    # Process glakes_subset (strict)
+    # glakes_subset['gwp-max-area-km2'] = glakes_subset['GWP_lake_surface_area'].groupby(glakes_subset['GLAKES_id']).transform("max")
+    # glakes_subset['gwp-water-perc'] = glakes_subset['GWP_lake_surface_area'] / glakes_subset['gwp-max-area-km2'] * 100
+    # glakes_subset['li_max_area'] = glakes_subset.groupby('GLAKES_id')['li_lake_surface_area_km2'].transform('max')
+    # glakes_subset['validation-water-perc_li'] = glakes_subset['li_lake_surface_area_km2'] * 100 / glakes_subset['li_max_area'] 
+
+
+    li_strict_subset['gwp-max-area-km2'] = li_strict_subset['GWP_lake_surface_area'].groupby(li_strict_subset['GLAKES_id']).transform("max")
+    li_strict_subset['gwp-water-perc'] = li_strict_subset['GWP_lake_surface_area'] / li_strict_subset['gwp-max-area-km2'] * 100
+    li_strict_subset['li_max_area'] = li_strict_subset.groupby('GLAKES_id')['li_lake_surface_area_km2'].transform('max')
+    li_strict_subset['validation-water-perc_li'] = li_strict_subset['li_lake_surface_area_km2'] * 100 / li_strict_subset['li_max_area'] 
+
+    li_strict_subset = li_strict_subset.rename(columns ={
         "Date": "Date",
         "GLAKES_id": "GLAKES_id",
         "Hylak_id": "Hylak_id", 
@@ -132,12 +144,12 @@ def main(config):
         "gwp-water-perc": "gwp-water-perc"})
 
     # Process glakes_subset_no_frozen (same steps)
-    glakes_subset_no_frozen['gwp-max-area-km2'] = glakes_subset_no_frozen['GWP_lake_surface_area'].groupby(glakes_subset_no_frozen['GLAKES_id']).transform("max")
-    glakes_subset_no_frozen['gwp-water-perc'] = glakes_subset_no_frozen['GWP_lake_surface_area'] / glakes_subset_no_frozen['gwp-max-area-km2'] * 100
-    glakes_subset_no_frozen['li_max_area'] = glakes_subset_no_frozen.groupby('GLAKES_id')['li_lake_surface_area_km2'].transform('max')
-    glakes_subset_no_frozen['validation-water-perc_li'] = glakes_subset_no_frozen['li_lake_surface_area_km2'] * 100 / glakes_subset_no_frozen['li_max_area'] 
+    li_subset_no_frozen['gwp-max-area-km2'] = li_subset_no_frozen['GWP_lake_surface_area'].groupby(li_subset_no_frozen['GLAKES_id']).transform("max")
+    li_subset_no_frozen['gwp-water-perc'] = li_subset_no_frozen['GWP_lake_surface_area'] / li_subset_no_frozen['gwp-max-area-km2'] * 100
+    li_subset_no_frozen['li_max_area'] = li_subset_no_frozen.groupby('GLAKES_id')['li_lake_surface_area_km2'].transform('max')
+    li_subset_no_frozen['validation-water-perc_li'] = li_subset_no_frozen['li_lake_surface_area_km2'] * 100 / li_subset_no_frozen['li_max_area'] 
 
-    glakes_subset_no_frozen = glakes_subset_no_frozen.rename(columns ={
+    li_subset_no_frozen = li_subset_no_frozen.rename(columns ={
         "Date": "Date",
         "GLAKES_id": "GLAKES_id",
         "Hylak_id": "Hylak_id", 
@@ -154,18 +166,18 @@ def main(config):
 
 
     # Z-score transformation for glakes_subset (strict)
-    glakes_z = glakes_subset.copy()
-    glakes_z['zscore-gwp-perc'] = zscore(glakes_z['gwp-water-perc'])
-    glakes_z['zscore-validation-water-perc-li'] = zscore(glakes_z['validation-water-perc-li'])
-    glakes_z['zscore-gwp-area-km2'] = zscore(glakes_z['gwp-water-km2'])
-    glakes_z['zscore-li-water-km2'] = zscore(glakes_z['li-water-km2'])
+    li_strict_z = li_strict_subset.copy()
+    li_strict_z['zscore-gwp-perc'] = zscore(li_strict_z['gwp-water-perc'])
+    li_strict_z['zscore-validation-water-perc-li'] = zscore(li_strict_z['validation-water-perc-li'])
+    li_strict_z['zscore-gwp-area-km2'] = zscore(li_strict_z['gwp-water-km2'])
+    li_strict_z['zscore-li-water-km2'] = zscore(li_strict_z['li-water-km2'])
 
-    # Z-score transformation for glakes_subset_no_frozen
-    glakes_z_no_frozen = glakes_subset_no_frozen.copy()
-    glakes_z_no_frozen['zscore-gwp-perc'] = zscore(glakes_z_no_frozen['gwp-water-perc'])
-    glakes_z_no_frozen['zscore-validation-water-perc-li'] = zscore(glakes_z_no_frozen['validation-water-perc-li'])
-    glakes_z_no_frozen['zscore-gwp-area-km2'] = zscore(glakes_z_no_frozen['gwp-water-km2'])
-    glakes_z_no_frozen['zscore-li-water-km2'] = zscore(glakes_z_no_frozen['li-water-km2'])
+    # Z-score transformation for li_subset_no_frozen
+    li_z_no_frozen = li_subset_no_frozen.copy()
+    li_z_no_frozen['zscore-gwp-perc'] = zscore(li_z_no_frozen['gwp-water-perc'])
+    li_z_no_frozen['zscore-validation-water-perc-li'] = zscore(li_z_no_frozen['validation-water-perc-li'])
+    li_z_no_frozen['zscore-gwp-area-km2'] = zscore(li_z_no_frozen['gwp-water-km2'])
+    li_z_no_frozen['zscore-li-water-km2'] = zscore(li_z_no_frozen['li-water-km2'])
 
     nasaflood_z = nasaflood_subset.copy()
     nasaflood_z['zscore-gwp-perc'] = zscore(nasaflood_z['gwp-water-perc'])
@@ -173,8 +185,8 @@ def main(config):
 
 
     nasa_dict = {f"Lake_{hylak_id}": group.copy() for hylak_id, group in nasaflood_z.groupby('Hylak_id')}
-    li_dict = {f"Lake_{GLAKES_id}": group.copy() for GLAKES_id, group in glakes_z.groupby('GLAKES_id')}
-    li_dict_no_frozen = {f"Lake_{GLAKES_id}": group.copy() for GLAKES_id, group in glakes_z_no_frozen.groupby('GLAKES_id')}
+    li_dict = {f"Lake_{GLAKES_id}": group.copy() for GLAKES_id, group in li_strict_z.groupby('GLAKES_id')}
+    li_dict_no_frozen = {f"Lake_{GLAKES_id}": group.copy() for GLAKES_id, group in li_z_no_frozen.groupby('GLAKES_id')}
 
     
     for name, df in nasa_dict.items():
@@ -223,7 +235,7 @@ def main(config):
 
     arlie_stats_df_z['Dataset'] = 'Arlie'
     nasa_stats_df_z['Dataset'] = 'NASAFlood'
-    li_stats_df_z['Dataset'] = 'Li'
+    li_stats_df_z['Dataset'] = 'Li-strict'
     li_stats_df_z_no_frozen['Dataset'] = 'Li_no_frozen'
 
     # Calculate stats without z-scores
@@ -234,7 +246,7 @@ def main(config):
 
     arlie_stats_df['Dataset'] = 'Arlie'
     nasa_stats_df['Dataset'] = 'NASAFlood'  
-    li_stats_df['Dataset'] = 'Li'
+    li_stats_df['Dataset'] = 'Li-strict'
     li_stats_df_no_frozen['Dataset'] = 'Li_no_frozen'
 
     # Save results
