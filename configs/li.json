@@ -1,6 +1,6 @@
 {
   "aoi": "world",
-  "root_dir": "T:/DLR/Analysis3",
+  "root_dir": "T:/DLR-DFD/Analysis3",
   "path_to_gwp_timeseries_folder": "Input/GWP/05_timeseries_8247_rm2902",
   "preprocessing": {
     "hydrolakes_shp": "Input/HydroLAKES_polys_v10/hydrolakes_poly_greater20m.gpkg",
@@ -16,8 +16,8 @@
     "monthly_gwp_folder": "Input/GWP/06_timeseries_8247_rm2902_monthly_hylakIDs"
   },
   "matching": {
-    "output_dir": "Output/Li/01_glakes_based_datasets",
-    "statistics_output": "Output/AllValidationDatasets/LiData",
-    "output_ts_plots": "Output/Li/02_dataForTimeSeriesPlots"
+    "output_dir": "Output_May2026/Li/01_glakes_based_datasets",
+    "statistics_output": "Output_May2026/AllValidationDatasets/LiData",
+    "output_ts_plots": "Output_May2026/Li/02_dataForTimeSeriesPlots"
   }
 }
