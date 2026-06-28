@@ -162,11 +162,11 @@ The information is stored in two corresponding files: one containing coordinates
 
 Furthermore we removed the 29.02. for all leap years.
 
-### Near realtime Flood Product (Nasa Flood Product)
+### Near realtime Flood Product (NRT-FP)
 
 The [near realtime global Flood Product](https://www.earthdata.nasa.gov/data/instruments/viirs/near-real-time-data/nrt-global-flood-products) provided by NASA is online available for recent years. We used historical data provided by NASA for the years 2010 and 2021. 
 
-### Global Lake Surface Extent dataset 
+### Global Lake Surface Extent dataset (LSE)
 The Global Lake Surface Extent dataset was published in mid 2025 within the paper [Global dominance of seasonality in shaping lake-surface-extent dynamics](https://www.nature.com/articles/s41586-025-09046-3#data-availability) by Li et al. 
 
 Data is available [here](https://zenodo.org/records/15536395)
