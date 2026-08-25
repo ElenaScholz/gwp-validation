@@ -107,12 +107,12 @@ Main Data Folder/
 │   │   ├── 06_timeseries_8247_rm2902_monthly    
 │   │   └── 06_timeseries_8247_rm2902_monthly_hylakIDs  
 │   ├── HydroLAKES_polys_v10  
-│   ├── Li  
+│   ├── LSE  
 │   │   ├── GLAKES  
 │   │   ├── Glakes_Prepared  
 │   │   ├── Monthly_Lakes  
 │   │   └── monthly_lake_surface_extent.csv    
-│   ├── NASAFlood  
+│   ├── NRT-FP  
 │   │   ├── 01_GlobalGWP  
 │   │   ├── 01_MWP  
 │   │   ├── 02_GWP-tiles  
@@ -123,8 +123,8 @@ Main Data Folder/
 │   ├── ARLIE  
 │   ├── GWP  
 │   ├── Hydrolakes  
-│   ├── Li  
-│   ├── NASAFlood    
+│   ├── LSE  
+│   ├── NRT-FP    
 ├── Results  
 ├── Maps  
 └── Plots  
@@ -141,15 +141,30 @@ The workflow follows the described steps within the paper. An overview is depict
 Download the Hydrolakes dataset in Shapefile-Format from this website [Hydrolakes](https://www.hydrosheds.org/products/hydrolakes#downloads). 
 
 ### Aggregated River and Lake Ice Extent (ARLIE)
-1. Download the ARLIE dataset for the whole time series (2003-2024). You can use the Script: *00_arlie_download_hda_files.py*
+1. Download the ARLIE dataset for the whole time series (2016/09-2024). You can use the Script: *00_arlie_download_hda_files.py*
 
-We used the maximum spatial extent for the dataset. [Information about it can be found here](https://www.eea.europa.eu/en/datahub/datahubitem-view/b5c68a06-5dcf-42e5-baad-94f861189f91). 
+Our Area of Interest was the whole Area covered by ARLIE. 
 
-Note that the Area of interest needs to be **geopackage file** and that you need login credential for the hda-file donwload. 
+Bounding Box: 69.00 N, 36.00S, 44.00E, -25.00W 
+
+You can find a file called arlie_bbox.gpkg in the repository.
+
+Note that the Area of interest needs to be **geopackage file** and that you need login credential to WEkEO for the hda-file donwload. 
+
+Registration: https://data.wekeo.copernicus.eu/register
+
+[Information about it can be found here](https://www.eea.europa.eu/en/datahub/datahubitem-view/b5c68a06-5dcf-42e5-baad-94f861189f91). 
+
+https://doi.org/10.2909/5752e8b5-ecda-4013-8eb9-e27f8515b87e
+
 
 Please download geometries as well as timeseries files. 
 
 2. Afterwards the files need to be unzipped. To do so use the script: *00_extract_arlie_zipfiles.py* 
+
+The files were downloaded on 01.04.2025. Later downloads may result in a differnt number of lakes, or dataset properties can change. 
+Publication Date for this version was 2025-03-05, edition 01.00
+
 
 ### Global Water Pack Raster (GWP)
 Global Water Pack comes as global raster datasets. Those can be downloaded with the script `00_Download_GWP_raster.py`.
@@ -157,14 +172,17 @@ Global Water Pack comes as global raster datasets. Those can be downloaded with 
 Download the rasterfiles into this folder:  
 \Input\NasaFlood\01_GlobalGWP  
 
-**Note:** We used already processed time series dataset containing daily Lake Area information in km², as well as coordinates for each lake in form of latitude/longitude information.
+
+
+**Note:** We also used already processed time series dataset containing daily Lake Area information in km², as well as coordinates for each lake in form of latitude/longitude information.
 The information is stored in two corresponding files: one containing coordinates, one the time series.  
 
-Furthermore we removed the 29.02. for all leap years.
+Furthermore we removed the 29.02. for all leap years. 
+
 
 ### Near realtime Flood Product (NRT-FP)
 
-The [near realtime global Flood Product](https://www.earthdata.nasa.gov/data/instruments/viirs/near-real-time-data/nrt-global-flood-products) provided by NASA is online available for recent years. We used historical data provided by NASA for the years 2010 and 2021. 
+The [near realtime global Flood Product](https://www.earthdata.nasa.gov/data/instruments/viirs/near-real-time-data/nrt-global-flood-products) provided by NASA is online available for recent years. We used historical data provided by NASA for the years 2010 and 2021. The datasets are in the folder "T:\GlobalWaterPack_Product_Intercomparison\INPUT\NRT-FP\01_NRT-FP"
 
 ### Global Lake Surface Extent dataset (LSE)
 The Global Lake Surface Extent dataset was published in mid 2025 within the paper [Global dominance of seasonality in shaping lake-surface-extent dynamics](https://www.nature.com/articles/s41586-025-09046-3#data-availability) by Li et al. 

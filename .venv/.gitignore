@@ -1,0 +1,12 @@
+*
+*.csv
+*.gpkg
+*.txt
+*.tif
+*.shp
+*.dbf
+*.prj
+*.shx
+*.sbx
+*.sbn
+
