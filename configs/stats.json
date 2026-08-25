@@ -1,17 +1,17 @@
 {"root": "T:/DLR-DFD/Analysis3",
     "input":{
-        "li_data_strict" : "Output_May2026/allValidationDatasets/LiData/Li_all_lakes_strict_no_frozen.csv",
-        "li_data_no_frozen" : "Output_May2026/allValidationDatasets/LiData/Li_all_lakes_no_frozen.csv",
+        "lse_data_strict" : "Output/allValidationDatasets/LSE/LSE_all_lakes_strict_no_frozen.csv",
+        "lse_data_no_frozen" : "Output/allValidationDatasets/LSE/LSE_all_lakes_no_frozen.csv",
         "arlie_data": "Output/AllValidationDatasets/Arlie_len146/all_arlie_lakes_10percDisr_len146.csv",
-        "nasaflood_data": "Output_May2026/AllValidationDatasets/NasaFlood/all_lakes_percentage_10percDisr.csv",
-        "hydrolakes": "Output/Hydrlakes/gwp_withHylaksAndMaxExtent_world.gpkg"
+        "nrt-fp_data": "Output/AllValidationDatasets/NRT-FP/all_lakes_percentage_10percDisr.csv",
+        "hydrolakes": "Output/Hydrolakes/gwp_withHylaksAndMaxExtent_world.gpkg"
     },
     "stats": {
         "arlie_number_of_sample": 146,
-        "nasaflood_number_of_sample": 37,
-        "li_number_of_sample" :14
+        "nrt-fp_number_of_sample": 37,
+        "lse_number_of_sample" :14
     },
     "output":{
-        "dir": "Results_10percDisrMay2026"
+        "dir": "Results_10percDisr"
     }
 }

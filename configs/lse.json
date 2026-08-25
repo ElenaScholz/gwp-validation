@@ -4,20 +4,20 @@
   "path_to_gwp_timeseries_folder": "Input/GWP/05_timeseries_8247_rm2902",
   "preprocessing": {
     "hydrolakes_shp": "Input/HydroLAKES_polys_v10/hydrolakes_poly_greater20m.gpkg",
-    "glakes_directory": "Input/Li/GLAKES/GLAKES/GLAKES",
+    "glakes_directory": "Input/LSE/GLAKES/GLAKES/GLAKES",
     "max_extent_dataset": "Output/Hydrolakes/gwp_withHylaks_world_withMaxExtent.gpkg",
     "output_dir": "/Output/Hydrolakes",
-    "glakes_output": "Input/Li/Glakes_Prepared",
-    "monthly_li_lse": "Input/Li/monthly_lake_surface_extent.csv",
-    "monthly_li_long": "Input/Li/monthly_lake_surface_extent_long.csv",
-    "prepared_glakes_ds": "Input/Li/Glakes_Prepared/glakes_hylak_30_subset.gpkg",
-    "glakes_hylak_strict": "Input/Li/Glakes_Prepared/gwp_glakes_hylak_30_merged_strict.gpkg",
-    "li_monthly_lakes_dir": "Input/Li/Monthly_Lakes",
+    "glakes_output": "Input/LSE/Glakes_Prepared",
+    "monthly_li_lse": "Input/LSE/monthly_lake_surface_extent.csv",
+    "monthly_li_long": "Input/LSE/monthly_lake_surface_extent_long.csv",
+    "prepared_glakes_ds": "Input/LSE/Glakes_Prepared/glakes_hylak_30_subset.gpkg",
+    "glakes_hylak_strict": "Input/LSE/Glakes_Prepared/gwp_glakes_hylak_30_merged_strict.gpkg",
+    "li_monthly_lakes_dir": "Input/LSE/Monthly_Lakes",
     "monthly_gwp_folder": "Input/GWP/06_timeseries_8247_rm2902_monthly_hylakIDs"
   },
   "matching": {
-    "output_dir": "Output_May2026/Li/01_glakes_based_datasets",
-    "statistics_output": "Output_May2026/AllValidationDatasets/LiData",
-    "output_ts_plots": "Output_May2026/Li/02_dataForTimeSeriesPlots"
+    "output_dir": "Output/LSE/01_glakes_based_datasets",
+    "statistics_output": "Output/AllValidationDatasets/LSEData",
+    "output_ts_plots": "Output/LSE/02_dataForTimeSeriesPlots"
   }
 }
