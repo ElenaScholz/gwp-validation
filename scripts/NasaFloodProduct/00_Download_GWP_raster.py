@@ -1,4 +1,4 @@
-# This Script automatically downloads GWP data from the dlr server
+# This Script automatically downloads GWP data from the german aerospace data server
 
 import os
 import requests
@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 start_date = datetime(2003,1,1) # yyyy, m, d 
 end_date = datetime(2024, 12, 31)
 
-outdir ="T:/DLR/Analysis3/Input/NasaFlood/01_GlobalGWP" 
+outdir = r"T:/GlobalWaterPack_Product_Intercomparison/INPUT/NRT-FP/01_GlobalGWP"
 
 
 # === SETUP ===

@@ -17,10 +17,10 @@ import getpass
 # === Step 0: Define Variables:
 # Path to the Area of Interest (needs to be a gpkg file)
 
-input_file = Path(r"...\not_downloaded_bBoxes2.gpkg") # Type in your path!
+input_file = Path(r"T:/GlobalWaterPack_Product_Intercomparison/INPUT/ARLIE/arlie_bbox.gpkg") # Type in your path!
 
 # Output directory for downloaded data
-OUTPUT_PATH = Path(".../Input/ARLIE") 
+OUTPUT_PATH = Path("T:/GlobalWaterPack_Product_Intercomparison/INPUT/ARLIE/zip") 
 
 # Define Start- & Enddate
 start_date = "2016-09-01T00:00:00.000Z"
@@ -59,7 +59,7 @@ geoms = list(gdf['geometry'])
 # === Step 3: Chunking the Geometries ===
 
 num_groups = 100         # Total number of groups to split into
-start_group = 42         # Index to start from (e.g., resume from group 43)
+start_group = 0         # Index to start from (e.g., resume from group 43)
 
 # Distribute geometries across groups in round-robin fashion
 chunks = [geoms[i::num_groups] for i in range(num_groups)]
