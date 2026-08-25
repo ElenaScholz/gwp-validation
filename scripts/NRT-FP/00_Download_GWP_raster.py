@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 start_date = datetime(2003,1,1) # yyyy, m, d 
 end_date = datetime(2024, 12, 31)
 
-outdir = r"T:/GlobalWaterPack_Product_Intercomparison/INPUT/NRT-FP/01_GlobalGWP"
+outdir = r"Path/To/You/Inputfolder/NRT-FP/01_GlobalGWP"
 
 
 # === SETUP ===
