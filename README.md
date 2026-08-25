@@ -34,11 +34,11 @@ Each Processing step was assigend to a number:
 04 = visualisation  
 
 
-DLR-GWPIntercomparison/  
+GlobalWaterPack_Product_Intercomparison/  
 ├── configs/  
 │   ├── arlie.json  
-│   ├── li.json  
-│   ├── nasaflood.json  
+│   ├── lse.json  
+│   ├── nrt-fp.json  
 │   ├── world_hydrolakes.json  
 │   ├── europe_hydrolakes.json  
 │   ├── stats.json  
@@ -51,11 +51,11 @@ DLR-GWPIntercomparison/
 │   │   ├── 00_extract_arlie_zipfiles.py  
 │   │   ├── 02.1_run_arlie_gwp_geom_matching.py  
 │   │   ├── 02.2_run_arlie_gwp_ts_matching.py  
-│   ├── Li  
+│   ├── LSE  
 │   │   ├── 01.1_matchGlakesHydrolakesGWP.py  
 │   │   ├── 01.2_reshapeMonthly_LiLSE.py  
 │   │   ├── 01.3_reshape_monthlyGWP.py   
-│   ├── NasaFloodProduct  
+│   ├── NRT-FP  
 │   │   ├── 00_Download_GWP_raster.py        
 │   │   ├── 01.1_clip_GWP_to_tiles.py  
 │   │   ├── 01.2_NasaFlood_extractHDF.py      
