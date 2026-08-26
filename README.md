@@ -449,3 +449,6 @@ uv run python scripts/04_visualisations.py --config configs/stats.json
 - [ARLIE](https://www.eea.europa.eu/en/datahub/datahubitem-view/b5c68a06-5dcf-42e5-baad-94f861189f91)
 - [GLAKES dataset](https://garslab.com/?p=234)
 - [Mapping global lake dynamics reveals the emerging roles of small lakes](https://www.nature.com/articles/s41467-022-33239-3)
+
+# License
+This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
