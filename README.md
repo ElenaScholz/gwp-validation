@@ -304,7 +304,7 @@ Make sure to use the following output-folder and file naming structure!
 
    **Output:** CSV files in `Output/NRT-FP/`.
 
-### 01 Global Lake Surface Extent (LSE, Li et al.)
+### 01 LSE
 
 1. **Match GLAKES with HydroLAKES and GWP.**
 
