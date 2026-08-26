@@ -163,8 +163,7 @@ Main Data Folder/
 > referred to as both **LSE** and **Li** throughout this repository. File and
 > folder names use `LSE`; variable names, config keys and some output files
 > use `Li`. They refer to the same dataset.
-> The NRT-FP dataset is also referred to as MWP (Modis Water Product) throught this repository.  
->`NRT-FP` as well as `MWP` refer to the same files
+> The Near Real Time Flood Product dataset is referred `NRT-FP` as well as `MWP`.
 
 # Workflow
 The workflow follows the steps described in the paper. An overview is shown in the flowchart below:
