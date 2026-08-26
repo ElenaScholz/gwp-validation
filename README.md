@@ -304,7 +304,7 @@ Make sure to use the following output-folder and file naming structure!
 
    **Output:** CSV files in `Output/NRT-FP/`.
 
-### 01 Global Lake Surface Extent (LSE, Li et al.)
+### 01 LSE
 
 1. **Match GLAKES with HydroLAKES and GWP.**
 
@@ -449,6 +449,9 @@ uv run python scripts/04_visualisations.py --config configs/stats.json
 - [ARLIE](https://www.eea.europa.eu/en/datahub/datahubitem-view/b5c68a06-5dcf-42e5-baad-94f861189f91)
 - [GLAKES dataset](https://garslab.com/?p=234)
 - [Mapping global lake dynamics reveals the emerging roles of small lakes](https://www.nature.com/articles/s41467-022-33239-3)
+<<<<<<< HEAD
 
 # License
 This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
+=======
+>>>>>>> 8154a0a04d1b04daf3c0890e9ab574a53f4611b2
