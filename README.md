@@ -419,14 +419,6 @@ Results_10percDisr/stats_summary_compact.csv
 
 Final results are displayed as maps, produced by `scripts/04_visualisations.py`.
 
-```
-uv run python scripts/04_visualisations.py --config configs/stats.json
-```
-
-The final results look like this:
-
-![Worldmap global LSE extent (Li et al. 2025)](images/LiRMSE_scatterscatter.png)
-
 # Sources
 - [Global dominance of seasonality in shaping lake-surface-extent dynamics](https://www.nature.com/articles/s41586-025-09046-3)
 - [Global LSE dataset](https://zenodo.org/records/15536395)
