@@ -23,9 +23,9 @@ This project uses two virtual environments: one managed via uv and one via pixi.
 3. Activation is only needed if you want to run scripts without the `uv run` prefix:
 
    ```
-   source .venv/Scripts/activate      # Git Bash
-   .venv\Scripts\Activate.ps1         # PowerShell
-   .venv\Scripts\activate.bat         # cmd
+   source .venv/Scripts/activate  # Git Bash
+   .venv\Scripts\Activate         # PowerShell
+   .venv\Scripts\activate         # cmd
    ```
 
 ### pixi
@@ -180,7 +180,7 @@ Place the whole folder inside `Input/HydroLAKES_polys_v10/`.
 
 1. Download the ARLIE dataset for the whole time series (2016/09–2024) using the script `scripts/arlie/00_arlie_download_hda_files.py`.
 
-   Our area of interest was the full area covered by ARLIE (bounding box in EPSG:4326: xmin −25.00, ymin 36.00, xmax 44.00, ymax 69.00).
+   Our area of interest was the full area covered by ARLIE (see file arlie_box.gpkg).
 
    The area of interest must be a **GeoPackage** file, and you need WEkEO login credentials for the HDA download.
 
