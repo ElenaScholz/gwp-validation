@@ -1,10 +1,10 @@
-{"root": "T:/DLR-DFD/Analysis3",
+{"root_dir": "T:/DLR-DFD/Analysis3",
     "input":{
-        "lse_data_strict" : "Output/allValidationDatasets/LSE/LSE_all_lakes_strict_no_frozen.csv",
-        "lse_data_no_frozen" : "Output/allValidationDatasets/LSE/LSE_all_lakes_no_frozen.csv",
-        "arlie_data": "Output/AllValidationDatasets/Arlie_len146/all_arlie_lakes_10percDisr_len146.csv",
+        "lse_data_strict" : "Output/AllValidationDatasets/LSE/LSE_all_lakes_strict_no_frozen.csv",
+        "lse_data_no_frozen" : "Output/AllValidationDatasets/LSE/LSE_all_lakes_no_frozen.csv",
+        "arlie_data": "Output/AllValidationDatasets/ARLIE_len146/all_arlie_lakes_10percDisr_len146.csv",
         "nrt-fp_data": "Output/AllValidationDatasets/NRT-FP/all_lakes_percentage_10percDisr.csv",
-        "hydrolakes": "Output/Hydrolakes/gwp_withHylaksAndMaxExtent_world.gpkg"
+        "hydrolakes": "Output/Hydrolakes/gwp_withHylaks_world_withMaxExtent.gpkg"
     },
     "stats": {
         "arlie_number_of_sample": 146,
@@ -13,5 +13,8 @@
     },
     "output":{
         "dir": "Results_10percDisr"
+    },
+    "visualisation": {
+        "output_dir": "Maps_10percDisr_colors"
     }
 }

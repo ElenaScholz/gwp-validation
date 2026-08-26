@@ -9,7 +9,8 @@ def main(config):
     INPUT_FOLDER = ROOT / config['matching']['output_dir']
     OUTPUT_FOLDER_Statistics = ROOT / config['matching']['statistics_output']
     OUTPUT_FOLDER_TimeseriesPlots = ROOT / config['matching']['output_ts_plots']
-
+    OUTPUT_FOLDER_Statistics.mkdir(parents=True, exist_ok=True)
+    OUTPUT_FOLDER_TimeseriesPlots.mkdir(parents=True, exist_ok=True)
 
     # Read in the glakes based dataset
     li_files = {}
@@ -51,11 +52,11 @@ def main(config):
 
     # combine all dfs in this dictionary into a dataframe
     combined_df = pd.concat(non_frozen_dict.values(), ignore_index=True)
-    combined_df.to_csv(OUTPUT_FOLDER_Statistics / "Li_all_lakes_no_frozen.csv", index=False)
+    combined_df.to_csv(OUTPUT_FOLDER_Statistics / "LSE_all_lakes_no_frozen.csv", index=False)
     combined_df_with_frozen = pd.concat(li_files.values(), ignore_index=True)
-    combined_df_with_frozen.to_csv(OUTPUT_FOLDER_Statistics / "Li_all_lakes_with_frozen.csv", index=False)
+    combined_df_with_frozen.to_csv(OUTPUT_FOLDER_Statistics / "LSE_all_lakes_with_frozen.csv", index=False)
     combined_df_strict = pd.concat(non_frozen_strict.values(), ignore_index=True)
-    combined_df_strict.to_csv(OUTPUT_FOLDER_Statistics / "Li_all_lakes_strict_no_frozen.csv", index=False)
+    combined_df_strict.to_csv(OUTPUT_FOLDER_Statistics / "LSE_all_lakes_strict_no_frozen.csv", index=False)
 
 
 if __name__ == "__main__":

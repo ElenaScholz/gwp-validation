@@ -6,7 +6,6 @@
     "hydrolakes_shp": "Input/HydroLAKES_polys_v10/hydrolakes_poly_greater20m.gpkg",
     "glakes_directory": "Input/LSE/GLAKES/GLAKES/GLAKES",
     "max_extent_dataset": "Output/Hydrolakes/gwp_withHylaks_world_withMaxExtent.gpkg",
-    "output_dir": "/Output/Hydrolakes",
     "glakes_output": "Input/LSE/Glakes_Prepared",
     "monthly_li_lse": "Input/LSE/monthly_lake_surface_extent.csv",
     "monthly_li_long": "Input/LSE/monthly_lake_surface_extent_long.csv",
@@ -17,7 +16,7 @@
   },
   "matching": {
     "output_dir": "Output/LSE/01_glakes_based_datasets",
-    "statistics_output": "Output/AllValidationDatasets/LSEData",
+    "statistics_output": "Output/AllValidationDatasets/LSE",
     "output_ts_plots": "Output/LSE/02_dataForTimeSeriesPlots"
   }
 }

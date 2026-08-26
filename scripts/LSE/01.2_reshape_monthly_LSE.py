@@ -21,11 +21,10 @@ def main(config):
     df = df[df['Hylak_id'].isin(NEEDED_IDS)]   
 
 
-    # Angenommen, df_long ist wie vorher erzeugt
-    # df_long: Hylak_id | month | lake_surface_area | frozen
+    # df_long has columns: Hylak_id | month | lake_surface_area | frozen
 
     output_dir = ROOT / config['preprocessing']["li_monthly_lakes_dir"]
-    os.makedirs(output_dir, exist_ok=True)  # Ordner anlegen, falls nicht existent
+    os.makedirs(output_dir, exist_ok=True)
     import pandas as pd
 
     # assuming your dataframe is called df
@@ -57,7 +56,7 @@ def main(config):
 
     df_long.to_csv(OUTPUT_FILE, index=False)
 
-    # Schreibe jede Hylak_id einzeln
+    # write each Hylak_id to its own file
     for hid, group in df_long.groupby("Hylak_id"):
         filename = os.path.join(output_dir, f"Hylak_{hid}.csv")
         group.to_csv(filename, index=False)

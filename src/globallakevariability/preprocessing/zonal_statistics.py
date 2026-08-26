@@ -13,7 +13,7 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 import logging
 from tqdm import tqdm
 
-# Konfiguriere Logging
+# configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -105,11 +105,11 @@ def find_matching_files(gwp_path, mwp_path, year, tile, max_files=None):
     Returns a list of tuples (gwp_file_path, mwp_file_path, date_obj, doy)
     """
     try:
-        # Pfade zu Dateien abrufen
+        # retrieve file paths
         gwp_files = get_filepaths_from_folder(gwp_path)
         mwp_files = get_filepaths_from_folder(mwp_path)
-        
-        # Erstelle ein Dictionary mit MWP-Dateinamen für schnellere Suche
+
+        # build a dictionary of MWP filenames for faster lookup
         # Key: (year, doy, tile) -> Value: file_path
         mwp_dict = {}
         for path in mwp_files:
@@ -135,7 +135,7 @@ def find_matching_files(gwp_path, mwp_path, year, tile, max_files=None):
             gwp_match = re.search(r"GWP\.OSWF\.DAILY\.(\d{8})\.([hv\d]+)", gwp_filename)
             
             if not gwp_match:
-                logger.warning(f"Kein gültiges GWP-Format gefunden in: {gwp_filename}")
+                logger.warning(f"No valid GWP format found in: {gwp_filename}")
                 continue
                 
 
@@ -164,22 +164,20 @@ def find_matching_files(gwp_path, mwp_path, year, tile, max_files=None):
                 if search_key in mwp_dict:
                     mwp_file_path = mwp_dict[search_key]
                     matched_files.append((gwp_file_path, mwp_file_path, date_obj, doy))
-                    logger.debug(f"Match gefunden: {gwp_filename} <-> {mwp_file_path.name}")
+                    logger.debug(f"Match found: {gwp_filename} <-> {mwp_file_path.name}")
                 else:
-                    logger.debug(f"Keine entsprechende MWP-Datei gefunden für: {gwp_filename} (Suche nach Jahr={file_year}, DOY={doy_str}, Tile={gwp_tile})")
-                    
+                    logger.debug(f"No matching MWP file found for: {gwp_filename} (searched for year={file_year}, DOY={doy_str}, tile={gwp_tile})")
+
             except ValueError as e:
-                logger.warning(f"Fehler beim Parsen des Datums in {gwp_filename}: {e}")
+                logger.warning(f"Error parsing date in {gwp_filename}: {e}")
                 continue
-        
-        logger.info(f"Insgesamt {len(matched_files)} passende Dateipaare gefunden")
-        
-        
+
+        logger.info(f"Found {len(matched_files)} matching file pairs in total")
+
         return matched_files
-    
-        
+
     except Exception as e:
-        logger.error(f"Fehler beim Suchen von Dateien für {tile}, {year}: {str(e)}")
+        logger.error(f"Error searching for files for {tile}, {year}: {str(e)}")
         return []
     
 
@@ -217,7 +215,7 @@ def process_file_pair(gwp_file, mwp_file, max_extent, year, doy, tile):
 
 
     try:
-        logger.debug(f"Verarbeite Dateien: {gwp_file.name} und {mwp_file.name}")
+        logger.debug(f"Processing files: {gwp_file.name} and {mwp_file.name}")
         
         gwp_stats_df = calculate_zonal_statistics(gwp_file, max_extent, count_name="gwp-count", year = year, doy = doy,
                                                       categories = {0.0 : "gwp-noWater", 1.0 : "gwp-Water"} ,
@@ -239,7 +237,7 @@ def process_file_pair(gwp_file, mwp_file, max_extent, year, doy, tile):
         
         return combined_df
     except Exception as e:
-        logger.error(f"Fehler bei der Verarbeitung von {gwp_file.name} und {mwp_file.name}: {str(e)}")
+        logger.error(f"Error processing {gwp_file.name} and {mwp_file.name}: {str(e)}")
         return None
 
 def process_tile_year(tile, year, gwp_path, mwp_basepath, max_extent_path, chunk_size, num_workers, max_files_per_tile_year):
@@ -247,29 +245,29 @@ def process_tile_year(tile, year, gwp_path, mwp_basepath, max_extent_path, chunk
     Process all file pairs for a specific tile and year combination.
     """
     try:
-        logger.info(f"Verarbeite Tile {tile} für Jahr {year}")
-        # Pfade zu den Ordnern
+        logger.info(f"Processing tile {tile} for year {year}")
+        # paths to the folders
 
         gwp_path = gwp_path / tile
         mwp_path = mwp_basepath / f"MCDWD.{tile}.{year}"
-        # Lade max_extent nur einmal
+        # load max_extent only once
         max_extent_file = max_extent_path / f"{tile}_extent.gpkg"
         if not max_extent_file.exists():
-            logger.error(f"Max extent file nicht gefunden: {max_extent_file}")
+            logger.error(f"Max extent file not found: {max_extent_file}")
             return pd.DataFrame()
-            
+
         max_extent = gpd.read_file(max_extent_file)
-        print(print(f"Features: {len(max_extent)}, CRS: {max_extent.crs}"))
-        # Finde passende Dateien
+        print(f"Features: {len(max_extent)}, CRS: {max_extent.crs}")
+        # find matching files
         matched_files = find_matching_files(gwp_path, mwp_path, year, tile, max_files_per_tile_year)
-        
+
         if not matched_files:
-            logger.warning(f"Keine passenden Dateien für {tile}, {year} gefunden")
+            logger.warning(f"No matching files found for {tile}, {year}")
             return pd.DataFrame()
-            
-        logger.info(f"{len(matched_files)} passende Dateien für {tile}, {year} gefunden")
-        
-        # Verarbeite die Dateien in Batches
+
+        logger.info(f"{len(matched_files)} matching files found for {tile}, {year}")
+
+        # process the files in batches
         result_df = process_in_batches(
             matched_files, 
             max_extent, 
@@ -280,38 +278,38 @@ def process_tile_year(tile, year, gwp_path, mwp_basepath, max_extent_path, chunk
         )
         
         return result_df
-    
+
     except Exception as e:
-        logger.error(f"Fehler bei der Verarbeitung von {tile}, {year}: {str(e)}")
+        logger.error(f"Error processing {tile}, {year}: {str(e)}")
         return pd.DataFrame()
-    
+
 def apply_area_deviation_check(df, max_area_difference=0.1):
         """
-        Überprüft die Pixel-Konsistenz zwischen GWP und MWP Daten
-        
+        Checks pixel consistency between GWP and MWP data.
+
         Parameters:
         -----------
         df : DataFrame
-            See-Daten mit gwp-count und mwp-count Spalten
+            Lake data with gwp-count and mwp-count columns
         max_area_difference : float, default=0.1
-            Maximale erlaubte relative Abweichung (0.1 = 10%)
-        
+            Maximum allowed relative deviation (0.1 = 10%)
+
         Returns:
         --------
         clean_df : DataFrame
-            Datenpunkte die den Konsistenz-Check bestehen
+            Data points that pass the consistency check
         removed_df : DataFrame
-            Datenpunkte die den Check nicht bestehen
+            Data points that fail the check
         """
-        
-        # Pixel-Konsistenz Check
+
+        # pixel consistency check
         df['pixel_deviation'] = np.where(
             df['gwp-count'] != 0,
             abs(df['gwp-count'] - df['mwp-count']) / df['gwp-count'],
             0
         )
-        
-        # Filter anwenden
+
+        # apply filter
         consistency_mask = df['pixel_deviation'] <= max_area_difference
         
         clean_df = df[consistency_mask].copy()

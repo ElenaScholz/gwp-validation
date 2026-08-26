@@ -27,9 +27,9 @@ class ArlieProcessor:
         '''Reads geometry files, removes rivers, filters small areas, and converts them into GeoDataFrames.'''
         for file in self.arlie_files:
             if file.name.endswith("geometries.csv"):
-                match = re.search(r'\d{3}_geometries', file.name) 
+                match = re.search(r'\d{3}_geometries', file.name)
                 if not match:
-                    continue  # Falls kein Match gefunden wird, weitergehen
+                    continue  # skip if no match is found
 
                 geometry = pd.read_csv(file, sep=";")
                 if geometry.shape[0] == 0:  
@@ -49,108 +49,105 @@ class ArlieProcessor:
                     gdf = gdf.to_crs("EPSG:4326")  
 
                     geom_id = match.group(0)[:-11]
-                    self.arlie_geometries[geom_id] = gdf  # Speichert das Ergebnis für späteres Matching
+                    self.arlie_geometries[geom_id] = gdf  # store the result for later matching
 
         return self.arlie_geometries
-    
-    def apply_negative_buffer(self, buffer_distance=-0.0003):  # Für geographische Koordinaten
+
+    def apply_negative_buffer(self, buffer_distance=-0.0003):  # for geographic coordinates
         """
-        Wendet einen negativen Buffer auf die Arlie-Geometrien an, um kleine Überlappungen zu eliminieren.
-        
+        Applies a negative buffer to the Arlie geometries to eliminate small overlaps.
+
         Args:
-            buffer_distance: Negativer Bufferwert in den Einheiten der CRS
+            buffer_distance: negative buffer value in the units of the CRS
         """
         for geom_id, gdf in self.arlie_geometries.items():
 
             if gdf.empty:
-                continue  # Überspringe leere Geometrien
+                continue  # skip empty geometries
 
-            orig_crs = gdf.crs  # Ursprüngliche CRS speichern
+            orig_crs = gdf.crs  # store the original CRS
 
             gdf['geometry'] = gdf.geometry.make_valid()
 
             centroid = gdf.union_all(method = "unary").centroid
             utm_zone = int(((centroid.x + 180) / 6) % 60) + 1
             projected_crs = f"EPSG:{32600 + utm_zone}" if centroid.y >= 0 else f"EPSG:{32700 + utm_zone}"
-        
-            # Erstelle kopie um Warnungen zu vermeiden
+
+            # create a copy to avoid warnings
             gdf_copy = gdf.copy()
-            # Konvertiere in UTM-Koordinaten
+            # convert to UTM coordinates
             gdf_projected = gdf_copy.to_crs(projected_crs)
 
-            # Wende negativen Buffer an
+            # apply negative buffer
             gdf_projected['geometry'] = gdf_projected.geometry.buffer(buffer_distance)
-            
-            # Zurück zum ursprünglichen CRS
+
+            # convert back to the original CRS
             gdf_buffered = gdf_projected.to_crs(orig_crs)
-        
-            # Entferne leere Geometrien
+
+            # remove empty geometries
             gdf_buffered = gdf_buffered[~gdf_buffered.geometry.is_empty]
-            
-        
-            self.arlie_geometries[geom_id] = gdf_buffered  # Aktualisiere die Geometrien in der Liste
-        
+
+
+            self.arlie_geometries[geom_id] = gdf_buffered  # update the geometries in the list
+
         return self.arlie_geometries
-        
+
     def filter_by_overlap_threshold(self, threshold_percentage=10):
         """
-        Filtert Arlie-Polygone basierend auf ihrem Überlappungsgrad mit HyLAK-Polygonen.
-        
+        Filters Arlie polygons based on their overlap with HyLAK polygons.
+
         Args:
-            threshold_percentage: Minimaler Überlappungsprozentsatz (z.B. 10 für 10%)
+            threshold_percentage: minimum overlap percentage (e.g. 10 for 10%)
         """
         filtered_geometries = {}
-        
+
         for geom_id, arlie_gdf in self.arlie_geometries.items():
-            # Liste zum Speichern der Polygone, die den Schwellenwert erfüllen
+            # list to store the polygons that meet the threshold
             valid_polygons = []
-            
+
             for idx, arlie_row in arlie_gdf.iterrows():
-                arlie_geom = arlie_row.geometry.buffer(0) # Repariere Geometrien
+                arlie_geom = arlie_row.geometry.buffer(0) # repair geometries
                 arlie_area = arlie_geom.area
-                
-                # Finde potentielle Überlappungen durch räumliche Indexierung
+
+                # find potential overlaps via spatial indexing
                 possible_matches_idx = self.hylak_dataset.sindex.query(arlie_geom)
                 possible_matches = self.hylak_dataset.iloc[possible_matches_idx]
                 #print(possible_matches)
                 valid_match = False
                 for _, hylak_row in possible_matches.iterrows():
                     hylak_geom = hylak_row.geometry
-                    
-                    # Berechne Überlappungsfläche
+
+                    # calculate overlap area
                     if arlie_geom.intersects(hylak_geom):
                         intersection_area = arlie_geom.intersection(hylak_geom).area
                         overlap_percentage = (intersection_area / arlie_area) * 100
-                        
+
                         if overlap_percentage >= threshold_percentage:
                             valid_match = True
                             break
-                
+
                 if valid_match:
                     valid_polygons.append(arlie_row)
-            
+
             if valid_polygons:
                 filtered_geometries[geom_id] = gpd.GeoDataFrame(valid_polygons, crs=arlie_gdf.crs)
-        
-        # Ersetze die ursprünglichen Geometrien durch die gefilterten
+
+        # replace the original geometries with the filtered ones
         self.arlie_geometries = filtered_geometries
         return self.arlie_geometries
                         
 
     def matchArlieAndGWP(self):
         '''Matches Arlie geometries with GWP IDs and adds additional attributes.'''
-        for geom_id, gdf in self.arlie_geometries.items():  # Iteriere über die vorher gespeicherten Geometrien
-            
-            
+        for geom_id, gdf in self.arlie_geometries.items():  # iterate over the previously stored geometries
+
+
             if gdf.empty:
                 print(f"⚠️ WARNING: No geometries found for {geom_id}. Skipping.")
                 continue
 
-            
-            gdf = gpd.sjoin(gdf, self.hylak_dataset,  how="left", predicate="intersects")  # Führe den räumlichen Join durch	
 
-           # gdf = gdf.dropna(subset=['basin_name'])  # Entferne Zeilen bei denen kein See zugeordnet werden konnte
-
+            gdf = gpd.sjoin(gdf, self.hylak_dataset,  how="left", predicate="intersects")  # perform the spatial join
 
             gdf['Lake_area_HyLak'] = gdf['Lake_area']
             gdf['Lake_name_HyLak'] = gdf['Lake_name']
@@ -164,38 +161,38 @@ class ArlieProcessor:
             #print(arlie_with_gwpId.columns)
             arlie_with_gwpId = arlie_with_gwpId.dropna(subset=['gwp_id'])
 
-            self.gwp_arlie_dict[geom_id] = arlie_with_gwpId  # Speichert das finale Mapping
+            self.gwp_arlie_dict[geom_id] = arlie_with_gwpId  # store the final mapping
 
         return self.gwp_arlie_dict
     
     
     def mergeArlieStatsWithGeoms(self):
-                
+
         for file in self.arlie_files:
             if file.name.endswith("arlie.csv"):
-                match = re.search(r'\d{3}_arlie', file.name) 
+                match = re.search(r'\d{3}_arlie', file.name)
                 if not match:
                     continue
-                    
-            
-                arlie_id = match.group(0)[:-6]  # Entferne "_arlie"
-                print(f"Verarbeite Arlie-Datei für ID: {arlie_id}")
-                
-                # Lade Arlie-Daten
+
+
+                arlie_id = match.group(0)[:-6]  # remove "_arlie"
+                print(f"Processing Arlie file for ID: {arlie_id}")
+
+                # load Arlie data
                 arlie = pd.read_csv(file, sep=";")
 
-                
-                # Filtere und konvertiere
+
+                # filter and convert
                 arlie = arlie[arlie['qc'] == 0]
                 arlie = arlie.copy()
                 arlie['river_km_id'] = arlie['river_km_id'].astype(str)
-                
-                # Suche entsprechende Geometrie-Daten
+
+                # look up the corresponding geometry data
                 if arlie_id in self.gwp_arlie_dict:
                     geom_gdf = self.gwp_arlie_dict[arlie_id]
                     geom_gdf['id'] = geom_gdf['id'].astype(str)
-                    
-                    # Führe den Merge durch (wie in deinem manuellen Beispiel)
+
+                    # perform the merge
                     merged_df = pd.merge(
                         arlie,              # df1 (arlie_stats)
                         geom_gdf,           # df2 (arlie_geometries)
@@ -204,38 +201,26 @@ class ArlieProcessor:
                     )
 
                     merged_df.drop(columns =["id_x", "id_y", "basin_name", "river_km"], inplace=True)
-                    
-                    # Speichere das Ergebnis
+
+                    # store the result
                     self.stats_dict[arlie_id] = merged_df
-                    #print(f"Erfolgreich gemergt: {arlie_id} mit {len(merged_df)} Zeilen")
                 else:
-                    print(f"Keine entsprechenden Geometriedaten für ID: {arlie_id} gefunden")
-   
+                    print(f"No corresponding geometry data found for ID: {arlie_id}")
+
         return self.stats_dict
-    
-    def save_dict(self, data_dict, output_path):
-
-        output_path = Path(output_path)
-
-        os.makedirs(output_path, exist_ok=True)
-
-        for lake, df in data_dict.items():
-            df.to_csv(output_path / f"Lake_{lake}.csv")
-
-
 
 
 
 def process_rows(row, threshold):
     """
-    Prüft eine Zeile auf Basis der angegebenen Grenzwerte.
-    
+    Checks a row against the given threshold.
+
     Args:
-        row (Series): Eine Zeile des DataFrames.
-        thresholds (dict): Grenzwerte für die Filterung.
-    
+        row (Series): A row of the DataFrame.
+        threshold: threshold value for filtering.
+
     Returns:
-        bool: True, wenn die Zeile gültig ist; False, wenn sie ausgeschlossen wird.
+        bool: True if the row is valid; False if it is excluded.
     """
     if row['nd_perc'] + row['cloud_perc'] + row['other_perc'] > threshold:
         return False
@@ -244,14 +229,14 @@ def process_rows(row, threshold):
 
 def filter_arlie_by_threshold(df, threshold):
         """
-        Filtert den ARLIE-Datensatz basierend auf den angegebenen Grenzwerten.
-        
+        Filters the ARLIE dataset based on the given threshold.
+
         Args:
-            dataframe (DataFrame): Der ursprüngliche DataFrame.
-            thresholds (dict): Grenzwerte für die Filterung.
-        
+            df (DataFrame): The original DataFrame.
+            threshold: threshold value for filtering.
+
         Returns:
-            DataFrame: Gefilterter DataFrame.
+            DataFrame: Filtered DataFrame.
         """
         valid_rows= [
              row for _, row in df.iterrows() if
@@ -264,22 +249,19 @@ def filter_arlie_by_threshold(df, threshold):
 def aggregate_water_data(df, max_area_difference, id_column="river_km_id", target_id_column="Hylak_id"):
     issues = []
 
-    # Datum extrahieren
+    # extract date
     df['datetime'] = pd.to_datetime(df['datetime'])
     df['date'] = df['datetime'].dt.date
 
-    # Prozent-Spalten erkennen
+    # detect percentage columns
     perc_columns = [col for col in df.columns if col.endswith("_perc")]
     area_column = "area"
 
-    # Hohe Wolkenbedeckungen etc. entfernen
-
-    
-    # Gewichtete Werte vorbereiten
+    # prepare weighted values
     for col in perc_columns:
         df[f"{col}_weighted"] = df[col] * df[area_column]
 
-    # Aggregation definieren
+    # define aggregation
     aggregation_dict = {f"{col}_weighted": "sum" for col in perc_columns}
     aggregation_dict.update({
         "area": "sum",
@@ -291,24 +273,24 @@ def aggregate_water_data(df, max_area_difference, id_column="river_km_id", targe
         id_column: "first"
     })
 
-    # Gruppieren
+    # group
     df_grouped = df.groupby([target_id_column, "date"]).agg(aggregation_dict).reset_index()
 
-    # Gewichtete Prozentwerte zurückrechnen
+    # recompute weighted percentage values
     for col in perc_columns:
         df_grouped[col] = df_grouped[f"{col}_weighted"] / df_grouped["area"]
         df_grouped.drop(columns=[f"{col}_weighted"], inplace=True)
 
-    # Total-Check
+    # total check
     df_grouped["total_perc"] = df_grouped[perc_columns].sum(axis=1)
 
-    # Problemfälle "total_perc ≠ 100" merken
+    # record cases where total_perc != 100
     total_perc_issues = df_grouped.loc[df_grouped["total_perc"].round(1) != 100, target_id_column].unique()
 
     for lake_id in total_perc_issues:
         issues.append((lake_id, "total area not 100%"))
-    
-    # Fläche in km² umrechnen
+
+    # convert area to km²
     df_grouped['Arlie_Area'] = df_grouped['area'] * 1e-6  # Convert area to km²
     df_grouped['Gwp_Max_Area'] = df_grouped['gwp_Area_max']# * 1e-6  # Convert area to km²
     df_grouped = df_grouped.drop(columns=["total_perc", "area", "gwp_Area_max"])
@@ -316,9 +298,9 @@ def aggregate_water_data(df, max_area_difference, id_column="river_km_id", targe
 
 
 
-    # Extent Difference Check
+    # extent difference check
     arlie_area = df_grouped["Arlie_Area"].iloc[0]
-    gwp_area = df_grouped["Gwp_Max_Area"].iloc[0]  # Achtung: wir nehmen einfach den ersten gwp_Area_max-Wert!
+    gwp_area = df_grouped["Gwp_Max_Area"].iloc[0]  # note: we simply take the first gwp_Area_max value!
 
     deviation = abs(gwp_area - arlie_area) / gwp_area if gwp_area != 0 else 0
 
@@ -333,33 +315,30 @@ def make_arlie_files_to_dict(file_list, max_area_difference, max_disruption_thre
     issues_list = []
 
     for file in file_list:
-        #df = pd.read_csv(file, sep=",")
         print(f"Processing {file}...")
         try:
             df = pd.read_csv(file, sep=",")
-         
+
         except pd.errors.ParserError as e:
             print(f"Error parsing {file}: {e}")
             continue  # Skip this file and continue with the next one
-        # Schlüssel erstellen
-   
-        key = df['gwp_id'].iloc[0][:-14]  # Kürzen
+        # build the key
+        key = df['gwp_id'].iloc[0][:-14]  # shorten
 
-        # Doppelte Zeitstempel löschen
+        # drop duplicate timestamps
         df = df.drop_duplicates(subset=['datetime'])
         df = filter_arlie_by_threshold(df, threshold = max_disruption_threshold)
-        #print(df.columns)
         if df.empty:
             print(f"Warning: All rows in {file} were filtered out.")
             continue
-        # Aggregieren
+        # aggregate
         agg_df, issues = aggregate_water_data(df, max_area_difference)
 
-        # Ergebnisse sammeln
+        # collect results
         arlie_dict[key] = agg_df
         issues_list.extend(issues)
 
-    # Alle Probleme in DataFrame umwandeln
+    # convert all issues into a DataFrame
     issues_df = pd.DataFrame(issues_list, columns=["Hylak_id", "Comment"])
 
     return arlie_dict, issues_df
@@ -369,38 +348,33 @@ import re
 def make_gwp_files_to_dict(root, arlie_dict, lat_lon_root):
     result_dict = {}
 
-    # Prüfe, ob root ein String oder ein Path-Objekt ist
+    # check whether root is a string or a Path object
     if isinstance(root, str):
         root_path = Path(root)
     else:
         root_path = root
 
-    # Liste alle Dateien im Verzeichnis auf
+    # list all files in the directory
     files = [root_path / file for file in os.listdir(root_path) if os.path.isfile(root_path / file)]
     coord_files = [lat_lon_root / file for file in os.listdir(lat_lon_root) if os.path.isfile(lat_lon_root / file)]
-    # Lade Koordinaten in ein Dictionary für schnellen Zugriff
+    # load coordinates into a dictionary for fast lookup
     lat_lon_dict = {}
     for file in coord_files:
         file_stem = file.stem
-        new_name = file_stem[:-14]  # Extrahiere den Basisnamen
+        new_name = file_stem[:-14]  # extract the base name
         df_lat_lon = pd.read_csv(file, sep=";")
-        lat_lon_dict[new_name] = (df_lat_lon['Lat'].iloc[0], df_lat_lon['Lon'].iloc[0])  # Nehme den ersten Eintrag
-    
+        lat_lon_dict[new_name] = (df_lat_lon['Lat'].iloc[0], df_lat_lon['Lon'].iloc[0])  # take the first entry
+
 
     for file in files:
-        file_stem = file.stem  # Dateiname ohne Erweiterung
-        
-        # Extrahiere den Basis-Namen mit regex
-        new_name = re.sub(r'(.*?)(_1_|_SGV-timeseries).*', r'\1', file_stem)
-        #print(f"Verarbeite Datei: {file_stem}, extrahierter Name: {new_name}")
+        file_stem = file.stem  # filename without extension
 
-        # Suche nach passenden Einträgen im arlie_dict
+        # extract the base name via regex
+        new_name = re.sub(r'(.*?)(_1_|_SGV-timeseries).*', r'\1', file_stem)
+
+        # look for matching entries in arlie_dict
         for gwp_id, arlie_df in arlie_dict.items():
-            # Extrahiere die ID aus dem gwp_id (entferne "Lake" Präfix)
-            
-            #print(gwp_id)
             if new_name == gwp_id:
-                #print(f"Treffer gefunden: {new_name} entspricht {gwp_id}")
                 df = pd.read_csv(file, sep=";")
 
                 arlie_df['date'] = pd.to_datetime(arlie_df['date']).dt.date
@@ -418,12 +392,12 @@ def make_gwp_files_to_dict(root, arlie_dict, lat_lon_root):
                 merged_df['GWP_Area'] = merged_df['Area']
                 merged_df['GWP_water_perc'] = merged_df['GWP_Area'] * 100 / merged_df['Gwp_Max_Area']
                 
-                key_name = merged_df["Hylak_id"].iloc[0]  # Nimm den ersten Wert
+                key_name = merged_df["Hylak_id"].iloc[0]  # take the first value
                 merged_df.drop(columns = ["Area", "object_nam"])
-                
-                
-                # Füge die Koordinaten aus dem lat_lon_dict hinzu
-            
+
+
+                # add the coordinates from lat_lon_dict
+
                 if gwp_id in lat_lon_dict:
                     lat, lon = lat_lon_dict[gwp_id]
                     merged_df['Latitude'] = lat
@@ -449,13 +423,13 @@ def create_gwp_based_dict(dict):
     
 def find_multiple_assignments(gwp_arlie_dicts):
     """
-        Identifiziert ARLIE-Seen, die mehreren HydroLAKES zugeordnet sind.
-        
+        Identifies ARLIE lakes that are assigned to multiple HydroLAKES.
+
         Args:
-            lake_dict: Dictionary mit HydroLAKES-IDs als Schlüssel und DataFrames als Werte
-            
+            lake_dict: dictionary with HydroLAKES IDs as keys and DataFrames as values
+
         Returns:
-            Dictionary mit ARLIE-IDs als Schlüssel und Mengen von zugeordneten HydroLAKES-IDs als Werte
+            Dictionary with ARLIE IDs as keys and sets of assigned HydroLAKES IDs as values
     """
     
     arlie_to_hylak = {}
@@ -489,17 +463,17 @@ def find_multiple_assignments(gwp_arlie_dicts):
         else:
             assignment_counts[count] = 1
 
-    # Ausgabe der Ergebnisse
-    print(f"Insgesamt {len(multiple_assignments)} von {len(arlie_to_hylak)} ARLIE-Seen sind mehrfach zugeordnet. Es gibt {len(gwp_arlie_dicts.keys())} GWP Samples")
-    print("\nVerteilung der Mehrfachzuordnungen:")
+    # print the results
+    print(f"A total of {len(multiple_assignments)} out of {len(arlie_to_hylak)} ARLIE lakes are assigned multiple times. There are {len(gwp_arlie_dicts.keys())} GWP samples")
+    print("\nDistribution of multiple assignments:")
     for count, num_rivers in sorted(assignment_counts.items()):
-        print(f"  {num_rivers} Seen sind jeweils {count} verschiedenen HydroLAKES zugeordnet")
+        print(f"  {num_rivers} lakes are each assigned to {count} different HydroLAKES")
 
-    # Beispiele für mehrfach zugeordnete Seen
-    print("\nMehrfach zugeordnete Seen:")
-    for arlie_id, hylak_ids in list(multiple_assignments.items()):  # Die ersten 5 Beispiele
-        print(f"id {arlie_id} ist zugeordnet zu HydroLAKES: {hylak_ids}")
-        
+    # examples of multiply assigned lakes
+    print("\nMultiply assigned lakes:")
+    for arlie_id, hylak_ids in list(multiple_assignments.items()):
+        print(f"id {arlie_id} is assigned to HydroLAKES: {hylak_ids}")
+
     return arlie_to_hylak, multiple_assignments
 
 def drop_multiple_assigned_hylaks(multiple_assignments, gwp_arlie_dict):
@@ -509,7 +483,7 @@ def drop_multiple_assigned_hylaks(multiple_assignments, gwp_arlie_dict):
         for i in l:
             keys_to_remove.append(f"Lake_{i}")
         
-        # Neues Dictionary erstellen ohne die zu entfernenden Schlüssel
+        # create a new dictionary without the keys to be removed
         filtered_dict = {k: v for k, v in gwp_arlie_dict.items() if k not in keys_to_remove}
         
     

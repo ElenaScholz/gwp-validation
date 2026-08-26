@@ -1,4 +1,4 @@
-# Comparison of Global Water Pack with ALRIE, LSE and NRT-FP 
+# Comparison of Global Water Pack with ARLIE, LSE and NRT-FP
 
 # Get started
 1. Go to GitHub and fork this repository.
@@ -39,7 +39,7 @@ This code was developed on a Windows machine with Windows 11.
 All configuration files in `configs/` use the same folder structure and share one root directory. Set the root in each config to your local data location:
 
 ```json
-"root": "PATH/TO/YOUR/DATA"
+"root_dir": "PATH/TO/YOUR/DATA"
 ```
 
 If you keep the folder layout described below, this is the only path you need to adjust.
@@ -60,42 +60,38 @@ Each processing step is assigned a number:
 ```
 gwp-validation/
 ├── configs/
-│   ├── arlie.json  
-│   ├── europe_hydrolakes.json  
-│   ├── lse.json  
-│   ├── nrt-fp.json  
-│   ├── world_hydrolakes.json  
-│   └── stats.json  
-├── notebooks/
-│   ├── getInfoForPaper.ipynb
-│   └── plots.ipynb
+│   ├── arlie.json
+│   ├── europe_hydrolakes.json
+│   ├── lse.json
+│   ├── nrt-fp.json
+│   ├── world_hydrolakes.json
+│   └── stats.json
 ├── scripts/
 │   ├── arlie/
 │   │   ├── 00_arlie_download_hda_files.py
-│   │   ├── 00_extract_arlie_zipfiles.py
+│   │   ├── 00_extract_arlie_zip_files.py
 │   │   ├── 02.1_run_arlie_gwp_geom_matching.py
 │   │   └── 02.2_run_arlie_gwp_ts_matching.py
 │   ├── LSE/
-│   │   ├── 01.1_matchGlakesHydrolakesGWP.py
-│   │   ├── 01.2_reshapeMonthly_LiLSE.py
-│   │   └── 01.3_reshape_monthlyGWP.py
+│   │   ├── 01.1_match_Glakes_Hydrolakes_GWP.py
+│   │   ├── 01.2_reshape_monthly_LSE.py
+│   │   └── 01.3_reshape_monthly_GWP.py
 │   ├── NRT-FP/
 │   │   ├── 00_Download_GWP_raster.py
-│   │   ├── 01.1_clip_GWP_to_tiles.py
-│   │   ├── 01.2_NRT-FP_extractHDF.py
-│   │   └── 01.3_run_GWP_NRT-FP_calculate_zonal_statistics.py
+│   │   ├── 01.2_NRT-FP_extract_HDF.py
+│   │   └── 01.3_run_GWP_NRT_calculate_zonal_statistics.py
 │   ├── 01_run_hydrolakes_processing.py
 │   ├── 02_run_match_arlie_complete.py
 │   ├── 02_run_match_GWP_NRT-FP.py
-│   ├── 02.1_run_matchGWPandLiByGlakes.py
-│   ├── 02.2_run_LiProcessData.py
-│   ├── 03_statistics.py
+│   ├── 02.1_run_match_GWP_and_LSE_by_Glakes.py
+│   ├── 02.2_run_LSE_Process_Data.py
+│   ├── 03_calculate_Statistics.py
 │   └── 04_visualisations.py
 ├── src/globallakevariability/
 │   ├── matching/
 │   │   └── arlieProcessor.py
 │   ├── preprocessing/
-│   │   ├── add_maximum_extent.py
+│   │   ├── add_max_extent.py
 │   │   ├── filehandling.py
 │   │   ├── HydrolakesDataloader.py
 │   │   ├── GlakesProcessor.py
@@ -145,7 +141,7 @@ Main Data Folder/
 │       ├── 02_MWP_gtiff/
 │       └── max_extent_tiles/
 ├── Output/
-│   ├── allValidationDatasets/
+│   ├── AllValidationDatasets/
 │   ├── ARLIE/
 │   ├── GWP/
 │   ├── Hydrolakes/
@@ -192,7 +188,7 @@ Place the whole folder inside `Input/HydroLAKES_polys_v10/`.
 
    Please download geometries as well as timeseries files.
 
-2. Afterwards the files need to be unzipped, using the script `scripts/arlie/00_extract_arlie_zipfiles.py`.
+2. Afterwards the files need to be unzipped, using the script `scripts/arlie/00_extract_arlie_zip_files.py`.
 
 The files were downloaded on 01.04.2025. Later downloads may result in a different number of lakes, and dataset properties may change. The publication date for this version was 2025-03-05, edition 01.00.
 
@@ -275,7 +271,7 @@ Make sure to use the following output-folder and file naming structure!
    Input/NRT-FP/02_GWP-tiles/h08v05/
    ```
 
-2. NRT-FP comes in HDF format. To extract the datasets use `scripts/NRT-FP/01.2_NRT-FP_extractHDF.py`:
+2. NRT-FP comes in HDF format. To extract the datasets use `scripts/NRT-FP/01.2_NRT-FP_extract_HDF.py`:
 
    ```
    pixi run python scripts/NRT-FP/01.2_NRT-FP_extract_HDF.py --config configs/nrt-fp.json
@@ -298,7 +294,7 @@ Make sure to use the following output-folder and file naming structure!
 3. **Calculate the zonal statistics** as the last preprocessing step for the NASA Flood Product:
 
    ```
-   uv run python scripts/NRT-FP/01.3_run_GWP_NRT-FP_calculate_zonal_statistics.py --config configs/nrt-fp.json
+   uv run python scripts/NRT-FP/01.3_run_GWP_NRT_calculate_zonal_statistics.py --config configs/nrt-fp.json
    ```
 
    **Input:**
@@ -317,7 +313,7 @@ Make sure to use the following output-folder and file naming structure!
    For more information see `src/globallakevariability/preprocessing/GlakesProcessor.py` and `postprocessingGlakes.py`.
 
    ```
-   uv run python scripts/LSE/01.1_matchGlakesHydrolakesGWP.py --config configs/lse.json
+   uv run python scripts/LSE/01.1_match_Glakes_Hydrolakes_GWP.py --config configs/lse.json
    ```
 
    **Input:**
@@ -335,7 +331,7 @@ Make sure to use the following output-folder and file naming structure!
 2. **Reshape the Lake Surface Extent file from Li et al.** from wide to long format.
 
    ```
-   uv run python scripts/LSE/01.2_reshapeMonthly_LiLSE.py --config configs/lse.json
+   uv run python scripts/LSE/01.2_reshape_monthly_LSE.py --config configs/lse.json
    ```
 
    **Input:** `Input/LSE/monthly_lake_surface_extent.csv`
@@ -345,7 +341,7 @@ Make sure to use the following output-folder and file naming structure!
 3. **Reshape the GWP time series to monthly medians.** As the GWP time series contains daily information, this script calculates monthly medians for each lake.
 
    ```
-   uv run python scripts/LSE/01.3_reshape_monthlyGWP.py --config configs/lse.json
+   uv run python scripts/LSE/01.3_reshape_monthly_GWP.py --config configs/lse.json
    ```
 
    **Input:** `Input/GWP/05_timeseries_8247_rm2902/` (daily time series)
@@ -388,8 +384,16 @@ uv run python scripts/02_run_match_GWP_NRT-FP.py --config configs/nrt-fp.json
 ### Monthly Lake Surface Area by Li et al.
 
 ```
-uv run python scripts/02.1_run_matchGWPandLiByGlakes.py --config configs/lse.json
-uv run python scripts/02.2_run_LiProcessData.py --config configs/lse.json
+uv run python scripts/02.1_run_match_GWP_and_LSE_by_Glakes.py --config configs/lse.json
+uv run python scripts/02.2_run_LSE_Process_Data.py --config configs/lse.json
+```
+
+**Output:** `02.2_run_LSE_Process_Data.py` writes the following files into `matching.statistics_output` (`Output/AllValidationDatasets/LSE/`):
+
+```
+Output/AllValidationDatasets/LSE/LSE_all_lakes_no_frozen.csv
+Output/AllValidationDatasets/LSE/LSE_all_lakes_with_frozen.csv
+Output/AllValidationDatasets/LSE/LSE_all_lakes_strict_no_frozen.csv
 ```
 
 ## 03 Statistics
@@ -397,17 +401,17 @@ uv run python scripts/02.2_run_LiProcessData.py --config configs/lse.json
 The statistics script uses `configs/stats.json`. Lake areas are converted to percentages and z-transformed; RMSE and Spearman correlation are then calculated.
 
 ```
-uv run python scripts/03_statistics.py --config configs/stats.json
+uv run python scripts/03_calculate_Statistics.py --config configs/stats.json
 ```
 
 **Input:**
 
 ```
-"lse_data_strict":    "Output/allValidationDatasets/LSEData/LSE_all_lakes_strict_no_frozen.csv"
-"lse_data_no_frozen": "Output/allValidationDatasets/LSEData/LSE_all_lakes_no_frozen.csv"
-"arlie_data":        "Output/allValidationDatasets/Arlie_len146/all_arlie_lakes_10percDisr_len146.csv"
-"NRT-FP_data":       "Output/allValidationDatasets/NRT-FP/all_lakes_percentage_10percDisr.csv"
-"hydrolakes":        "Output/Hydrolakes/gwp_withHylaks_world_withMaxExtent.gpkg"
+"lse_data_strict":    "Output/AllValidationDatasets/LSE/LSE_all_lakes_strict_no_frozen.csv"
+"lse_data_no_frozen": "Output/AllValidationDatasets/LSE/LSE_all_lakes_no_frozen.csv"
+"arlie_data":         "Output/AllValidationDatasets/ARLIE_len146/all_arlie_lakes_10percDisr_len146.csv"
+"nrt-fp_data":        "Output/AllValidationDatasets/NRT-FP/all_lakes_percentage_10percDisr.csv"
+"hydrolakes":         "Output/Hydrolakes/gwp_withHylaks_world_withMaxExtent.gpkg"
 ```
 
 **Output:** all outputs are stored in the results directory (`Results_10percDisr/`):
@@ -416,10 +420,10 @@ uv run python scripts/03_statistics.py --config configs/stats.json
 Results_10percDisr/all_stats_df.csv
 Results_10percDisr/arlie_stats_df.csv
 Results_10percDisr/arlie_stats_df_z.csv
-Results_10percDisr/lse_stats_df.csv
-Results_10percDisr/lse_stats_df_no_frozen.csv
-Results_10percDisr/lse_stats_df_z.csv
-Results_10percDisr/lse_stats_df_z_no_frozen.csv
+Results_10percDisr/li_stats_df.csv
+Results_10percDisr/li_stats_df_no_frozen.csv
+Results_10percDisr/li_stats_df_z.csv
+Results_10percDisr/li_stats_df_z_no_frozen.csv
 Results_10percDisr/nasa_stats_df.csv
 Results_10percDisr/nasa_stats_df_z.csv
 Results_10percDisr/stats_summary_compact.csv
@@ -427,7 +431,15 @@ Results_10percDisr/stats_summary_compact.csv
 
 ## 04 Visualisations
 
-Final results are displayed as maps, produced by `scripts/04_visualisations.py`.
+Final results are displayed as maps, produced by `scripts/04_visualisations.py`, using the same `configs/stats.json` file:
+
+```
+uv run python scripts/04_visualisations.py --config configs/stats.json
+```
+
+**Input:** the statistics CSVs in `Results_10percDisr/` (`output.dir` in `configs/stats.json`).
+
+**Output:** map images (`.tif`) in `visualisation.output_dir` (`Maps_10percDisr_colors/`).
 
 # Sources
 - [Global dominance of seasonality in shaping lake-surface-extent dynamics](https://www.nature.com/articles/s41586-025-09046-3)

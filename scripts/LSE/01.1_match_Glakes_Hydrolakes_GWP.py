@@ -16,7 +16,10 @@ def main(config):
     print("Loading HydroLAKES shapefile from:", hydrolakes)
     glakes_dir = ROOT / config['preprocessing']['glakes_directory']
 
-    glakes_prepared_dir = ROOT / config['preprocessing']['glakes_output'] / "glakes_hylak_30_subset.gpkg"
+    glakes_output_dir = ROOT / config['preprocessing']['glakes_output']
+    glakes_output_dir.mkdir(parents=True, exist_ok=True)
+
+    glakes_prepared_dir = glakes_output_dir / "glakes_hylak_30_subset.gpkg"
     if os.path.exists(glakes_prepared_dir):
         glakes_hylak_30 = gpd.read_file(glakes_prepared_dir)
 
@@ -44,9 +47,6 @@ def main(config):
     )
 
     print(merged_lakes.columns)
-    # # drop glakes geometry column
-    # merged_lakes = merged_lakes.drop(columns=['glakes_geometry'])
-    # 'glakes_geometry'
 
     merged_path = ROOT / config['preprocessing']['glakes_output'] / "gwp_glakes_hylak_30_merged_strict.gpkg"
     merged_lakes.to_file(merged_path, driver="GPKG")

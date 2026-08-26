@@ -17,10 +17,10 @@ import getpass
 # === Step 0: Define Variables:
 # Path to the Area of Interest (needs to be a gpkg file)
 
-input_file = Path(r"Path/To/You/Inputfolder/ARLIE/arlie_bbox.gpkg") # Type in your path!
+input_file = Path(r"Path/To/Your/Inputfolder/ARLIE/arlie_bbox.gpkg") # Type in your path!
 
 # Output directory for downloaded data
-OUTPUT_PATH = Path("Path/To/You/Inputfolder/ARLIE/zip") 
+OUTPUT_PATH = Path("Path/To/Your/Inputfolder/ARLIE/zip")
 
 # Define Start- & Enddate
 start_date = "2016-09-01T00:00:00.000Z"

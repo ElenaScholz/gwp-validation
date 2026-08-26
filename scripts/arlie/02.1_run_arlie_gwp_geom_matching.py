@@ -14,17 +14,13 @@ def main(config):
     input_root = Path(config["root_dir"])
     arlie_root = input_root / config["path_to_arlie_folder"]
 
-    # hylak_ds = gpd.read_file(config["path_to_hydrolake_dataset"])   
-    #     # Umbenennen der 'id' Spalte zu 'gwp_id'
-    
     path_hydolakes_with_gwp = config['preprocessing']['gwp_hydrolakes_max_extent']
     df_gwp_hylakIds = gpd.read_file(input_root / path_hydolakes_with_gwp)
-    #print(df_gwp_hylakIds.columns)
     df_gwp_hylakIds = df_gwp_hylakIds.rename(columns={'id': 'gwp_id'})
     df_gwp_hylakIds = df_gwp_hylakIds[['Hylak_id', 'gwp_id', 'gwp_Area_max']].copy()
-    
+
     out_dir = input_root / config["matching"]["output_directory"]
-    path_to_hylak_dataset= f"{config['root_dir']}/{config["path_to_hydrolake_dataset"]}"
+    path_to_hylak_dataset = input_root / config["path_to_hydrolake_dataset"]
 
     arlieProcessor = ArlieProcessor(root_to_arlie_folder= arlie_root,
                                   path_to_hylak_dataset= path_to_hylak_dataset,

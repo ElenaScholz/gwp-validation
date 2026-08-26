@@ -46,17 +46,17 @@ def main(config):
                     try:
                         ds = gdal.Open(subdataset)
                         if ds is None:
-                            raise RuntimeError(f"Dataset konnte nicht geöffnet werden: {subdataset}")
-                        
+                            raise RuntimeError(f"Could not open dataset: {subdataset}")
+
                         # Export as GeoTIFF with compression and tile option
                         gdal.Translate(str(output_file), ds, creationOptions=['COMPRESS=DEFLATE', 'TILED=YES'])
-                        print(f"Export erfolgreich: {output_file}")
-                        
+                        print(f"Export successful: {output_file}")
+
                         # Clean up
                         ds = None
-                        
+
                     except Exception as e:
-                        print(f"Fehler bei {hdf_path}: {e}")
+                        print(f"Error processing {hdf_path}: {e}")
 
     print("Conversion completed!")
 

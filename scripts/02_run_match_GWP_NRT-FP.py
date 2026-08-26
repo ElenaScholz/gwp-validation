@@ -21,7 +21,7 @@ def main(config):
     lakes_df = ROOT / config["zonal_statistics"]["output"] / "all_lakes_combined.csv"
     hydrolakes = ROOT / config['preprocessing']['output_dir_hydrolakes'] / config['matching']['gwp_hydrolakes_max_extent']
     OUTPUT_ROOT = ROOT / Path(config["matching"]["output_directory"])
-
+    OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
 
     # drop number after comma in disruption threshold
     disruption_threshold_filename = int(disruption_threshold)
@@ -119,8 +119,8 @@ def main(config):
         
         if len(clean_df) > 0:
             area_consistent_dict[lake_id] = clean_df
-        
-        # Statistiken sammeln
+
+        # collect statistics
         if len(removed_df) > 0:
             area_inconsistent_data.append({
                 'Hylak_id': lake_id,
@@ -131,10 +131,10 @@ def main(config):
                 'avg_deviation': df['pixel_deviation'].mean()
             })
 
-    # Ergebnisse
-    print(f"Seen vor Area Check: {len(filtered_dict)}")
-    print(f"Seen nach Area Check: {len(area_consistent_dict)}")
-    print(f"Seen mit inkonsistenten Datenpunkten: {len(area_inconsistent_data)}")
+    # results
+    print(f"Lakes before area check: {len(filtered_dict)}")
+    print(f"Lakes after area check: {len(area_consistent_dict)}")
+    print(f"Lakes with inconsistent data points: {len(area_inconsistent_data)}")
     from globallakevariability.utils.helper import find_min_max_length
 
 
@@ -148,7 +148,7 @@ def main(config):
         if len(filtered_df) > 0:
             no_disruption_dict[lake_id] = filtered_df
         else:
-            # See wird komplett entfernt - explizit dokumentieren
+            # lake is removed entirely - document explicitly
             completely_removed_lakes.append({
                 'Hylak_id': lake_id,
                 'Lake_name': df['Lake_name'].iloc[0],
@@ -158,26 +158,26 @@ def main(config):
                 'avg_insufficient_data_perc': df['mwp-insufficientData-perc'].mean()
             })
 
-    # Ergebnisse nach Disruption Check
-    print(f"Seen vor Disruption Check: {len(filtered_dict)}")
-    print(f"Seen nach Disruption Check: {len(no_disruption_dict)}")
-    print(f"Komplett entfernte Seen (Disruption): {len(completely_removed_lakes)}")
+    # results after disruption check
+    print(f"Lakes before disruption check: {len(filtered_dict)}")
+    print(f"Lakes after disruption check: {len(no_disruption_dict)}")
+    print(f"Lakes completely removed (disruption): {len(completely_removed_lakes)}")
 
-    # Zeige entfernte Seen
+    # show removed lakes
     if completely_removed_lakes:
         removed_df = pd.DataFrame(completely_removed_lakes)
-        print(f"\nEntfernte Seen (Disruption):\n{removed_df[['Lake_name', 'Lake_area', 'avg_insufficient_data_perc']]}")
+        print(f"\nRemoved lakes (disruption):\n{removed_df[['Lake_name', 'Lake_area', 'avg_insufficient_data_perc']]}")
 
     print("\n" + "="*minimum_length_of_dataframes)
 
     # Step 8
-    print("Überprüfung der Mindestanzahl von Datenpunkten...")
+    print("Checking minimum number of data points...")
     min_length, max_length, final_cleaned_dict, length_stats = find_min_max_length(
-        no_disruption_dict, 
+        no_disruption_dict,
         min_length_to_keep_df=minimum_length_of_dataframes
     )
 
-    # Dokumentiere zusätzlich entfernte Seen (wegen zu wenig Datenpunkte)
+    # document additionally removed lakes (too few data points)
     length_removed_lakes = []
     for lake_id in no_disruption_dict.keys():
         if lake_id not in final_cleaned_dict:
@@ -191,42 +191,40 @@ def main(config):
                 'actual_points': len(df)
             })
 
-    print(f"\nZusätzlich entfernte Seen (< {minimum_length_of_dataframes} Datenpunkte): {len(length_removed_lakes)}")
+    print(f"\nAdditionally removed lakes (< {minimum_length_of_dataframes} data points): {len(length_removed_lakes)}")
     if length_removed_lakes:
         length_removed_df = pd.DataFrame(length_removed_lakes)
-        print(f"Entfernte Seen (< {minimum_length_of_dataframes} Punkte):\n{length_removed_df[['Lake_name', 'Lake_area', 'actual_points']]}")
+        print(f"Removed lakes (< {minimum_length_of_dataframes} points):\n{length_removed_df[['Lake_name', 'Lake_area', 'actual_points']]}")
 
-    # Finale Statistiken
+    # final statistics
     print("\n" + "="*minimum_length_of_dataframes)
-    print("FINALE STATISTIKEN:")
-    print(f"Ursprüngliche Anzahl Seen: {len(filtered_dict)}")
-    print(f"Nach Disruption-Filterung: {len(no_disruption_dict)}")
-    print(f"Nach Mindestpunkt-Filterung: {len(final_cleaned_dict)}")
-    print(f"Gesamt entfernte Seen: {len(completely_removed_lakes) + len(length_removed_lakes)}")
+    print("FINAL STATISTICS:")
+    print(f"Initial number of lakes: {len(filtered_dict)}")
+    print(f"After disruption filtering: {len(no_disruption_dict)}")
+    print(f"After minimum-points filtering: {len(final_cleaned_dict)}")
+    print(f"Total removed lakes: {len(completely_removed_lakes) + len(length_removed_lakes)}")
 
     if final_cleaned_dict:
-        print(f"Finale Datenpunkt-Range: {min_length} bis {max_length}")
-        
-        # Zeige Verteilung der finalen Datenpunkte
-        final_lengths = [len(df) for df in final_cleaned_dict.values()]
-        print(f"Durchschnittliche Datenpunkte pro See: {np.mean(final_lengths):.1f}")
-        print(f"Median Datenpunkte pro See: {np.median(final_lengths):.1f}")
+        print(f"Final data point range: {min_length} to {max_length}")
 
-    # Kombiniere alle entfernten Seen für finale Dokumentation
+        # show distribution of final data points
+        final_lengths = [len(df) for df in final_cleaned_dict.values()]
+        print(f"Average data points per lake: {np.mean(final_lengths):.1f}")
+        print(f"Median data points per lake: {np.median(final_lengths):.1f}")
+
+    # combine all removed lakes for final documentation
     all_removed_lakes = completely_removed_lakes + length_removed_lakes
     if all_removed_lakes:
         all_removed_df = pd.DataFrame(all_removed_lakes)
-        print(f"\nGesamte entfernte Seen: {len(all_removed_df)}")
-        
-        # Gruppiere nach Grund der Entfernung
-        removal_reasons = all_removed_df['reason'].value_counts()
-        print("Gründe für Entfernung:")
-        for reason, count in removal_reasons.items():
-            print(f"  - {reason}: {count} Seen")
+        print(f"\nTotal removed lakes: {len(all_removed_df)}")
 
-    # Das finale Dictionary verwenden
-    print(f"\nFinales Dictionary 'final_cleaned_dict' enthält {len(final_cleaned_dict)} Seen")
-    print("Bereit für weitere Analyse!")
+        # group by removal reason
+        removal_reasons = all_removed_df['reason'].value_counts()
+        print("Reasons for removal:")
+        for reason, count in removal_reasons.items():
+            print(f"  - {reason}: {count} lakes")
+
+    print(f"\nFinal dictionary 'final_cleaned_dict' contains {len(final_cleaned_dict)} lakes")
 
     # Step 9
 
@@ -259,9 +257,9 @@ def main(config):
         final_cleaned_dict[key] = df
 
     print(f"Number of lakes after adding coordinates: {len(final_cleaned_dict)} ")
-    print("Spalten nach dem Hinzufügen:")
+    print("Columns after adding coordinates:")
     for key in final_cleaned_dict:
-        print(f"Key: {key}, Spalten: {final_cleaned_dict[key].columns.tolist()}")
+        print(f"Key: {key}, columns: {final_cleaned_dict[key].columns.tolist()}")
 
     #  Step 10
 

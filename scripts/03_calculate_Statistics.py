@@ -11,32 +11,23 @@ from scipy.stats import zscore
 
 
 def main(config):
-    from scipy.stats import zscore
-    import pandas as pd
-    from pathlib import Path
-    import numpy as np
-    import geopandas as gpd
-    from globallakevariability.stats.statistics import calculate_stats_per_lake 
-    import os
-
     arlie_number_of_sample = config["stats"]["arlie_number_of_sample"]
-    nasaflood_number_of_sample = config["stats"]["nasaflood_number_of_sample"]
-    li_number_of_sample = config["stats"]["li_number_of_sample"]
+    nasaflood_number_of_sample = config["stats"]["nrt-fp_number_of_sample"]
+    li_number_of_sample = config["stats"]["lse_number_of_sample"]
 
-    ROOT = Path(config['root'])
+    ROOT = Path(config['root_dir'])
     li_path_strict = ROOT / config["input"]["lse_data_strict"]
     li_path_no_frozen = ROOT / config["input"]["lse_data_no_frozen"]
     arlie_path = ROOT / config["input"]["arlie_data"]
-    nasa_path = ROOT / config["input"]["nasaflood_data"]
+    nasa_path = ROOT / config["input"]["nrt-fp_data"]
     hydrolakes = ROOT / config["input"]["hydrolakes"]
     OUTPUT_DIR = ROOT / config['output']["dir"]
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-# I changed hte variable assignment from glakes and glakes not frozen to li_strict and li_no_frozen_month to avoid confusion with the original glakes dataset which is not used in the stats calculation. The new variable names also reflect that these datasets are based on the Li data and represent strict and no-frozen versions respectively.
-    li_strict = pd.read_csv( li_path_strict, sep=',') 
-    li_no_frozen_month = pd.read_csv( li_path_no_frozen, sep=',') 
 
-    # glakes = pd.read_csv( li_path_strict, sep=',') 
-    # glakes_no_frozen = pd.read_csv( li_path_no_frozen, sep=',') 
+    # Variable names use "li_strict"/"li_no_frozen_month" for the LSE (Li et al.) dataset;
+    # see the README's naming note on LSE/Li being used interchangeably.
+    li_strict = pd.read_csv( li_path_strict, sep=',')
+    li_no_frozen_month = pd.read_csv( li_path_no_frozen, sep=',')
     arlie = pd.read_csv (arlie_path, sep=',')
     nasaflood = pd.read_csv(nasa_path , sep=',')
 
@@ -110,19 +101,9 @@ def main(config):
     })
 
 
-    # glakes_subset = glakes[["Date", "GLAKES_id", "Hylak_id", "GWP_lake_surface_area", "gwp_Area_max_km2", "li_lake_surface_area_km2", "latitude", "longitude", "glakes_area"]].copy()
-    # glakes_subset_no_frozen = glakes_no_frozen[["Date", "GLAKES_id", "Hylak_id", "GWP_lake_surface_area", "gwp_Area_max_km2", "li_lake_surface_area_km2", "latitude", "longitude", "glakes_area"]].copy()
-
     li_strict_subset = li_strict[["Date", "GLAKES_id", "Hylak_id", "GWP_lake_surface_area", "gwp_Area_max_km2", "li_lake_surface_area_km2", "latitude", "longitude", "glakes_area"]].copy()
     li_subset_no_frozen = li_no_frozen_month[["Date", "GLAKES_id", "Hylak_id", "GWP_lake_surface_area", "gwp_Area_max_km2", "li_lake_surface_area_km2", "latitude", "longitude", "glakes_area"]].copy()
      
-    # Process glakes_subset (strict)
-    # glakes_subset['gwp-max-area-km2'] = glakes_subset['GWP_lake_surface_area'].groupby(glakes_subset['GLAKES_id']).transform("max")
-    # glakes_subset['gwp-water-perc'] = glakes_subset['GWP_lake_surface_area'] / glakes_subset['gwp-max-area-km2'] * 100
-    # glakes_subset['li_max_area'] = glakes_subset.groupby('GLAKES_id')['li_lake_surface_area_km2'].transform('max')
-    # glakes_subset['validation-water-perc_li'] = glakes_subset['li_lake_surface_area_km2'] * 100 / glakes_subset['li_max_area'] 
-
-
     li_strict_subset['gwp-max-area-km2'] = li_strict_subset['GWP_lake_surface_area'].groupby(li_strict_subset['GLAKES_id']).transform("max")
     li_strict_subset['gwp-water-perc'] = li_strict_subset['GWP_lake_surface_area'] / li_strict_subset['gwp-max-area-km2'] * 100
     li_strict_subset['li_max_area'] = li_strict_subset.groupby('GLAKES_id')['li_lake_surface_area_km2'].transform('max')

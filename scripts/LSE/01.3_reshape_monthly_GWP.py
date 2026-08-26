@@ -15,7 +15,7 @@ def main (config):
     coordinates_df = hydrolakes_gdf[['latitude', 'longitude', 'Hylak_id', "Filename"]].drop_duplicates(subset='Hylak_id').reset_index(drop=True)
     coordinates_df['Hylak_id'] = coordinates_df['Hylak_id'].astype("int")
     print(coordinates_df.columns)
-    # # Füge 'Lake_' Präfix hinzu und erstelle das Dictionary
+    # add the 'Hylak_' prefix and build the lookup dictionary
     coordinates_df['Lake_Hylak_id'] = 'Hylak_' + coordinates_df['Hylak_id'].astype(str)
     lat_lon_dict = coordinates_df.set_index('Lake_Hylak_id')[['latitude', 'longitude']].to_dict(orient='index')
 
@@ -27,10 +27,6 @@ def main (config):
 
     # Create a mapping from the file key to Hylak_id using coordinates_df
     id_map = dict(zip(coordinates_df['Filename'], coordinates_df['Hylak_id']))
-    # Save id_map to CSV
-    # id_map_df = pd.DataFrame(list(id_map.items()), columns=['id', 'Hylak_id'])
-    # id_map_df.to_csv("id_map.csv", index=False)
-
 
     gwp_lse_monthly = {}
     monthly_gwp_dict_hylak_ids = {}
@@ -47,22 +43,6 @@ def main (config):
         monthly_gwp_dict_hylak_ids[new_key] = df_monthly
 
     # Save monthly timeseries with Hylak IDs
-    #OUTPUT_FOLDER = Path(r"T:\DLR\Analysis2\Input\GWP\06_timeseries_8247_rm2902_monthly_hylakIDs")
-    os.makedirs(OUTPUT_FOLDER, exist_ok=True)
-    for file, df in monthly_gwp_dict_hylak_ids.items():
-        filename = file + ".csv"
-        df.to_csv(OUTPUT_FOLDER / filename, sep=";")
-
-
-
-        # Directly get Hylak_id from id_map using the filename
-        hylak_id = id_map.get(file)
-        df_monthly['Hylak_id'] = hylak_id
-        new_key = f'Hylak_{hylak_id}'
-        monthly_gwp_dict_hylak_ids[new_key] = df_monthly
-
-    # Save monthly timeseries with Hylak IDs
-
     os.makedirs(OUTPUT_FOLDER, exist_ok=True)
     for file, df in monthly_gwp_dict_hylak_ids.items():
         filename = file + ".csv"

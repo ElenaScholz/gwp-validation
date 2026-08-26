@@ -6,12 +6,11 @@
   "path_to_arlie_folder": "Input/ARLIE/files",
   "path_to_hydrolake_dataset": "Output/Hydrolakes/hydrolakes_clipped_europe.gpkg",
   "preprocessing": {
-    "gwp_hydrolakes_max_extent": "Output/Hydrolakes/gwp_withHylaks_arlie_withMaxExtent.csv",
-    "gwp_hylaks_gpkg": "Output/Hydrolakes/gwp_withHylaks_arlie.gpkg"
+    "gwp_hydrolakes_max_extent": "Output/Hydrolakes/gwp_withHylaks_arlie_withMaxExtent.csv"
   },
   "matching":{
     "output_directory": "Output/ARLIE/matching",
-    "processed_data_directory": "Output/allValidationDatasets/ARLIE_len146",
+    "processed_data_directory": "Output/AllValidationDatasets/ARLIE_len146",
     "filename_gwp_arlie_matching_summary": "all_arlie_lakes_10percDisr_len146",
     "max_area_difference": 0.10,
     "maximum_disruption_threshold_perc": 10.0,

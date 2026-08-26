@@ -33,34 +33,34 @@ class HydroLakesGWP_DataLoading:
             aoi_gdf (GeoDataFrame): Polygon defining the AOI in Europe (EPSG:4326).
     """
 
-    def __init__(self, root_dir: str = r"T:\DLR", clip_to_arlie: bool = False, save = True):
+    def __init__(self, root_dir: str, clip_to_arlie: bool = False, save = True):
         """
         Initializes file paths, output folders, and AOI polygon.
 
         Args:
-            root_dir (str): Root directory of project data. Defaults to r"T:\DLR".
+            root_dir (str): Root directory of project data.
             clip_to_arlie (bool): Whether to clip data to Europe/ARLIE area. Defaults to False.
             save (bool): Whether to save processed outputs. Defaults to True.
         """
 
         self.root = Path(root_dir)
-        self.save = save  # Add this line to define self.save
-        
-        # Input-Pfade
-        
+        self.save = save
+
+        # Input paths
+
         self.input_root = self.root / "Input"
 
         self.input_gwp = self.input_root / "GWP" / "00_coordinates_8247"  # This is your GWP path
 
         self.hydrolakes_path = self.input_root / "HydroLAKES_polys_v10" / "HydroLAKES_polys_v10_shp"
 
-        # Output-Pfade
+        # Output paths
         self.output_root = self.root / "Output"
         self.output_arlie = self.output_root / "ARLIE"
         self.output_gwp = self.output_root / "GWP"
         self.output_hydrolakes = self.output_root / "Hydrolakes"
 
-        # Falls Ordner noch nicht existieren, erstelle sie
+        # Create output folders if they don't exist yet
         self.output_root.mkdir(parents=True, exist_ok=True)
         self.output_arlie.mkdir(parents=True, exist_ok=True)
         self.output_gwp.mkdir(parents=True, exist_ok=True)
@@ -76,8 +76,8 @@ class HydroLakesGWP_DataLoading:
             (self.west, self.south), 
             (self.west, self.north), 
             (self.east, self.north), 
-            (self.east, self.south), 
-            (self.west, self.south)  # Polygon schließen
+            (self.east, self.south),
+            (self.west, self.south)  # close the polygon
         ])
 
         self.aoi_gdf = gpd.GeoDataFrame({'geometry': [wgs84_polygon]}, crs="EPSG:4326")
@@ -99,16 +99,16 @@ class HydroLakesGWP_DataLoading:
             output_file = self.output_hydrolakes / "hydrolakes_clipped_europe.gpkg"
 
             if output_file.exists():
-                print("Geladene Hydrolakes aus:", output_file)
+                print("Loaded Hydrolakes from:", output_file)
                 return gpd.read_file(output_file)
-            else: 
-                # load hydrolakes 
+            else:
+                # load hydrolakes
                 hydrolakes = gpd.read_file(self.hydrolakes_path / "HydroLAKES_polys_v10.shp")
-                # create a subset with Information for further analysis 
+                # create a subset with Information for further analysis
                 hydrolakes_europe = hydrolakes[['Hylak_id', 'Lake_name', 'Lake_area', "Lake_type", 'geometry']]
 
                 print(hydrolakes_europe.is_valid.value_counts())
-                hydrolakes_europe["geometry"] = hydrolakes_europe["geometry"].buffer(0)  # Repariere Geometrien
+                hydrolakes_europe["geometry"] = hydrolakes_europe["geometry"].buffer(0)  # repair invalid geometries
 
                 hydrolakes_clipped = gpd.clip(hydrolakes_europe, self.aoi_gdf)
                 print(f"The hydrolakes data set is clipped. There are {len(hydrolakes_clipped)} lakes within the given Arlie area")
@@ -138,8 +138,8 @@ class HydroLakesGWP_DataLoading:
         """
 
         def create_gwp_gdf():
-            """Erstellt GeoDataFrame für GWP-Daten"""
-            
+            """Creates a GeoDataFrame for GWP data"""
+
             # load all gwp files containing the coordinates
             gwp_files = os.listdir(self.input_gwp)
             file_id, latitude, longitude = [], [], []
@@ -158,13 +158,13 @@ class HydroLakesGWP_DataLoading:
                         lines = f.readlines()
 
                     if len(lines) > 1:  # Check if file has content
-                        for line in lines[1:]:  # Header-Zeile überspringen
+                        for line in lines[1:]:  # skip header line
                             if ";" in line:  # Ensure line has expected format
                                 lat, lon = line.strip().split(";")
                                 latitude.append(float(lat))
                                 longitude.append(float(lon))
 
-            # DataFrame erstellen
+            # build the DataFrame
             if not file_id:  # Check if lists are empty
                 return gpd.GeoDataFrame(columns=["id", "latitude", "longitude", "geometry"], crs="EPSG:4326") 
                 
@@ -179,7 +179,7 @@ class HydroLakesGWP_DataLoading:
             output_file = self.output_gwp / "gwp_clipped_europe.gpkg"
 
             if output_file.exists():
-                print("Geladene Global Waterpack Daten aus:", output_file)
+                print("Loaded Global Waterpack data from:", output_file)
                 return gpd.read_file(output_file)
             else:
                 gwp_gdf = create_gwp_gdf()
@@ -201,13 +201,13 @@ class HydroLakesGWP_DataLoading:
             GeoDataFrame: GWP points including 'Hylak_id' from HydroLakes polygons.
         """
         
-        # Lade HydroLakes-Daten
+        # load HydroLakes data
         hydrolakes_clipped = self.load_hydrolakes()
-        
-        # Lade GWP-Daten
+
+        # load GWP data
         gwp_clipped = self.load_gwp()
-        
-        # Führe spatial join durch
+
+        # perform spatial join
         gwp_with_hylakID = gpd.sjoin(gwp_clipped, hydrolakes_clipped, how='left', predicate='within')
         
         gwp_with_hylakID = gwp_with_hylakID.drop(columns=['index_right'], errors='ignore')

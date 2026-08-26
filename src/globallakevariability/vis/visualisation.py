@@ -54,12 +54,12 @@ def plot_world_map(df, statistic_value, aggregation='mean',
                             gridsize=30, plot_type='hexbin', cmap = load_cmap("Blue2Orange12Steps", cmap_type = "continuous"), save=False, 
                             out_dir=None, filename=None):
     '''
-    Erstellt eine Weltkarte mit Hexbin oder Scatter-Darstellung statistischer Werte
-    
+    Creates a world map with a hexbin or scatter representation of statistical values.
+
     Parameters:
     -----------
     plot_type : str, default='hexbin'
-        'hexbin' für Hexbin-Plot oder 'scatter' für Punktplot
+        'hexbin' for a hexbin plot or 'scatter' for a point plot
     '''
     # Validation
     valid_aggregations = ['mean', 'max', 'min', 'count', 'median']
@@ -70,13 +70,13 @@ def plot_world_map(df, statistic_value, aggregation='mean',
     if plot_type not in valid_plot_types:
         raise ValueError(f"plot_type must be one of {valid_plot_types}")
     cmap = cmap
-    # Farblogik für Statistikwerte
+    # color logic for statistic values
     stat_config = {
-        "R2": {"cmap": cmap, "vmin": 0, "vmax": 1, 
+        "R2": {"cmap": cmap, "vmin": 0, "vmax": 1,
                "label": "R²"},
-        "spearman_cor": {"cmap": cmap, "vmin": -1, "vmax": 1, 
+        "spearman_cor": {"cmap": cmap, "vmin": -1, "vmax": 1,
                         "label": "spearman correlation"},
-        "MAE": {"cmap": "viridis_r", "label": "MAE (0 = gut, hoch = schlecht)"},
+        "MAE": {"cmap": "viridis_r", "label": "MAE (0 = good, high = bad)"},
         "RMSE": {"cmap": cmap.reversed(), "label": "RMSE"},
     }
 
@@ -166,7 +166,7 @@ def plot_world_map(df, statistic_value, aggregation='mean',
     plt.subplots_adjust(left=0.15, right=0.95, top=0.92, bottom=0.08)
     ticks = _get_colorbar_ticks(statistic_value, vmin, vmax)
 
-    # Vertikale Colorbar links
+    # vertical colorbar on the left
     cax = fig.add_axes([0.05, 0.2, 0.02, 0.6])  # [x, y, width, height]
 
     cbar = fig.colorbar(mappable, cax=cax, orientation='vertical',
@@ -203,7 +203,7 @@ def plot_world_map(df, statistic_value, aggregation='mean',
 def plot_europe_map(df, statistic_value, aggregation='mean', 
                              gridsize=30, plot_type='hexbin', cmap = load_cmap("Blue2Orange12Steps", cmap_type = "continuous"), save=False, out_dir=None, filename = None):
     """
-    Erstellt eine Europakarte mit Hexbin- oder Scatter-Darstellung
+    Creates a map of Europe with a hexbin or scatter representation.
     NOW USES ROBINSON PROJECTION to match R plots
     """
 
@@ -232,13 +232,13 @@ def plot_europe_map(df, statistic_value, aggregation='mean',
         return None
     cmap = cmap
 
-    # Farblogik
+    # color logic
     stat_config = {
-        "R2": {"cmap": cmap, "vmin": 0, "vmax": 1, 
+        "R2": {"cmap": cmap, "vmin": 0, "vmax": 1,
                "label": r"R²"},
-        "spearman_cor": {"cmap": cmap, "vmin": -1, "vmax": 1, 
+        "spearman_cor": {"cmap": cmap, "vmin": -1, "vmax": 1,
                         "label": "spearman correlation"},
-        "MAE": {"cmap": cmap, "label": "MAE (0 = gut, hoch = schlecht)"},
+        "MAE": {"cmap": cmap, "label": "MAE (0 = good, high = bad)"},
         # reverse cmap for error metrics
 
         "RMSE": {"cmap": cmap.reversed(), "label": "RMSE"},
@@ -324,7 +324,7 @@ def plot_europe_map(df, statistic_value, aggregation='mean',
 
         plt.subplots_adjust(left=0.15, right=0.95, top=0.92, bottom=0.08)
     ticks = _get_colorbar_ticks(statistic_value, vmin, vmax)
-    # Vertikale Colorbar links
+    # vertical colorbar on the left
     cax = fig.add_axes([0.05, 0.2, 0.02, 0.6])  # [x, y, width, height]
 
     cbar = fig.colorbar(mappable, cax=cax, orientation='vertical',
@@ -359,7 +359,7 @@ def quick_monthly_plot(*datasets_and_titles, figwidth=14, subplot_height=3.5):
     
     n_plots = len(datasets_and_titles)
     if n_plots == 0:
-        print("Keine Datasets übergeben!")
+        print("No datasets provided!")
         return
     
     fig_height = subplot_height * n_plots
@@ -384,15 +384,15 @@ def quick_monthly_plot(*datasets_and_titles, figwidth=14, subplot_height=3.5):
             ax[i].plot(df.index, df["Li_Area_m2"], 
                        label='Li et al', color=colors[1], linewidth=2)
 
-        # ---- Frozen Tag einbauen ----
+        # ---- add frozen tag ----
         if "Li_Frozen_Tag" in df.columns:
             frozen_periods = df[df["Li_Frozen_Tag"] == True]
             if not frozen_periods.empty:
-                # Variante 1: Marker auf Li-Kurve
+                # variant 1: marker on the Li curve
                 ax[i].scatter(frozen_periods.index, frozen_periods["Li_Area_m2"],
                               color="blue", s=20, label="Frozen", zorder=5, alpha=0.7)
-                
-                # Variante 2: Hintergrund einfärben
+
+                # variant 2: shade the background
                 for t in frozen_periods.index:
                     ax[i].axvspan(t - pd.Timedelta(days=15), 
                                   t + pd.Timedelta(days=15),
@@ -414,7 +414,7 @@ def quick_monthly_plot(*datasets_and_titles, figwidth=14, subplot_height=3.5):
     plt.show()
 
 
-# Funktionen für häufige Fälle 
+# convenience functions for common cases
 def plot_two_lakes(df1, title1, df2, title2): 
     quick_monthly_plot((df1, title1), (df2, title2)) 
 def plot_three_lakes(df1, title1, df2, title2, df3, title3): 

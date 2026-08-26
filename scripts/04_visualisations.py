@@ -3,17 +3,30 @@ import geopandas as gpd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from pathlib import Path
-import pandas as pd
-import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from highlight_text import ax_text
 import os
+import argparse
+import json
 from globallakevariability.vis.visualisation import plot_world_map, plot_europe_map
 from pypalettes import load_cmap
 
+parser = argparse.ArgumentParser(description="Create result maps from the calculated statistics.")
+parser.add_argument(
+    '--config',
+    type=str,
+    required=True,
+    help="Path to the JSON configuration file"
+)
+args = parser.parse_args()
+
+with open(args.config, 'r') as f:
+    config = json.load(f)
+
 cmap = load_cmap("Blue2Orange12Steps", cmap_type = "continuous")
-ROOT = Path(r"T:\DLR\Analysis3\Results_10percDisr")
-OUTPUT_DIR = Path(r"T:\DLR\Analysis3\Maps_10percDisr_colors")
+ROOT_DIR = Path(config["root_dir"])
+ROOT = ROOT_DIR / config["output"]["dir"]
+OUTPUT_DIR = ROOT_DIR / config["visualisation"]["output_dir"]
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 statistic_values_to_plot = ["spearman_cor", "RMSE"]
 save_tag = "True"
