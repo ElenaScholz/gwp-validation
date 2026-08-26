@@ -24,7 +24,7 @@ OUTPUT_PATH = Path("Path/To/You/Inputfolder/ARLIE/zip")
 
 # Define Start- & Enddate
 start_date = "2016-09-01T00:00:00.000Z"
-end_date = "2025-04-01T23:59:59.999Z"
+end_date = "2025-12-31T23:59:59.999Z"
 
 # Download geometry information besides the timeseries data
 geometry_request = "True"
