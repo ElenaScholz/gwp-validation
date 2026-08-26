@@ -9,6 +9,7 @@ import pandas as pd
 from pathlib import Path
 import argparse
 
+
 def main(config):
 
     used_tiles_file = config["preprocessing"]["used_tiles_file"]
@@ -21,3 +22,22 @@ def main(config):
     used_tiles = tiles["MCDWDTile"].unique().tolist()
 
     gwp_files = [f for f in os.listdir(gwp_worldmap_dir) if f.endswith('.tif')]
+
+    for tile in used_tiles:
+        print(f"Processing tile: {tile}")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Clip GWP world maps to NASA Flood Product tiles based on configuration file.")
+    parser.add_argument(
+        '--config',
+        type=str,
+        required=True,
+        help="Path to the JSON configuration file"
+    )
+    
+    args = parser.parse_args()
+    
+    with open(args.config, 'r') as f:
+        config = json.load(f)
+    
+    main(config)

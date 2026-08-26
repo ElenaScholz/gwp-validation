@@ -163,6 +163,8 @@ Main Data Folder/
 > referred to as both **LSE** and **Li** throughout this repository. File and
 > folder names use `LSE`; variable names, config keys and some output files
 > use `Li`. They refer to the same dataset.
+> The NRT-FP dataset is also referred to as MWP (Modis Water Product) throught this repository.  
+>`NRT-FP` as well as `MWP` refer to the same files
 
 # Workflow
 The workflow follows the steps described in the paper. An overview is shown in the flowchart below:
@@ -248,11 +250,9 @@ Afterwards the preprocessing steps differ depending on the dataset.
 
 ### 01 NRT-FP
 
-1. The Global Water Pack raster datasets need to be clipped to the extent of the NASA Flood Product tiles, using `scripts/NRT-FP/01.1_clip_GWP_to_tiles.py`.
+1. The Global Water Pack raster datasets need to be clipped to the extent of the NASA Flood Product tiles
 
-   ```
-   uv run python scripts/NRT-FP/01.1_clip_GWP_to_tiles.py --config configs/nrt-fp.json
-   ```
+As input use the downloaded GWP files from the script '00_Download_GWP_raster.py' 
 
    **Input:** all Global Water Pack rasters in one directory:
 
@@ -262,6 +262,11 @@ Afterwards the preprocessing steps differ depending on the dataset.
    Input/NRT-FP/01_GlobalGWP/GWP.OSWF.DAILY.20100103.v1.tif
    Input/NRT-FP/01_GlobalGWP/....tif
    ```
+The original clipping script is not part of this repository. This step can be
+   carried out with GDAL, rasterio, or any GIS software. What matters is that the
+   output matches the folder and file naming structure below, as the following
+   steps depend on it.. Clipping preserves the original projection; no reprojection or resampling is applied.
+Make sure to use the following output-folder and file naming structure!
 
    **Output:** one folder per MODIS tile with all corresponding raster files for all used years:
 
@@ -274,7 +279,7 @@ Afterwards the preprocessing steps differ depending on the dataset.
 2. NRT-FP comes in HDF format. To extract the datasets use `scripts/NRT-FP/01.2_NRT-FP_extractHDF.py`:
 
    ```
-   pixi run python scripts/NRT-FP/01.2_NRT-FP_extractHDF.py --config configs/nrt-fp.json
+   pixi run python scripts/NRT-FP/01.2_NRT-FP_extract_HDF.py --config configs/nrt-fp.json
    ```
 
    **Input:** NASA Flood Product tiles, stored in one folder per tile and year:

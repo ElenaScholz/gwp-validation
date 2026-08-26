@@ -35,8 +35,10 @@ def main(config):
     max_extent_df = derive_max_extent_info(gwp_timeseries_folder)
 
     gwp_with_hylak_id_max_extent = add_max_extent_to_gwp(gwp_with_hylak_id, max_extent_df)
-
+    # check if output directory exists, if not create it
+    Path(output_dir).mkdir(parents=True, exist_ok=True)
     print(f"Saving outputs to {output_dir}")
+
     gwp_with_hylak_id.to_file(output_path, driver="GPKG")
     gwp_with_hylak_id.to_csv(get_csv_filename(output_path, "noMaxExtent"), index=False)
 

@@ -38,6 +38,9 @@ def main(config):
                     
                     #filename = str(hdf_path)[39:67] + ".tif"
                     filename = hdf_path.stem + ".tif"  
+                    # check if the output folder exists, if not create it
+                    output_folder.mkdir(parents=True, exist_ok=True)
+                    
                     output_file = output_folder / filename
                     
                     try:
