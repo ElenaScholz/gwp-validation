@@ -1,4 +1,4 @@
-# DLR-GWPIntercomparison
+# Comparison of Global Water Pack with ALRIE, LSE and NRT-FP 
 
 # Get started
 1. Go to GitHub and fork this repository.
@@ -157,6 +157,12 @@ Main Data Folder/
 ```
 
 **Note:** The configuration files stored within the repository use the same folder structure. If you keep it unchanged, you only need to adjust the root directory.
+
+
+> **Naming note:** the Global Lake Surface Extent dataset (Li et al. 2025) is
+> referred to as both **LSE** and **Li** throughout this repository. File and
+> folder names use `LSE`; variable names, config keys and some output files
+> use `Li`. They refer to the same dataset.
 
 # Workflow
 The workflow follows the steps described in the paper. An overview is shown in the flowchart below:
@@ -393,8 +399,8 @@ uv run python scripts/03_statistics.py --config configs/stats.json
 **Input:**
 
 ```
-"li_data_strict":    "Output/allValidationDatasets/LiData/Li_all_lakes_strict_no_frozen.csv"
-"li_data_no_frozen": "Output/allValidationDatasets/LiData/Li_all_lakes_no_frozen.csv"
+"lse_data_strict":    "Output/allValidationDatasets/LSEData/LSE_all_lakes_strict_no_frozen.csv"
+"lse_data_no_frozen": "Output/allValidationDatasets/LSEData/LSE_all_lakes_no_frozen.csv"
 "arlie_data":        "Output/allValidationDatasets/Arlie_len146/all_arlie_lakes_10percDisr_len146.csv"
 "NRT-FP_data":       "Output/allValidationDatasets/NRT-FP/all_lakes_percentage_10percDisr.csv"
 "hydrolakes":        "Output/Hydrolakes/gwp_withHylaks_world_withMaxExtent.gpkg"
@@ -406,10 +412,10 @@ uv run python scripts/03_statistics.py --config configs/stats.json
 Results_10percDisr/all_stats_df.csv
 Results_10percDisr/arlie_stats_df.csv
 Results_10percDisr/arlie_stats_df_z.csv
-Results_10percDisr/li_stats_df.csv
-Results_10percDisr/li_stats_df_no_frozen.csv
-Results_10percDisr/li_stats_df_z.csv
-Results_10percDisr/li_stats_df_z_no_frozen.csv
+Results_10percDisr/lse_stats_df.csv
+Results_10percDisr/lse_stats_df_no_frozen.csv
+Results_10percDisr/lse_stats_df_z.csv
+Results_10percDisr/lse_stats_df_z_no_frozen.csv
 Results_10percDisr/nasa_stats_df.csv
 Results_10percDisr/nasa_stats_df_z.csv
 Results_10percDisr/stats_summary_compact.csv

@@ -24,8 +24,8 @@ def main(config):
     li_number_of_sample = config["stats"]["li_number_of_sample"]
 
     ROOT = Path(config['root'])
-    li_path_strict = ROOT / config["input"]["li_data_strict"]
-    li_path_no_frozen = ROOT / config["input"]["li_data_no_frozen"]
+    li_path_strict = ROOT / config["input"]["lse_data_strict"]
+    li_path_no_frozen = ROOT / config["input"]["lse_data_no_frozen"]
     arlie_path = ROOT / config["input"]["arlie_data"]
     nasa_path = ROOT / config["input"]["nasaflood_data"]
     hydrolakes = ROOT / config["input"]["hydrolakes"]
