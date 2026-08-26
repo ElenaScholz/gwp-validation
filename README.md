@@ -13,7 +13,7 @@ This project uses two virtual environments: one managed via uv and one via pixi.
 
 **uv environment:** used for nearly all scripts.
 
-**pixi environment:** used only for the script that processes NASA Flood Product data, as it requires gdal.
+**pixi environment:** used only for the script that processes NASA Flood Product data, as it requires gdal.  restart your terminal after installing pixi
 
 ### uv Environment
 1. If you don't have uv installed yet, follow the official guide: [uv installation guide](https://docs.astral.sh/uv/getting-started/installation/).
@@ -51,11 +51,11 @@ Paths in this README are written with forward slashes, which work in PowerShell,
 # Repository Structure
 Each processing step is assigned a number:
 
-00 = Data download
-01 = Preprocessing
-02 = Matching GWP with a validation dataset / Hydrolakes
-03 = Calculate statistics
-04 = Visualisation
+00 = Data download  
+01 = Preprocessing  
+02 = Matching GWP with a validation dataset / Hydrolakes  
+03 = Calculate statistics  
+04 = Visualisation  
 
 ```
 GlobalWaterPack_Product_Intercomparison/
