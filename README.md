@@ -58,14 +58,14 @@ Each processing step is assigned a number:
 04 = Visualisation  
 
 ```
-GlobalWaterPack_Product_Intercomparison/
+gwp-validation/
 ├── configs/
-│   ├── arlie.json
-│   ├── lse.json
-│   ├── nrt-fp.json
-│   ├── world_hydrolakes.json
-│   ├── europe_hydrolakes.json
-│   └── stats.json
+│   ├── arlie.json  
+│   ├── europe_hydrolakes.json  
+│   ├── lse.json  
+│   ├── nrt-fp.json  
+│   ├── world_hydrolakes.json  
+│   └── stats.json  
 ├── notebooks/
 │   ├── getInfoForPaper.ipynb
 │   └── plots.ipynb
