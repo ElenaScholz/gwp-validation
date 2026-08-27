@@ -3,7 +3,7 @@ name = "globallakevariability"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-license = "MIT"
+license = "CC-BY-4.0"
 license-files = ["LICENSE"]
 authors = [
     { name = "ElenaScholz", email = "elenascholz@hotmail.de" }
