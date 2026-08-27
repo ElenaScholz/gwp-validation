@@ -1,4 +1,5 @@
 # Comparison of Global Water Pack with ARLIE, LSE and NRT-FP
+This repository is part of the Manuscript "Global Annual Open-Surface-Water Patterns reveal persistence and change in seasonal inland-water dynamics".
 
 # Get started
 1. Go to GitHub and fork this repository.
