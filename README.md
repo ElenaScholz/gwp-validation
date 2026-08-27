@@ -453,6 +453,5 @@ uv run python scripts/04_visualisations.py --config configs/stats.json
 <<<<<<< HEAD
 
 # License
-This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
-=======
+This project is licensed under the [CC-BY-4.0](https://spdx.org/licenses/CC-BY-4.0) License — see [LICENSE](LICENSE) for details.
 
