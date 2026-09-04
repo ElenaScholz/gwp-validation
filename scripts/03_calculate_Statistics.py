@@ -80,12 +80,12 @@ def main(config):
 
     for name,df in arlie_dict.items():
         if not {"gwp-water-perc", "validation-water-perc"}.issubset(df.columns):
-            print(f"⚠️ {name} missing correct percentage columns")
+            print(f"WARNING: {name} missing correct percentage columns")
         else:
             gwp_max = df["gwp-water-perc"].max()
             val_max = df["validation-water-perc"].max()
             if gwp_max > 100 or val_max > 100:
-                print(f"⚠️ {name}: gwp max={gwp_max}, val max={val_max}")
+                print(f"WARNING: {name}: gwp max={gwp_max}, val max={val_max}")
 
 
     
@@ -172,30 +172,30 @@ def main(config):
     
     for name, df in nasa_dict.items():
         if not {"gwp-water-perc", "validation-water-perc"}.issubset(df.columns):
-            print(f"⚠️ {name} missing correct percentage columns")
+            print(f"WARNING: {name} missing correct percentage columns")
         else:
             gwp_max = df["gwp-water-perc"].max()
             val_max = df["validation-water-perc"].max()
             if gwp_max > 100 or val_max > 100:
-                print(f"⚠️ {name}: gwp max={gwp_max}, val max={val_max}")
+                print(f"WARNING: {name}: gwp max={gwp_max}, val max={val_max}")
     
     for name, df in li_dict.items():
         if not {"gwp-water-perc", "validation-water-perc-li"}.issubset(df.columns):
-            print(f"⚠️ {name} missing correct percentage columns")
+            print(f"WARNING: {name} missing correct percentage columns")
         else:
             gwp_max = df["gwp-water-perc"].max()
             val_max = df["validation-water-perc-li"].max()
             if gwp_max > 100 or val_max > 100:
-                print(f"⚠️ {name}: gwp max={gwp_max}, val max={val_max}")
+                print(f"WARNING: {name}: gwp max={gwp_max}, val max={val_max}")
     
     for name, df in li_dict_no_frozen.items():
         if not {"gwp-water-perc", "validation-water-perc-li"}.issubset(df.columns):
-            print(f"⚠️ {name} (no_frozen) missing correct percentage columns")
+            print(f"WARNING: {name} (no_frozen) missing correct percentage columns")
         else:
             gwp_max = df["gwp-water-perc"].max()
             val_max = df["validation-water-perc-li"].max()
             if gwp_max > 100 or val_max > 100:
-                print(f"⚠️ {name} (no_frozen): gwp max={gwp_max}, val max={val_max}")
+                print(f"WARNING: {name} (no_frozen): gwp max={gwp_max}, val max={val_max}")
 
     # Find the shortest dataframe length in each dictionary
     min_length_arlie = min([len(df) for df in arlie_dict.values()])

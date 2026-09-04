@@ -33,7 +33,7 @@ class ArlieProcessor:
 
                 geometry = pd.read_csv(file, sep=";")
                 if geometry.shape[0] == 0:  
-                    print(f"⚠️ WARNING: file {file} contains only header and will not be used.")
+                    print(f"WARNING: file {file} contains only header and will not be used.")
                     continue
 
                 if 'river_km' in geometry.columns: 
@@ -143,7 +143,7 @@ class ArlieProcessor:
 
 
             if gdf.empty:
-                print(f"⚠️ WARNING: No geometries found for {geom_id}. Skipping.")
+                print(f"WARNING: No geometries found for {geom_id}. Skipping.")
                 continue
 
 

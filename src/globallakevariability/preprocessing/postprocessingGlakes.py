@@ -41,7 +41,7 @@ def merge_hylak_glakes_strict(
     """
 
     if verbose:
-        print(f"🔹 Starting merge process...")
+        print(f"Starting merge process...")
         print(f"  - GWP lakes: {len(gwp_lakes):,} rows")
         print(f"  - GLAKES-Hylak mapping: {len(glakes_hylak):,} rows")
 
@@ -54,13 +54,13 @@ def merge_hylak_glakes_strict(
         hylak_counts_glakes[hylak_counts_glakes == 1].index
     )
     if verbose:
-        print(f"✅ Step 1: Found {len(unique_hylak_ids):,} clean 1:1 Hylak matches")
+        print(f"Step 1: Found {len(unique_hylak_ids):,} clean 1:1 Hylak matches")
 
     # --- Step 3: Identify glakes_ids with multiple Hylak_ids (1:many)
     glakes_to_hylak = glakes_hylak.groupby(glakes_key)[hylak_key].nunique()
     multi_hylak_glakes = glakes_to_hylak[glakes_to_hylak > 1].index
     if verbose:
-        print(f"✅ Step 2: Found {len(multi_hylak_glakes):,} glakes_ids linked to multiple Hylak_ids (1:many)")
+        print(f"Step 2: Found {len(multi_hylak_glakes):,} glakes_ids linked to multiple Hylak_ids (1:many)")
 
     # --- Step 4: Keep valid glakes rows (either 1:1 or 1:many)
     valid_glakes = glakes_hylak[
@@ -68,7 +68,7 @@ def merge_hylak_glakes_strict(
         (glakes_hylak[glakes_key].isin(multi_hylak_glakes))
     ]
     if verbose:
-        print(f"✅ Step 3: Kept {len(valid_glakes):,} glakes rows after filtering invalid Hylak_ids")
+        print(f"Step 3: Kept {len(valid_glakes):,} glakes rows after filtering invalid Hylak_ids")
 
     # --- Step 5: Remove Hylak_ids that map to multiple glakes_ids (ambiguous)
     hylak_to_glakes = glakes_hylak.groupby(hylak_key)[glakes_key].nunique()
@@ -77,7 +77,7 @@ def merge_hylak_glakes_strict(
     valid_glakes = valid_glakes[~valid_glakes[hylak_key].isin(ambiguous_hylak)]
     if verbose:
         removed = before - len(valid_glakes)
-        print(f"✅ Step 4: Removed {removed:,} ambiguous Hylak_ids mapping to multiple glakes_ids")
+        print(f"Step 4: Removed {removed:,} ambiguous Hylak_ids mapping to multiple glakes_ids")
 
     # --- Step 6: Merge cleaned subsets
     merged = pd.merge(
@@ -91,8 +91,8 @@ def merge_hylak_glakes_strict(
     merged.drop(columns=["glakes_geometry"], inplace=True)
 
     if verbose:
-        print(f"🏁 Final merge completed using method '{how}'")
-        print(f"   → Merged DataFrame has {len(merged):,} rows")
+        print(f"Final merge completed using method '{how}'")
+        print(f"   -> Merged DataFrame has {len(merged):,} rows")
 
     unique_hylak_ids_after = merged[hylak_key].unique()
 

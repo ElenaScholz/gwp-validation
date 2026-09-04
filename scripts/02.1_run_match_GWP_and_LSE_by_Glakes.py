@@ -37,13 +37,13 @@ def main(config):
     # 2. Make li and gwp a glakes based dictionary
 
     # 2.1 Li: 
-    # 1️ Combine all DataFrames into one big DataFrame
+    # 1. Combine all DataFrames into one big DataFrame
     combined_li = pd.concat(li_dictionary.values(), ignore_index=True)
 
     # add glakes_id by merging with matching_hydrolakes
     combined_li = combined_li.merge(matching_hydrolakes[['Hylak_id', 'GLAKES_id']], on='Hylak_id', how='left')
 
-    # 2️ Group by GLAKES_id and month
+    # 2. Group by GLAKES_id and month
     agg_df_li = (
         combined_li.groupby(['GLAKES_id', 'month'], as_index=False)
         .agg({
@@ -53,12 +53,12 @@ def main(config):
         })
     )
 
-    # 3️ Optional: sort for readability
+    # 3. Optional: sort for readability
     agg_df_li = agg_df_li.sort_values(['GLAKES_id', 'month']).reset_index(drop=True)
     agg_df_li = agg_df_li.rename(columns={'lake_surface_area': 'li_lake_surface_area', "month": "Date"})
 
     # 2.2 GWP:
-    # 1️ Combine all DataFrames into one big DataFrame
+    # 1. Combine all DataFrames into one big DataFrame
 
     combined_gwp = pd.concat(gwp_dictionary.values(), ignore_index=True)
     # add glakes_id by merging with matching_hydrolakes
@@ -66,7 +66,7 @@ def main(config):
     combined_gwp = combined_gwp.merge(matching_hydrolakes, on='Hylak_id', how='outer')
 
     print(combined_gwp.columns)
-    # 2️ Group by GLAKES_id and month
+    # 2. Group by GLAKES_id and month
     agg_df_gwp = (
         combined_gwp.groupby(['GLAKES_id', 'Date'], as_index=False)
         .agg({
@@ -83,7 +83,7 @@ def main(config):
 
     print(agg_df_gwp.columns)
 
-    # 3️ Optional: sort for readability
+    # 3. Optional: sort for readability
     agg_df_gwp = agg_df_gwp.sort_values(['GLAKES_id', 'Date']).reset_index(drop=True)
     agg_df_gwp.rename(columns={"Area": "GWP_lake_surface_area"}, inplace=True)
 

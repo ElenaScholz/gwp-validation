@@ -43,7 +43,7 @@ if not hdarc.is_file():
         f.write(f'user: {USERNAME}\n')
         f.write(f'password: {PASSWORD}\n')
 else:
-    print('✅ Configuration file already exists.')
+    print('Configuration file already exists.')
 
 # Create HDA client instance
 hda_client = Client()
@@ -73,8 +73,8 @@ for idx in range(start_group, num_groups):
     multipolygon = MultiPolygon(chunk)
     wkt_multipolygon = multipolygon.wkt
 
-    print(f"\n📦 Group {idx + 1}/{num_groups}:")
-    print(f"➡️ Sending WKT MultiPolygon with {len(chunk)} polygons")
+    print(f"\nGroup {idx + 1}/{num_groups}:")
+    print(f"Sending WKT MultiPolygon with {len(chunk)} polygons")
 
     # Define HDA API query
     query = {
@@ -87,12 +87,12 @@ for idx in range(start_group, num_groups):
         "startIndex": 0
     }
 
-    print(f"🔍 Sending request for group {idx + 1}...")
+    print(f"Sending request for group {idx + 1}...")
     matches = hda_client.search(query)
 
     # Download if results found
     if matches:
-        print(f"📥 Downloading {len(matches)} items for group {idx + 1}...")
+        print(f"Downloading {len(matches)} items for group {idx + 1}...")
         matches[-1].download(OUTPUT_PATH)
     else:
-        print(f"⚠️ No results for group {idx + 1}.")
+        print(f"WARNING: No results for group {idx + 1}.")
